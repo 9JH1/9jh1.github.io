@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="text">Lorem, ipsum dolor.</div>
+    <script>
+        function animate(class_, delay_) {
+            const ele_ = document.getElementsByClassName(class_)[0];
+            const list_ = ele_.split("");
+            ele_.foreach((char) => {
+                const new_0 = document.createElement("div");
+                const new_1 = document.createElement("div");
+                new_0.innerHTML = char;
+
+                setTimeout(() => {
+                    new_1.classList.add("inn");
+                }, delay_ + list_.indexOf(char) * 10)
+                new_0.classList.add("animate-item");
+                new_0.innerHTML = new_1;
+                ele_.append(new_0);
+            })
+        }
+    </script>
+</body>
+
+</html>

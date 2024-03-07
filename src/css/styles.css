@@ -1,0 +1,59 @@
+:root {
+    --background: black;
+    --text-color: white;
+}
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+    color: var(--text-color);
+
+    .loader,
+    #main {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+    }
+
+    .loader {
+        padding: 20px;
+        box-sizing: border-box;
+        position: fixed;
+
+        .top-out {
+            width: 40%;
+            height: fit-content;
+            max-height: 40%;
+            overflow: hidden;
+
+            .com {
+                transition: opacity 0.3s ease-out
+            }
+        }
+    }
+}
+
+
+@keyframes blink {
+    0% {
+        color: var(--text-color)
+    }
+
+    50% {
+        color: transparent;
+    }
+
+    100% {
+        color: var(--text-color);
+    }
+}
+
+.blink {
+    animation: blink 1s infinite;
+}
