@@ -1,6 +1,7 @@
 window.onload = async () => {
     const loader = document.getElementById("loader");
     const loader_page = document.getElementsByClassName("loader")[0];
+    animateTextPar("animated-text-desc-one", 20);
     const list_ = ["---------------------<br>loading webpage", "loading fonts", "loading animations", "loading css", "loading images", "loading some other cool things"];
     const loop_ = new Promise((resolve, reject) => {
         for (let a = 0; a < list_.length; a++) {
@@ -57,4 +58,30 @@ function animate(class_, delay_) {
             ele_.append(new_0);
         }, index * delay_);
     });
+}
+
+function animateTextPar(element, duration) {
+    const mainE = document.getElementsByClassName(element)[0];
+    const mainE_text = mainE.innerText.replace(/\n/g, "").split(" ");
+    mainE.innerHTML = "";
+    // this some bs man
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateText();
+                observer.unobserve(mainE);
+            }
+        });
+    });
+    observer.observe(mainE);
+
+    function animateText() {
+        for (let item = 0; item < mainE_text.length; item++) {
+            const nc = document.createElement("div");
+            nc.innerHTML = `<div class="inner-active-text-item"> ${mainE_text[item]}</div>`;
+            nc.classList.add("active-text-item");
+            nc.firstChild.style.animation = `text-ani 0.3s ease-out forwards ${item * duration / 1000}s`;
+            mainE.append(nc);
+        }
+    }
 }

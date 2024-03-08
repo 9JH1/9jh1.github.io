@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/base.css">
     <script src="src/js/loader.js" defer></script>
     <script src="src/js/datetime.js" defer></script>
     <script src="src/js/cursor.js" defer></script>
     <script src="src/js/scrollbar.js" defer></script>
+    <script src="src/js/animate.js" defer></script>
 </head>
 
 <body id="scrollcontainer">
@@ -22,21 +24,54 @@
     </div>
     <div id="navbar">
         <div class="left tp" id="date"></div>
-        <div class="cent tp">welcome to</div>
+        <div class="cent tp animate-cent-tag">welcome to</div>
         <div class="right tp" id="time"></div>
     </div>
     <div class="loader">
         <div class="top-out" id="loader"></div>
     </div>
-    <div id="main">
+    <div id="main" class="page">
         <div class="text-cont">
 
             <div class="text lar-1">MY</div>
             <div class="text lar-2">WEBSITE</div>
         </div>
     </div>
-    <div id="main">
-
+    <div id="main-2" class="page">
+        <div class="inner-cont">
+            <div class="inner">
+                <div class="number">
+                    <span class="blink ">_</span>01
+                </div>
+                <h2 data-animation="opacity">Welcome to my website</h2>
+                <p>
+                    Hi, im 3hy 👋 <span></span><br>
+                    <span class="animated-text-desc-one">
+                        I specialize in software and web design. ive been programming since 2018, and ive learnt
+                        valuable skills in web design, software development, robotics, design, and cyber security.
+                        some of which include
+                    </span>
+                </p>
+                <ul data-animation="opacity" data-animation-delay="1s">
+                    <li>CSS</li>
+                    <li>JS</li>
+                    <li>HTML</li>
+                    <li>PHP</li>
+                    <li>C++</li>
+                    <li>Assembly</li>
+                    <li>python</li>
+                    <li>Arch Linux</li>
+                    <li>React</li>
+                    <li>Anime.js</li>
+                    <li>Kali Linux</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="main-3" class="page">
+        <div class="inner" id="moving-text">
+            This Thang This Thang This Thang
+        </div>
     </div>
 </body>
 
