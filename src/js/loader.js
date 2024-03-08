@@ -31,8 +31,10 @@ window.onload = async () => {
                 animate("lar-2", 20);
                 setTimeout(() => {
                     document.getElementById("navbar").style.transform = "translateY(0%)";
+                    animate("animate-cent-tag",20)
                     document.body.style.overflowY = "scroll";
                     document.getElementById("scrollbar").style.transform = "translateX(0%)";
+                    animate_moving_text()
                 }, 500);
             }, 200);
         }, 300);
@@ -49,9 +51,6 @@ function animate(class_, delay_) {
         const new_1 = document.createElement("div");
         new_1.innerHTML = char;
         new_1.classList.add("inn");
-        if (char == " ") {
-            new_1.classList.add("space")
-        }
         new_0.classList.add("animate-item");
         setTimeout(() => {
             new_0.append(new_1);
@@ -84,4 +83,16 @@ function animateTextPar(element, duration) {
             mainE.append(nc);
         }
     }
+}
+
+function animate_moving_text(){
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animate("moving-text",20)
+                observer.unobserve(document.getElementById("moving-text"));
+            }
+        });
+    });
+    observer.observe(document.getElementById("moving-text"));
 }

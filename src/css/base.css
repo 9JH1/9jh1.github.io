@@ -14,5 +14,9 @@ ul {
         padding: 3px 10px;
         border-radius: 100px;
         color: var(--background);
+        a { 
+            text-decoration: none;
+            color:var(--background)
+        }
     }
 }

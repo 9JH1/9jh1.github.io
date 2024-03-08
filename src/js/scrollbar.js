@@ -24,7 +24,10 @@ document.addEventListener("scroll", () => {
     } else {
         document.getElementById("navbar").style.transform = "translateY(0px)";
     }
-    document.getElementById("main").style.height = base_main - window.scrollY + "px";
+    document.getElementById("main").style.opacity = (100 - window.scrollY / 10)/100;
+    document.getElementById("main").style.height = base_main - window.scrollY / 3 + "px";
+
+    document.getElementById("main-3").style.opacity = ((window.scrollY / 1)/100);
     document.getElementById("moving-text").style.transform = `translateX(-${window.scrollY}px)`
 
 });

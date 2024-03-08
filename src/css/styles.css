@@ -93,14 +93,19 @@ body {
 
         .inner {
             font-size: 260px;
-            text-wrap: nowrap;
+            white-space: nowrap;
             font-family: 'Poppins';
             font-weight: 800;
             text-transform: uppercase;
-            color: rgb(27, 27, 27);
+            color: rgb(12, 12, 12);
             margin-top: 10vh;
+            overflow: visible; 
         }
     }
+
+
+
+
 
     #main-2 {
         width: 100vw;
@@ -125,6 +130,7 @@ body {
             .inner {
                 width: 85%;
                 height: 100%;
+
             }
         }
     }
@@ -145,6 +151,14 @@ body {
                 opacity: 0;
                 font-size: 300px;
                 overflow: hidden;
+                .animate-item {
+                        -webkit-text-fill-color: transparent;
+                        background-color: #0d61ff;
+                        background-image: url(https://media.giphy.com/media/9JxkPTP3alOykb8PmQ/source.gif);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                    }
+                
 
 
 
@@ -192,10 +206,6 @@ body {
         */
     }
 
-    .space {
-        width: 40px;
-    }
-
 }
 
 #cursor {
@@ -222,6 +232,7 @@ body {
     margin-right: 2px;
     transform: translateX(12px);
     transition: all 1s ease;
+    z-index: 97;
 
     .scrollbar-inn {
         width: 100%;
@@ -254,6 +265,10 @@ body {
 ::selection {
     background: white;
     color: black;
+}
+
+* {
+    scrollbar-width: none;
 }
 
 
