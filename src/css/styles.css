@@ -1,23 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
     --background: black;
     --text-color: white;
+    --foreground: rgb(17, 17, 17);
+    --text-disabled: grey;
 }
 
-
 body {
+    font-family: 'IBM Plex Mono', monospace;
     width: 100vw;
     height: 100vh;
     background-color: var(--background);
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-
+    overflow-y: hidden;
+    cursor: none;
     color: var(--text-color);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
     .loader,
     #main {
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         background-color: black;
     }
 
@@ -25,6 +32,7 @@ body {
         padding: 20px;
         box-sizing: border-box;
         position: fixed;
+        z-index: 100;
 
         .top-out {
             width: 40%;
@@ -33,9 +41,74 @@ body {
             overflow: hidden;
 
             .com {
-                transition: opacity 0.3s ease-out
+                transition: opacity 0.3s ease-out;
+                white-space: pre;
             }
         }
+    }
+
+    #navbar {
+        width: 100vw;
+        height: 30px;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        padding: 0px 20px;
+        box-sizing: border-box;
+        z-index: 98;
+        transform: translateY(-60px);
+        transition: all 1s ease;
+        color: var(--text-disabled);
+
+        .tp {
+            width: 33.3%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .left {
+            justify-content: left;
+
+        }
+
+        .right {
+            justify-content: right;
+
+
+        }
+
+        .cent {
+            color: var(--text-color)
+        }
+
+    }
+
+    #main {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+
+        font-weight: 700;
+
+        .text-cont {
+            overflow: hidden;
+
+            .text {
+                line-height: 300px;
+                opacity: 0;
+                font-size: 300px;
+                overflow: hidden;
+
+
+
+            }
+        }
+
     }
 }
 
@@ -55,5 +128,86 @@ body {
 }
 
 .blink {
-    animation: blink 1s infinite;
+    animation: blink 2s infinite;
+}
+
+.animate-item {
+    user-select: none;
+    display: inline-flex;
+    background: var(--background);
+    overflow: hidden;
+
+
+    .inn {
+        transform: translateY(100%);
+        animation: animate-item 2s ease forwards;
+        -webkit-text-fill-color: transparent;
+        background-color: #0d61ff;
+        background-image: url(https://media.giphy.com/media/9JxkPTP3alOykb8PmQ/source.gif);
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+    .space {
+        width: 40px;
+    }
+
+}
+
+#cursor {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    border-radius: 100%;
+    z-index: 99;
+    pointer-events: none;
+    backdrop-filter: invert(100%);
+    transition: all 0s ease-in-out;
+
+}
+
+#scrollbar {
+    background: transparent;
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    width: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 2px;
+    transform: translateX(12px);
+    transition: all 1s ease;
+
+    .scrollbar-inn {
+        width: 100%;
+        height: 60%;
+        background: var(--foreground);
+        border-radius: 100px;
+        overflow: hidden;
+
+
+        .scrollbar {
+            width: 100%;
+            height: 40px;
+            background: var(--text-disabled);
+            border-radius: 100px;
+        }
+    }
+}
+
+@keyframes animate-item {
+    to {
+        transform: translateY(0%)
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+::selection {
+    background: white;
+    color: black;
 }

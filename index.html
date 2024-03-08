@@ -7,16 +7,36 @@
     <title>Document</title>
     <link rel="stylesheet" href="src/css/styles.css">
     <script src="src/js/loader.js" defer></script>
+    <script src="src/js/datetime.js" defer></script>
+    <script src="src/js/cursor.js" defer></script>
+    <script src="src/js/scrollbar.js" defer></script>
 </head>
 
-<body>
+<body id="scrollcontainer">
+    <div id="scrollbar">
+        <div class="scrollbar-inn">
+            <div class="scrollbar"></div>
+        </div>
+    </div>
+    <div id="cursor">
+    </div>
+    <div id="navbar">
+        <div class="left tp" id="date"></div>
+        <div class="cent tp">welcome to</div>
+        <div class="right tp" id="time"></div>
+    </div>
     <div class="loader">
-        <div class="top-out" id="loader">
+        <div class="top-out" id="loader"></div>
+    </div>
+    <div id="main">
+        <div class="text-cont">
 
+            <div class="text lar-1">MY</div>
+            <div class="text lar-2">WEBSITE</div>
         </div>
     </div>
     <div id="main">
-        asdasd
+
     </div>
 </body>
 

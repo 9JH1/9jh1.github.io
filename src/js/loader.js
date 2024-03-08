@@ -1,13 +1,13 @@
 window.onload = async () => {
     const loader = document.getElementById("loader");
     const loader_page = document.getElementsByClassName("loader")[0];
-    const list_ = ["test", "test2", "test3"];
+    const list_ = ["---------------------<br>loading webpage", "loading fonts", "loading animations", "loading css", "loading images", "loading some other cool things"];
     const loop_ = new Promise((resolve, reject) => {
         for (let a = 0; a < list_.length; a++) {
             setTimeout(() => {
                 const new_ = document.createElement("div");
                 new_.classList.add("com");
-                new_.innerText = list_[a];
+                new_.innerHTML = list_[a];
                 loader.append(new_);
                 setTimeout(() => {
                     new_.style.opacity = 0;
@@ -25,12 +25,36 @@ window.onload = async () => {
         loader_page.style.opacity = 0;
         setTimeout(() => {
             loader_page.remove();
-            // implement animation text 
-            //animate_landing_page()
+            animate("lar-1", 20);
+            setTimeout(() => {
+                animate("lar-2", 20);
+                setTimeout(() => {
+                    document.getElementById("navbar").style.transform = "translateY(0%)";
+                    document.body.style.overflowY = "scroll";
+                    document.getElementById("scrollbar").style.transform = "translateX(0%)";
+                }, 500);
+            }, 200);
         }, 300);
     });
 };
 
-
-
-
+function animate(class_, delay_) {
+    const ele_ = document.getElementsByClassName(class_)[0];
+    ele_.style.opacity = 1;
+    const list_ = ele_.textContent.split("");
+    ele_.innerHTML = "";
+    list_.forEach((char, index) => {
+        const new_0 = document.createElement("div");
+        const new_1 = document.createElement("div");
+        new_1.innerHTML = char;
+        new_1.classList.add("inn");
+        if (char == " ") {
+            new_1.classList.add("space")
+        }
+        new_0.classList.add("animate-item");
+        setTimeout(() => {
+            new_0.append(new_1);
+            ele_.append(new_0);
+        }, index * delay_);
+    });
+}

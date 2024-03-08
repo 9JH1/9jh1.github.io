@@ -5,27 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .animate-item {
+            display: inline-block;
+            background: white;
+            overflow: hidden;
+
+
+            .inn {
+                transform: translateY(100%);
+                animation: animate-item 2s ease forwards;
+            }
+
+            .space {
+                width: 10px;
+            }
+
+        }
+
+        @keyframes animate-item {
+            to {
+                transform: translateY(0%)
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div class="text">Lorem, ipsum dolor.</div>
+
+    <div class="text-2">Lorem, ipsum dolor.</div>
     <script>
         function animate(class_, delay_) {
             const ele_ = document.getElementsByClassName(class_)[0];
-            const list_ = ele_.split("");
-            ele_.foreach((char) => {
+            const list_ = ele_.textContent.split("");
+            ele_.innerHTML = "";
+            list_.forEach((char, index) => {
                 const new_0 = document.createElement("div");
                 const new_1 = document.createElement("div");
-                new_0.innerHTML = char;
-
-                setTimeout(() => {
-                    new_1.classList.add("inn");
-                }, delay_ + list_.indexOf(char) * 10)
+                new_1.innerHTML = char;
+                new_1.classList.add("inn");
+                new_0.title = char;
+                if (char == " ") {
+                    new_1.classList.add("space")
+                }
                 new_0.classList.add("animate-item");
-                new_0.innerHTML = new_1;
-                ele_.append(new_0);
-            })
+                setTimeout(() => {
+                    new_0.append(new_1);
+                    ele_.append(new_0);
+                }, index * delay_);
+            });
         }
+
+        animate("text", 100);
+
+        animate("text-2", 100);
+
     </script>
 </body>
 
