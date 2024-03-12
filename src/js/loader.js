@@ -83,11 +83,10 @@ function animateTextPar(element, duration) {
     }
 }
 document.addEventListener("DOMContentLoaded", () => {
-    animateInTitle("tester")
+    animateInTitle("test")
 })
 function animateInTitle(newTitle) {
-    newTitle = newTitle.toUpperCase
-    const list_ = String(newTitle).split('');
+    const list_ = newTitle.split('');
     const title_ = document.getElementById("title-act");
     const old_ = title_.innerText;
     const char_ = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%&".split("");
@@ -98,22 +97,16 @@ function animateInTitle(newTitle) {
         for (let ii = 0; ii < randomNumber; ii++) {
             let randomNumberChar = Math.round(Math.random() * (char_.length - 0));
             titleText[i] = char_[randomNumberChar];
-            console.log(titleText);
             render_.push(titleText);
+            console.log(titleText)
+            setTimeout(() => {
+                title_.innerText = (titleText.toString()).replace("\,\g", "")
+            }, (100 * ii) * i);
+
         }
     }
-    console.log(render_);
-    function RenderTitle() {
-        for (let iii = 0; iii < render_.length; iii++) {
-            let titleSample = "";
-            for (let iiii = 0; iiii < render_[iii].length; iiii++) {
-                titleSample = titleSample + render[iii][iiii];
-                setTimeout(() => {
-                    title_.innerText = titleSample;
-                }, (700 * iii) * iiii);
-            }
-        }
-    }
+    console.log(render_)
+
 }
 
 
