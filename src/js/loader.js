@@ -98,10 +98,7 @@ function animateInTitle(newTitle) {
             let randomNumberChar = Math.round(Math.random() * (char_.length - 0));
             titleText[i] = char_[randomNumberChar];
             render_.push(titleText);
-            console.log(titleText)
-            setTimeout(() => {
-                title_.innerText = (titleText.toString()).replace("\,\g", "")
-            }, (100 * ii) * i);
+            console.log(titleText);
 
         }
     }
