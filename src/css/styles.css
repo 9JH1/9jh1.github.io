@@ -87,54 +87,6 @@ body {
 
     }
 
-    #main-3 {
-        width: 100vw;
-        margin-top: 10vh;
-
-        .inner {
-            font-size: 260px;
-            white-space: nowrap;
-            font-family: 'Poppins';
-            font-weight: 800;
-            text-transform: uppercase;
-            color: rgb(12, 12, 12);
-            margin-top: 10vh;
-            overflow: visible; 
-        }
-    }
-
-
-
-
-
-    #main-2 {
-        width: 100vw;
-
-        .inner-cont {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-
-            .number {
-                position: absolute;
-                top: 0;
-                right: 0;
-                margin-top: 40px;
-                font-size: 25px;
-                margin-right: 7.5%;
-            }
-
-            .inner {
-                width: 85%;
-                height: 100%;
-
-            }
-        }
-    }
-
     #main {
         overflow: hidden;
         display: flex;
@@ -151,17 +103,6 @@ body {
                 opacity: 0;
                 font-size: 300px;
                 overflow: hidden;
-                .animate-item {
-                        -webkit-text-fill-color: transparent;
-                        background-color: #0d61ff;
-                        background-image: url(https://media.giphy.com/media/9JxkPTP3alOykb8PmQ/source.gif);
-                        background-clip: text;
-                        -webkit-background-clip: text;
-                    }
-                
-
-
-
             }
         }
 
@@ -197,13 +138,11 @@ body {
     .inn {
         transform: translateY(100%);
         animation: animate-item 2s ease forwards;
-        /*
-        -webkit-text-fill-color: transparent;
+        /*-webkit-text-fill-color: transparent;
         background-color: #0d61ff;
         background-image: url(https://media.giphy.com/media/9JxkPTP3alOykb8PmQ/source.gif);
         background-clip: text;
-        -webkit-background-clip: text;
-        */
+        -webkit-background-clip: text;*/
     }
 
 }
