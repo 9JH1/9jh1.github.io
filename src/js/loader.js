@@ -2,6 +2,7 @@ window.onload = async () => {
     const loader = document.getElementById("loader");
     const loader_page = document.getElementsByClassName("loader")[0];
     const list_ = ["---------------------<br>loading webpage", "loading fonts", "loading animations", "loading css", "loading images", "loading some other cool things"];
+    //document.getElementById("title-act").innerText = "⠀"
     const loop_ = new Promise((resolve, reject) => {
         for (let a = 0; a < list_.length; a++) {
             setTimeout(() => {
@@ -98,23 +99,33 @@ function animateInTitle(newTitle) {
             let randomNumberChar = Math.round(Math.random() * (char_.length - 0));
             titleText[i] = char_[randomNumberChar];
             render_.push(titleText);
+            //focking shitty but it works
             console.log(titleText);
-
         }
     }
-    console.log(render_)
 
+    function render__() {
+        for (let iii = 0; iii < render_.length; iii++) {
+            let wordTitleTmp;
+            for (let iiii = 0; iiii < render_[iii].length; iiii++) {
+                wordTitleTmp += render_[iii][iiii];
+            }
+            console.log(wordTitleTmp);
+        }
+    }
+    render__();
 }
 
 
 
-/*
-const letter_ = list_[i];
-const randomI_ = Math.random * 100;
 
-setTimeout(() => {
-    title_.innerText += letter_;
-}, (700 * i) + 500);
-console.log(letter_)
-console.log(i);
+/*
+    const letter_ = list_[i];
+    const randomI_ = Math.random * 100;
+
+    setTimeout(() => {
+        title_.innerText += letter_;
+    }, (700 * i) + 500);
+    console.log(letter_)
+    console.log(i);
 */

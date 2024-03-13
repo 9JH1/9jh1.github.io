@@ -6,6 +6,7 @@ function setDateTime() {
         hour: "numeric",
         minute: "numeric",
     });
+    document.getElementById("date").innerHTML = String(document.getElementById("date").innerHTML).replace(new RegExp("/", "gm"), "<span class='blink'>/</span>")
     document.getElementById("time").innerHTML = String(document.getElementById("time").innerHTML).replace(":", "<span class='blink'>:</span>")
 }
 

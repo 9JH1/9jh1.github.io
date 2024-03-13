@@ -99,9 +99,9 @@ body {
             overflow: hidden;
 
             .text {
-                line-height: 300px;
+                line-height: 17vw;
                 opacity: 0;
-                font-size: 300px;
+                font-size: 17vw;
                 overflow: hidden;
             }
         }
@@ -229,5 +229,12 @@ body {
         opacity: 1;
 
         transform: rotate(0deg) translateY(0px);
+    }
+}
+
+
+@media screen and (max-width:500px) {
+    #main {
+        align-items: end !important;
     }
 }
