@@ -76,30 +76,50 @@ body {
         align-items: center;
         justify-content: space-between;
         transform: translateY(60px);
-        transition: all 1s ease;
+        transition: transform 1s ease;
 
         p {
-            --margin: 10px;
+            --margin: 20px;
             margin-left: var(--margin);
             margin-right: var(--margin);
         }
     }
 
-    .page {
-        width: 100vw;
-        height: 100vh;
-    }
-
     #main-2 {
+        width: 100vw;
+        height: fit-content;
         display: flex;
         align-items: center;
         justify-content: center;
         background-color: var(--foreground);
+        padding: 20px 0px;
 
         .inner {
             width: 90%;
             height: 100%;
-            background-color: red;
+            display: flex;
+            flex-wrap: wrap;
+
+            .spacer {
+                width: 100vw;
+                height: 40px;
+                color: transparent;
+                user-select: none;
+                display: none;
+            }
+
+            .half {
+                width: 50%;
+                height: fit-content;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .cont {
+                    width: 80%;
+                    height: 80%;
+                }
+            }
         }
     }
 
@@ -115,7 +135,7 @@ body {
         box-sizing: border-box;
         z-index: 98;
         transform: translateY(-60px);
-        transition: all 1s ease;
+        transition: transform 1s ease;
         color: var(--text-disabled);
 
         .tp {
@@ -141,6 +161,62 @@ body {
             color: var(--text-color)
         }
 
+    }
+
+    #main-3 {
+        width: 100vw;
+        min-height: 10vh;
+        margin-top: 10vh;
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .project {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            border-top: solid 2px white;
+
+            .main {
+                width: 50%;
+                display: flex;
+
+                .title {
+                    font-size: 5vw;
+                    width: 90%;
+                    font-family: 'Poppins';
+                    font-weight: 400;
+                }
+
+                .number {
+                    width: 10%;
+                    font-size: 3vw;
+                    border-right: solid 2px rgb(15, 15, 15);
+                    padding: 0px 10px;
+                    margin: 0px 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+            }
+
+
+            .text {
+                width: calc(30% + 20px);
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+                .credits,
+                .date {
+                    height: 100%;
+                    width: 50%;
+
+                }
+            }
+        }
     }
 
     #main {
@@ -340,7 +416,7 @@ body {
 }
 
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:700px) {
     #main {
         align-items: end !important;
         padding-bottom: 35px !important;
@@ -350,5 +426,66 @@ body {
         .top-out {
             width: 100% !important;
         }
+    }
+
+    #main-2 {
+        .inner {
+            width: 100% !important;
+
+            .half {
+                width: 100% !important;
+
+                .cont {
+                    width: 90% !important;
+                }
+            }
+
+            .spacer {
+                display: block !important;
+            }
+        }
+    }
+
+    #main-3 {
+        .project {
+            padding: 20px;
+            display: block !important;
+
+
+            .text,
+            .main {
+                width: 100% !important;
+            }
+
+            .main {
+                margin-bottom: 20px;
+                justify-content: space-between !important;
+
+                .number {
+                    border: none !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    justify-content: end !important;
+
+                }
+
+            }
+
+            .text {
+                display: block;
+
+                .credits,
+                .date {
+                    width: 100% !important;
+
+
+                }
+
+                .credits {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
     }
 }
