@@ -114,15 +114,87 @@ function animateInTitle(newTitle) {
     }
     render__();
 }
+function parallax(elementId, divider) {
+    const parallax = document.getElementById(elementId);
+    parallax.classList.add("parallax-Element");
+
+    if (window.innerWidth >= 770) {
+        document.addEventListener("mousemove", (event) => {
+            let _mouseX = ((event.clientX - (document.documentElement.clientWidth / 2)) / divider);
+            let _mouseY = ((event.clientY - (document.documentElement.clientHeight / 2)) / divider);
+
+            parallax.style.transform = `translate(${_mouseX}px, ${_mouseY}px)`;
+            parallax.style.webkitTransform = `translate(${_mouseX}px, ${_mouseY}px)`;
+            parallax.style.mozTransform = `translate(${_mouseX}px, ${_mouseY}px)`;
+
+            setTimeout(() => {
+                parallax.style.transition = "all  0s";
+            }, 300);
+        });
+
+        document.addEventListener("mouseout", () => {
+            parallax.style.transform = "translate(0px, 0px)";
+            parallax.style.webkitTransform = "translate(0px, 0px)";
+            parallax.style.mozTransform = "translate(0px, 0px)";
+        });
+    }
+}
+
+function setTiltEffect(element, tiltEffectSettings) {
+    const card = element;
+    document.addEventListener("mouseenter", cardMouseEnter);
+    document.addEventListener("mousemove", cardMouseMove);
+    document.addEventListener("mouseleave", cardMouseLeave);
+
+    function cardMouseEnter(event) {
+        setTransition();
+    }
 
 
-/*
-    const letter_ = list_[i];
-    const randomI_ = Math.random * 100;
+    function cardMouseMove(event) {
+        const cardWidth = card.offsetWidth;
+        const cardHeight = card.offsetHeight;
+        const centerX = card.offsetLeft + cardWidth / 2;
+        const centerY = card.offsetTop + cardHeight / 2;
+        const mouseX = event.clientX - centerX;
+        const mouseY = event.clientY - centerY;
+        const rotateXUncapped = (+1) * (tiltEffectSettings.max * mouseY / (cardHeight / 2));
+        const rotateYUncapped = (-1) * (tiltEffectSettings.max * mouseX / (cardWidth / 2));
+        const rotateX = rotateXUncapped < -tiltEffectSettings.max ? -tiltEffectSettings.max : (rotateXUncapped > tiltEffectSettings.max ? tiltEffectSettings.max : rotateXUncapped);
+        const rotateY = rotateYUncapped < -tiltEffectSettings.max ? -tiltEffectSettings.max : (rotateYUncapped > tiltEffectSettings.max ? tiltEffectSettings.max : rotateYUncapped);
 
-    setTimeout(() => {
-        title_.innerText += letter_;
-    }, (700 * i) + 500);
-    console.log(letter_)
-    console.log(i);
-*/
+        card.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) 
+                          scale3d(${tiltEffectSettings.scale}, ${tiltEffectSettings.scale}, ${tiltEffectSettings.scale})`;
+    }
+
+    function cardMouseLeave(event) {
+        card.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        setTransition();
+    }
+
+    function setTransition() {
+        clearTimeout(card.transitionTimeoutId);
+        card.style.transition = `transform ${tiltEffectSettings.speed}ms ${tiltEffectSettings.easing}`;
+        card.transitionTimeoutId = setTimeout(() => {
+            card.style.transition = "";
+        }, tiltEffectSettings.speed);
+    }
+}
+// -----------------------------------------------------------
+//                   EFFECTS FOR WEBSITE                     |
+// -----------------------------------------------------------
+// parallax effects
+parallax("noise", 100);
+parallax("text-lar-1", 30);
+parallax("text-lar-2", 30);
+parallax("main-2", 100);
+// cool perspective effects
+setTiltEffect(document.getElementsByClassName("lin-inn")[0], {
+    max: 3,
+    perspective: 1500,
+    scale: 1.0,
+    speed: 500,
+    easing: "cubic-bezier(.03,.98,.52,.99)"
+});
+
+// ----------------------------------------------------------
