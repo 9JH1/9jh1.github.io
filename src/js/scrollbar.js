@@ -20,11 +20,13 @@ document.addEventListener("scroll", () => {
     scrollbar.style.marginTop = `${((scrollbarInn.clientHeight / 100) * percentage) - 20}px`; // Assigning marginTop in pixels;
     if (window.scrollY >= 100) {
         document.getElementById("navbar").style.transform = "translateY(-60px)";
-
         document.getElementById("extra-nav").style.transform = "translateY(60px)";
+        document.getElementById("lines").style.opacity = 0;
+
     } else {
         document.getElementById("navbar").style.transform = "translateY(0px)";
         document.getElementById("extra-nav").style.transform = "translateY(0px)";
+        document.getElementById("lines").style.opacity = 1;
     }
     document.getElementById("main").style.opacity = (100 - window.scrollY / 10) / 100;
     document.getElementById("main").style.height = base_main - window.scrollY / 3 + "px";

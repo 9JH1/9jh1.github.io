@@ -116,16 +116,6 @@ function animateInTitle(newTitle) {
 }
 
 
-const observer_page2 = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            console.log("working")
-            observer_page2.unobserve(document.getElementById("main-2"));
-        }
-    });
-});
-observer_page2.observe(document.getElementById("main-2"));
-
 /*
     const letter_ = list_[i];
     const randomI_ = Math.random * 100;
