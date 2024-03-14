@@ -6,7 +6,6 @@ document.addEventListener("scroll", () => {
     const limit = () => {
         const body = document.body;
         const html = document.documentElement;
-
         const documentHeight = Math.max(
             body.scrollHeight,
             body.offsetHeight,
@@ -21,14 +20,15 @@ document.addEventListener("scroll", () => {
     scrollbar.style.marginTop = `${((scrollbarInn.clientHeight / 100) * percentage) - 20}px`; // Assigning marginTop in pixels;
     if (window.scrollY >= 100) {
         document.getElementById("navbar").style.transform = "translateY(-60px)";
+
+        document.getElementById("extra-nav").style.transform = "translateY(60px)";
     } else {
         document.getElementById("navbar").style.transform = "translateY(0px)";
+        document.getElementById("extra-nav").style.transform = "translateY(0px)";
     }
-    document.getElementById("main").style.opacity = (100 - window.scrollY / 10)/100;
+    document.getElementById("main").style.opacity = (100 - window.scrollY / 10) / 100;
     document.getElementById("main").style.height = base_main - window.scrollY / 3 + "px";
 
-    document.getElementById("main-3").style.opacity = ((window.scrollY / 1)/100);
-    document.getElementById("moving-text").style.transform = `translateX(-${window.scrollY}px)`
 
 });
 

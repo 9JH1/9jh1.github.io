@@ -1,0 +1,7 @@
+website 
+show url input for url 
+show url input for icon 
+under that show method on pasting base64 code into pastebin 
+show toggle for base64 and url 
+use php to render the url and icon as a link that way it can be run properly 
+make it so the page is able to be gone two but is then redirected to the actual site instantly

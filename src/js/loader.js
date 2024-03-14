@@ -18,19 +18,21 @@ window.onload = async () => {
                             resolve();
                         }
                     }, 300);
-                }, 1000);
-            }, 10 + a * Math.random() * 400);
+                }, 700);
+            }, 10 + a * Math.random() * 200);
         }
     });
     loop_.then(() => {
         loader_page.style.opacity = 0;
         setTimeout(() => {
+            document.body.style.cursor = "none";
             loader_page.remove();
             animate("lar-1", 20);
             setTimeout(() => {
                 animate("lar-2", 20);
                 setTimeout(() => {
                     document.getElementById("navbar").style.transform = "translateY(0%)";
+                    document.getElementById("extra-nav").style.transform = "translateY(0%)";
                     document.body.style.overflowY = "scroll";
                     //document.getElementById("scrollbar").style.transform = "translateX(0%)"; 
                     // NUH UH
@@ -83,9 +85,6 @@ function animateTextPar(element, duration) {
         }
     }
 }
-document.addEventListener("DOMContentLoaded", () => {
-    animateInTitle("test")
-})
 function animateInTitle(newTitle) {
     const list_ = newTitle.split('');
     const title_ = document.getElementById("title-act");
@@ -117,7 +116,15 @@ function animateInTitle(newTitle) {
 }
 
 
-
+const observer_page2 = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            console.log("working")
+            observer_page2.unobserve(document.getElementById("main-2"));
+        }
+    });
+});
+observer_page2.observe(document.getElementById("main-2"));
 
 /*
     const letter_ = list_[i];
