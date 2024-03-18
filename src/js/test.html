@@ -5,62 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .animate-item {
-            display: inline-block;
-            background: white;
-            overflow: hidden;
-
-
-            .inn {
-                transform: translateY(100%);
-                animation: animate-item 2s ease forwards;
-            }
-
-            .space {
-                width: 10px;
-            }
-
-        }
-
-        @keyframes animate-item {
-            to {
-                transform: translateY(0%)
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <div class="text">Lorem, ipsum dolor.</div>
-
-    <div class="text-2">Lorem, ipsum dolor.</div>
+    <div id="cooltext">this is my text</div>
     <script>
-        function animate(class_, delay_) {
-            const ele_ = document.getElementsByClassName(class_)[0];
-            const list_ = ele_.textContent.split("");
-            ele_.innerHTML = "";
-            list_.forEach((char, index) => {
-                const new_0 = document.createElement("div");
-                const new_1 = document.createElement("div");
-                new_1.innerHTML = char;
-                new_1.classList.add("inn");
-                new_0.title = char;
-                if (char == " ") {
-                    new_1.classList.add("space")
+        console.clear()
+        const coolText = document.getElementById("cooltext");
+        function coolTextFunc(element) {
+            let virtual_list = String(element.innerText).split()
+            let virtual_origin = String(element.innerText);
+            let virtual_string = element.innerText;
+            let render_list = []
+            charSet = "ACDEF"
+            for (let letter = 0; letter < virtual_origin.length; letter++) {
+                let virtual_string_letter = virtual_string.slice(0, letter);
+                for (let randomLetter = 0; randomLetter < Math.random() * 10; randomLetter++) {
+                    let vslt = virtual_string_letter
+                    vslt += charSet.charAt(Math.floor(Math.random() * charSet.length));
+                    render_list.push(vslt)
                 }
-                new_0.classList.add("animate-item");
-                setTimeout(() => {
-                    new_0.append(new_1);
-                    ele_.append(new_0);
-                }, index * delay_);
-            });
+                render_list.push(virtual_string.slice(0, letter + 1))
+
+            }
+            console.log(render_list)
+
         }
-
-        animate("text", 100);
-
-        animate("text-2", 100);
-
+        coolTextFunc(coolText)
     </script>
 </body>
 

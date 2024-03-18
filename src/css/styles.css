@@ -88,54 +88,71 @@ body {
 
 
     #projects {
-        width: 15vw;
         height: 100vh;
         position: absolute;
         right: 0%;
         top: 0%;
         display: flex;
-        align-items: end;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
 
-        .inn {
+        .title,
+        .item {
             width: 100%;
-            height: 60%;
-
-            padding: 0px 10px;
+            color: grey;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            padding: 0px 20px;
             box-sizing: border-box;
-
-            .title,
-            .item {
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: end;
-                color: grey;
-            }
-
-            .title {
-                font-size: 1.3em;
-                color: white;
-            }
-
-            .item {
-                background: red;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                .text {
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                }
-
-                .background {
-                    position: absolute;
-                    width: 0%;
-                    height: 100%;
-                }
-            }
         }
+
+        .title {
+            font-size: 1.6em;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .item {
+            button {
+                border: unset;
+                color: #ffffff;
+                z-index: 1;
+                background: transparent;
+                position: relative;
+                overflow: hidden;
+                transition: 250ms;
+                font-family: 'IBM Plex Mono', monospace;
+                padding: 0px;
+                margin: 0px;
+
+                font-size: 1.1em;
+            }
+
+            button::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 0;
+                background-color: #ffffff;
+                z-index: -1;
+                transition: all 250ms
+            }
+
+            button:hover {
+                color: #000000;
+            }
+
+            button:hover::before {
+                width: 100%;
+            }
+
+        }
+
 
     }
 
