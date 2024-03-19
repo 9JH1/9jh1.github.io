@@ -28,7 +28,12 @@
                 render_list.push(virtual_string.slice(0, letter + 1))
 
             }
-            console.log(render_list)
+            console.log(render_list);
+            for(let renderFor = 0;renderFor<render_list.length;renderFor++){
+                setTimeout(()=>{
+element.innerHTML =  render_list[renderFor];
+},500*renderFor)
+}
 
         }
         coolTextFunc(coolText)
