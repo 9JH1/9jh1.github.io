@@ -25,7 +25,6 @@ window.onload = async () => {
     loop_.then(() => {
         loader_page.style.opacity = 0;
         setTimeout(() => {
-            document.body.style.cursor = "none";
             loader_page.remove();
             animate("lar-1", 20);
             setTimeout(() => {
@@ -33,7 +32,7 @@ window.onload = async () => {
                 setTimeout(() => {
                     document.getElementById("navbar").style.transform = "translateY(0%)";
                     document.getElementById("extra-nav").style.transform = "translateY(0%)";
-                    document.body.style.overflowY = "scroll";
+                    //document.body.style.overflowY = "scroll";
                     //document.getElementById("scrollbar").style.transform = "translateX(0%)"; 
                     // NUH UH
                 }, 500);
@@ -187,7 +186,6 @@ function setTiltEffect(element, tiltEffectSettings) {
 parallax("noise", 100);
 parallax("text-lar-1", 30);
 parallax("text-lar-2", 30);
-parallax("main-2", 100);
 // cool perspective effects
 setTiltEffect(document.getElementsByClassName("lin-inn")[0], {
     max: 3,
