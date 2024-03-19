@@ -10,14 +10,13 @@
 <body>
     <div id="cooltext">this is my text</div>
     <script>
-        console.clear()
         const coolText = document.getElementById("cooltext");
         function coolTextFunc(element) {
             let virtual_list = String(element.innerText).split()
             let virtual_origin = String(element.innerText);
             let virtual_string = element.innerText;
             let render_list = []
-            charSet = "ACDEFGHIJKLMNOPQRSTUVWXYZ1234567890#@$&%"
+            charSet = "1234567890#@$&%"
             for (let letter = 0; letter < virtual_origin.length; letter++) {
                 let virtual_string_letter = virtual_string.slice(0, letter);
                 for (let randomLetter = 0; randomLetter < Math.random() * 3; randomLetter++) {
@@ -28,11 +27,11 @@
                 render_list.push(virtual_string.slice(0, letter + 1))
 
             }
-            for(let renderFor = 0;renderFor<render_list.length;renderFor++){
-                setTimeout(()=>{
-element.innerHTML =  render_list[renderFor];
-},20*renderFor)
-}
+            for (let renderFor = 0; renderFor < render_list.length; renderFor++) {
+                setTimeout(() => {
+                    element.innerHTML = render_list[renderFor];
+                }, 20 * renderFor)
+            }
 
         }
         coolTextFunc(coolText)

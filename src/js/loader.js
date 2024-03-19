@@ -32,6 +32,9 @@ window.onload = async () => {
                 setTimeout(() => {
                     document.getElementById("navbar").style.transform = "translateY(0%)";
                     document.getElementById("extra-nav").style.transform = "translateY(0%)";
+                    coolTextFunc(document.getElementById("project-project-one"), "OPEN-CHAT");
+                    coolTextFunc(document.getElementById("project-project-two"), "Terminal");
+                    coolTextFunc(document.getElementById("project-project-three"), "xos");
                     //document.body.style.overflowY = "scroll";
                     //document.getElementById("scrollbar").style.transform = "translateX(0%)"; 
                     // NUH UH
@@ -85,6 +88,7 @@ function animateTextPar(element, duration) {
     }
 }
 function animateInTitle(newTitle) {
+
     const list_ = newTitle.split('');
     const title_ = document.getElementById("title-act");
     const old_ = title_.innerText;
@@ -179,6 +183,28 @@ function setTiltEffect(element, tiltEffectSettings) {
         }, tiltEffectSettings.speed);
     }
 }
+
+function coolTextFunc(element, text) {
+    element.style.opacity = 1;
+    let virtual_origin = String(text);
+    let render_list = [];
+    charSet = "1234567890#@$&%";
+    for (let letter = 0; letter < virtual_origin.length; letter++) {
+        let virtual_string_letter = virtual_origin.slice(0, letter);
+        for (let randomLetter = 0; randomLetter < Math.random() * 3; randomLetter++) {
+            let vslt = virtual_string_letter;
+            vslt += charSet.charAt(Math.floor(Math.random() * charSet.length));
+            render_list.push(vslt);
+        }
+        render_list.push(virtual_origin.slice(0, letter + 1));
+    }
+    for (let renderFor = 0; renderFor < render_list.length; renderFor++) {
+        setTimeout(() => {
+            element.innerHTML = render_list[renderFor];
+        }, 20 * renderFor);
+    }
+}
+
 // -----------------------------------------------------------
 //                   EFFECTS FOR WEBSITE                     |
 // -----------------------------------------------------------

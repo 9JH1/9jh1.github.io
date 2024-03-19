@@ -53,7 +53,7 @@ body {
         box-sizing: border-box;
         position: fixed;
         z-index: 100;
-        transition: all 0.3s ease;
+        transition: opacity 0.3s ease;
 
         .top-out {
             width: 40%;
@@ -116,6 +116,7 @@ body {
         }
 
         .item {
+
             button {
                 border: unset;
                 color: #ffffff;
@@ -127,7 +128,7 @@ body {
                 font-family: 'IBM Plex Mono', monospace;
                 padding: 0px;
                 margin: 0px;
-
+                opacity: 0;
                 font-size: 1.1em;
             }
 
@@ -213,6 +214,7 @@ body {
                 font-size: 17vw;
                 overflow-y: hidden;
                 overflow-x: visible;
+                margin-left: 20px;
             }
         }
 
@@ -388,67 +390,21 @@ body {
         }
     }
 
-    #main-2 {
-        .inner {
-            width: 100% !important;
+    #projects {
+        width: 100% !important;
+        height: 40% !important;
+        bottom: 0 !important;
+        top: unset !important;
+        align-items: start !important;
+        justify-content: start !important;
 
-            .half {
-                width: 100% !important;
+        .item,
+        .title {
+            justify-content: start !important;
 
-                .cont {
-                    width: 90% !important;
-                }
-            }
-
-            .spacer {
-                display: block !important;
-            }
-        }
-    }
-
-    #main-3 {
-        .project {
-            padding: 20px;
-            display: block !important;
-
-
-            .text,
-            .main {
-                width: 100% !important;
-
-            }
-
-            .main {
-                margin-bottom: 20px;
-                justify-content: space-between !important;
-
-                .number {
-                    border: none !important;
-                    margin: 0 !important;
-                    padding: 0 !important;
-                    justify-content: end !important;
-
-                }
-
-                .title {
-                    padding-left: 0px !important;
-                }
-
-            }
-
-            .text {
-                display: block;
-
-                .credits,
-                .date {
-                    width: 100% !important;
-
-
-                }
-
-                .credits {
-                    margin-bottom: 10px;
-                }
+            button::before {
+                right: unset !important;
+                left: 0 !important;
             }
         }
 
