@@ -17,7 +17,7 @@
             let virtual_origin = String(element.innerText);
             let virtual_string = element.innerText;
             let render_list = []
-            charSet = "ACDEF"
+            charSet = "ACDEFGHIJKLMNOPQRSTUVWXYZ1234567890#@$&%"
             for (let letter = 0; letter < virtual_origin.length; letter++) {
                 let virtual_string_letter = virtual_string.slice(0, letter);
                 for (let randomLetter = 0; randomLetter < Math.random() * 10; randomLetter++) {
@@ -28,7 +28,6 @@
                 render_list.push(virtual_string.slice(0, letter + 1))
 
             }
-            console.log(render_list);
             for(let renderFor = 0;renderFor<render_list.length;renderFor++){
                 setTimeout(()=>{
 element.innerHTML =  render_list[renderFor];
