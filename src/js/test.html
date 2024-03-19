@@ -20,7 +20,7 @@
             charSet = "ACDEFGHIJKLMNOPQRSTUVWXYZ1234567890#@$&%"
             for (let letter = 0; letter < virtual_origin.length; letter++) {
                 let virtual_string_letter = virtual_string.slice(0, letter);
-                for (let randomLetter = 0; randomLetter < Math.random() * 10; randomLetter++) {
+                for (let randomLetter = 0; randomLetter < Math.random() * 5; randomLetter++) {
                     let vslt = virtual_string_letter
                     vslt += charSet.charAt(Math.floor(Math.random() * charSet.length));
                     render_list.push(vslt)
