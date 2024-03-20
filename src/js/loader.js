@@ -1,3 +1,4 @@
+
 window.onload = async () => {
     const loader = document.getElementById("loader");
     const loader_page = document.getElementsByClassName("loader")[0];
@@ -87,36 +88,6 @@ function animateTextPar(element, duration) {
         }
     }
 }
-function animateInTitle(newTitle) {
-
-    const list_ = newTitle.split('');
-    const title_ = document.getElementById("title-act");
-    const old_ = title_.innerText;
-    const char_ = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%&".split("");
-    let render_ = [];
-    let titleText = old_.split('');
-    for (let i = 0; i < old_.length; i++) {
-        let randomNumber = Math.round(Math.random() * (30 - 6) + 6);
-        for (let ii = 0; ii < randomNumber; ii++) {
-            let randomNumberChar = Math.round(Math.random() * (char_.length - 0));
-            titleText[i] = char_[randomNumberChar];
-            render_.push(titleText);
-            //focking shitty but it works
-            console.log(titleText);
-        }
-    }
-
-    function render__() {
-        for (let iii = 0; iii < render_.length; iii++) {
-            let wordTitleTmp;
-            for (let iiii = 0; iiii < render_[iii].length; iiii++) {
-                wordTitleTmp += render_[iii][iiii];
-            }
-            console.log(wordTitleTmp);
-        }
-    }
-    render__();
-}
 function parallax(elementId, divider) {
     const parallax = document.getElementById(elementId);
     parallax.classList.add("parallax-Element");
@@ -184,6 +155,15 @@ function setTiltEffect(element, tiltEffectSettings) {
     }
 }
 
+
+document.getElementById("text-animate-welcome-to").addEventListener("mouseenter", () => {
+    coolTextFunc(document.getElementById("text-animate-welcome-to"), "contact");
+
+})
+document.getElementById("text-animate-welcome-to").addEventListener("mouseleave", () => {
+    coolTextFunc(document.getElementById("text-animate-welcome-to"), "welcome_to")
+})
+
 function coolTextFunc(element, text) {
     element.style.opacity = 1;
     let virtual_origin = String(text);
@@ -203,6 +183,12 @@ function coolTextFunc(element, text) {
             element.innerHTML = render_list[renderFor];
         }, 20 * renderFor);
     }
+}
+
+
+
+function pullPageIntoFocus() {
+    console.log("test");
 }
 
 // -----------------------------------------------------------

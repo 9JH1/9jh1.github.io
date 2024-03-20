@@ -130,6 +130,7 @@ body {
                 margin: 0px;
                 opacity: 0;
                 font-size: 1.1em;
+                cursor: pointer;
             }
 
             button::before {
@@ -192,7 +193,8 @@ body {
         }
 
         .cent {
-            color: var(--text-color)
+            color: var(--text-color);
+            cursor: pointer;
         }
 
     }
@@ -244,6 +246,11 @@ body {
                 border: inset 3px white;
                 display: flex;
                 flex-wrap: wrap;
+
+                background-image: url('');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
 
                 .half {
                     width: 100%;
