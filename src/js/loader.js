@@ -2,8 +2,9 @@
 window.onload = async () => {
     const loader = document.getElementById("loader");
     const loader_page = document.getElementsByClassName("loader")[0];
-    const list_ = ["---------------------<br>loading webpage", "loading fonts", "loading animations", "loading css", "loading images", "loading some other cool things"];
+    const list_ = ["---------------------<br>loading webpage", "loading fonts", "loading animations", "loading css", "loading images", "loading some other cool things", "thanks for visiting <br> my website"];
     //document.getElementById("title-act").innerText = "⠀"
+    // i cant remember if this is useful or not, so im going to leave it here.
     const loop_ = new Promise((resolve, reject) => {
         for (let a = 0; a < list_.length; a++) {
             setTimeout(() => {
@@ -17,10 +18,11 @@ window.onload = async () => {
                         new_.remove();
                         if (a === list_.length - 1) {
                             resolve();
+                            // wtf, i cant remeber coding this. it works and thats fine
                         }
                     }, 300);
-                }, 700);
-            }, 10 + a * Math.random() * 200);
+                }, 70);
+            }, 10 + a * Math.random() * 20);
         }
     });
     loop_.then(() => {
@@ -28,15 +30,23 @@ window.onload = async () => {
         setTimeout(() => {
             loader_page.remove();
             animate("lar-1", 20);
+            // splayed timing !!!!!
             setTimeout(() => {
                 animate("lar-2", 20);
+                // anothuh one
                 setTimeout(() => {
                     document.getElementById("navbar").style.transform = "translateY(0%)";
                     document.getElementById("extra-nav").style.transform = "translateY(0%)";
-                    coolTextFunc(document.getElementById("project-project-one"), "OPEN-CHAT");
-                    coolTextFunc(document.getElementById("project-project-two"), "Terminal");
-                    coolTextFunc(document.getElementById("project-project-three"), "xos");
                     //document.body.style.overflowY = "scroll";
+                    setTimeout(() => {
+                        document.getElementsByClassName("projects-title-animate-loader")[0].style.opacity = 1;
+
+                        setTimeout(() => {
+                            coolTextFunc(document.getElementById("project-project-one"), "OPEN-CHAT");
+                            coolTextFunc(document.getElementById("project-project-two"), "Terminal");
+                            coolTextFunc(document.getElementById("project-project-three"), "xos");
+                        }, 400);
+                    }, 500);
                     //document.getElementById("scrollbar").style.transform = "translateX(0%)"; 
                     // NUH UH
                 }, 500);
@@ -46,6 +56,7 @@ window.onload = async () => {
 };
 
 function animate(class_, delay_) {
+    // what does this do again??
     const ele_ = document.getElementsByClassName(class_)[0];
     ele_.style.opacity = 1;
     const list_ = ele_.textContent.split("");
@@ -62,7 +73,6 @@ function animate(class_, delay_) {
         }, index * delay_);
     });
 }
-
 function animateTextPar(element, duration) {
     const mainE = document.getElementsByClassName(element)[0];
     const mainE_text = mainE.innerText.replace(/\n/g, "").split(" ");
@@ -91,7 +101,7 @@ function animateTextPar(element, duration) {
 function parallax(elementId, divider) {
     const parallax = document.getElementById(elementId);
     parallax.classList.add("parallax-Element");
-
+    // finally fixed this bs
     if (window.innerWidth >= 770) {
         document.addEventListener("mousemove", (event) => {
             let _mouseX = ((event.clientX - (document.documentElement.clientWidth / 2)) / divider);
@@ -115,6 +125,7 @@ function parallax(elementId, divider) {
 }
 
 function setTiltEffect(element, tiltEffectSettings) {
+    // im'a let some other chump organize this code. oh wait, its a solo project :(
     const card = element;
     document.addEventListener("mouseenter", cardMouseEnter);
     document.addEventListener("mousemove", cardMouseMove);
@@ -154,16 +165,6 @@ function setTiltEffect(element, tiltEffectSettings) {
         }, tiltEffectSettings.speed);
     }
 }
-
-
-document.getElementById("text-animate-welcome-to").addEventListener("mouseenter", () => {
-    coolTextFunc(document.getElementById("text-animate-welcome-to"), "contact");
-
-})
-document.getElementById("text-animate-welcome-to").addEventListener("mouseleave", () => {
-    coolTextFunc(document.getElementById("text-animate-welcome-to"), "welcome_to")
-})
-
 function coolTextFunc(element, text) {
     element.style.opacity = 1;
     let virtual_origin = String(text);
@@ -178,6 +179,7 @@ function coolTextFunc(element, text) {
         }
         render_list.push(virtual_origin.slice(0, letter + 1));
     }
+    // this tool SOOOOO LONNG but it kinda slaps ngl
     for (let renderFor = 0; renderFor < render_list.length; renderFor++) {
         setTimeout(() => {
             element.innerHTML = render_list[renderFor];
@@ -186,15 +188,19 @@ function coolTextFunc(element, text) {
 }
 
 
+document.getElementById("text-animate-welcome-to").addEventListener("mouseenter", () => {
+    coolTextFunc(document.getElementById("text-animate-welcome-to"), "contact");
 
+})
+document.getElementById("text-animate-welcome-to").addEventListener("mouseleave", () => {
+    coolTextFunc(document.getElementById("text-animate-welcome-to"), "welcome_to")
+})
 function pullPageIntoFocus() {
     console.log("test");
+    // not implemented, might do in the future prolly not tho.
 }
 
-// -----------------------------------------------------------
-//                   EFFECTS FOR WEBSITE                     |
-// -----------------------------------------------------------
-// parallax effects
+
 parallax("noise", 100);
 parallax("text-lar-1", 30);
 parallax("text-lar-2", 30);
@@ -207,4 +213,14 @@ setTiltEffect(document.getElementsByClassName("lin-inn")[0], {
     easing: "cubic-bezier(.03,.98,.52,.99)"
 });
 
-// ----------------------------------------------------------
+document.getElementById("project-project-one").addEventListener("click", () => {
+    coolTextFunc(document.getElementById("project-project-one"), "OPEN-CHAT");
+})
+
+document.getElementById("project-project-two").addEventListener("click", () => {
+    coolTextFunc(document.getElementById("project-project-two"), "Terminal");
+})
+
+document.getElementById("project-project-three").addEventListener("click", () => {
+    coolTextFunc(document.getElementById("project-project-three"), "xos");
+})
