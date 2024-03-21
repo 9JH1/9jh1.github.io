@@ -427,7 +427,7 @@ body {
 
     #projects {
         width: 100% !important;
-        height: 35% !important;
+        height: 40% !important;
         bottom: 0 !important;
         top: unset !important;
         align-items: start !important;
@@ -436,10 +436,20 @@ body {
         .item,
         .title {
             justify-content: start !important;
+            padding: 0px 40px !important;
 
             button::before {
                 right: unset !important;
                 left: 0 !important;
+            }
+        }
+
+    }
+
+    #main {
+        .text-cont {
+            .text {
+                margin-left: 40px !important;
             }
         }
 
