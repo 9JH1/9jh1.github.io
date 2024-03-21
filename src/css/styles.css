@@ -102,6 +102,7 @@ body {
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
+        padding-left: 20px;
 
         .title,
         .item {
