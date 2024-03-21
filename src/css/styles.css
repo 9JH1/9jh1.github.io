@@ -293,7 +293,6 @@ body {
                         background: white;
                     }
 
-
                 }
             }
 
@@ -304,7 +303,6 @@ body {
 
     }
 }
-
 
 @keyframes blink {
     0% {
@@ -329,7 +327,6 @@ body {
     display: inline-flex;
     background: var(--background);
     overflow-y: hidden;
-
 
     .inn {
         transform: translateY(100%);
@@ -364,7 +361,6 @@ body {
         border-radius: 100px;
         overflow: hidden;
 
-
         .scrollbar {
             width: 100%;
             height: 40px;
@@ -384,7 +380,6 @@ body {
     display: none;
 }
 
-
 ::selection {
     background: white;
     color: black;
@@ -393,7 +388,6 @@ body {
 * {
     scrollbar-width: none;
 }
-
 
 .active-text-item {
     width: fit-content;
@@ -411,11 +405,9 @@ body {
 @keyframes text-ani {
     to {
         opacity: 1;
-
         transform: rotate(0deg) translateY(0px);
     }
 }
-
 
 @media screen and (max-width:1120px) {
 
@@ -427,7 +419,7 @@ body {
 
     #projects {
         width: 100% !important;
-        height: 20% !important;
+        height: 35% !important;
         bottom: 0 !important;
         top: unset !important;
         align-items: start !important;
@@ -443,7 +435,6 @@ body {
                 left: 0 !important;
             }
         }
-
     }
 
     #main {
@@ -452,6 +443,5 @@ body {
                 margin-left: 40px !important;
             }
         }
-
     }
 }
