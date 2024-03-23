@@ -162,6 +162,15 @@ body {
                 width: 100%;
             }
 
+            .hover-prefix {
+                opacity: 0;
+                transition: all 250ms;
+            }
+
+        }
+
+        .item:hover .hover-prefix {
+            opacity: 1;
         }
 
 

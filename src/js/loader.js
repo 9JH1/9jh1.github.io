@@ -45,6 +45,17 @@ window.onload = async () => {
                             coolTextFunc(document.getElementById("project-project-one"), "OPEN-CHAT");
                             coolTextFunc(document.getElementById("project-project-two"), "Terminal");
                             coolTextFunc(document.getElementById("project-project-three"), "xos");
+                            document.getElementById("project-project-one").addEventListener("click", () => {
+                                coolTextFunc(document.getElementById("project-project-one"), "OPEN-CHAT");
+                            })
+
+                            document.getElementById("project-project-two").addEventListener("click", () => {
+                                coolTextFunc(document.getElementById("project-project-two"), "Terminal");
+                            })
+
+                            document.getElementById("project-project-three").addEventListener("click", () => {
+                                coolTextFunc(document.getElementById("project-project-three"), "xos");
+                            })
                         }, 400);
                     }, 500);
                     //document.getElementById("scrollbar").style.transform = "translateX(0%)"; 
@@ -182,7 +193,7 @@ function coolTextFunc(element, text) {
     // this tool SOOOOO LONNG but it kinda slaps ngl
     for (let renderFor = 0; renderFor < render_list.length; renderFor++) {
         setTimeout(() => {
-            element.innerHTML = render_list[renderFor];
+            element.innerHTML = `<span class="hover-prefix">[</span>${render_list[renderFor]}<span class="hover-prefix">]</span>`;
         }, 20 * renderFor);
     }
 }
@@ -212,15 +223,3 @@ setTiltEffect(document.getElementsByClassName("lin-inn")[0], {
     speed: 500,
     easing: "cubic-bezier(.03,.98,.52,.99)"
 });
-
-document.getElementById("project-project-one").addEventListener("click", () => {
-    coolTextFunc(document.getElementById("project-project-one"), "OPEN-CHAT");
-})
-
-document.getElementById("project-project-two").addEventListener("click", () => {
-    coolTextFunc(document.getElementById("project-project-two"), "Terminal");
-})
-
-document.getElementById("project-project-three").addEventListener("click", () => {
-    coolTextFunc(document.getElementById("project-project-three"), "xos");
-})
