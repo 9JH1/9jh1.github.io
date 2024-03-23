@@ -91,6 +91,21 @@ body {
         }
     }
 
+    #mouse-move-cursor-dialog {
+        width: fit-content;
+        height: fit-content;
+        background-color: rgb(0, 0, 0);
+        padding: 10px;
+        opacity: 0.9;
+        border: solid 2px rgb(255, 255, 255);
+        position: fixed;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 10000000;
+        opacity: 0;
+        transition: opacity 250ms;
+        transition-delay: 2s;
+    }
 
     #projects {
         height: 100vh;

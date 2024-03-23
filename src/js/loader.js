@@ -134,7 +134,6 @@ function parallax(elementId, divider) {
         });
     }
 }
-
 function setTiltEffect(element, tiltEffectSettings) {
     // im'a let some other chump organize this code. oh wait, its a solo project :(
     const card = element;
@@ -197,8 +196,30 @@ function coolTextFunc(element, text) {
         }, 20 * renderFor);
     }
 }
+function animateLinkOnHover(element, text) {
+    const mouseMover = document.getElementById("mouse-move-cursor-dialog");
+    element.addEventListener("mouseenter", () => {
+        mouseMover.style.opacity = 1;
+        setTimeout(() => {
+            coolTextFunc(mouseMover, text);
+        }, 2000)
+        console.log("left");
+        // why did i make this, what is the point??? there are already hover events tf was i thinking...
+    })
+    element.addEventListener("mouseleave", () => {
+        mouseMover.style.opacity = 0;
+        coolTextFunc(mouseMover, "    ");
+        console.log("left");
+    })
+}
 
 
+document.addEventListener("mousemove", (event) => {
+    const mouseMover = document.getElementById("mouse-move-cursor-dialog");
+    mouseMover.style.marginTop = event.clientY + "px";
+    mouseMover.style.marginLeft = event.clientX + "px";
+
+})
 document.getElementById("text-animate-welcome-to").addEventListener("mouseenter", () => {
     coolTextFunc(document.getElementById("text-animate-welcome-to"), "contact");
 
@@ -206,16 +227,12 @@ document.getElementById("text-animate-welcome-to").addEventListener("mouseenter"
 document.getElementById("text-animate-welcome-to").addEventListener("mouseleave", () => {
     coolTextFunc(document.getElementById("text-animate-welcome-to"), "welcome_to")
 })
-function pullPageIntoFocus() {
-    console.log("test");
-    // not implemented, might do in the future prolly not tho.
-}
+
 
 
 parallax("noise", 100);
 parallax("text-lar-1", 30);
 parallax("text-lar-2", 30);
-// cool perspective effects
 setTiltEffect(document.getElementsByClassName("lin-inn")[0], {
     max: 3,
     perspective: 1500,
