@@ -54,7 +54,7 @@ window.onload = async () => {
                             })
 
                             document.getElementById("project-project-three").addEventListener("click", () => {
-                                coolTextFunc(document.getElementById("project-project-three"), "xos");
+                                coolTextFunc(document.getElementById("project-project-three"), "X3-Toolbox");
                             })
                         }, 400);
                     }, 500);
