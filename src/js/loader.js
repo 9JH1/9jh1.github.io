@@ -44,7 +44,7 @@ window.onload = async () => {
                         setTimeout(() => {
                             coolTextFunc(document.getElementById("project-project-one"), "OPEN-CHAT");
                             coolTextFunc(document.getElementById("project-project-two"), "Terminal");
-                            coolTextFunc(document.getElementById("project-project-three"), "xos");
+                            coolTextFunc(document.getElementById("project-project-three"), "X3-Toolbox");
                             document.getElementById("project-project-one").addEventListener("click", () => {
                                 coolTextFunc(document.getElementById("project-project-one"), "OPEN-CHAT");
                             })
