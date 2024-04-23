@@ -1,0 +1,22 @@
+p {
+    padding: 0 20px;
+    font-size: 20px;
+}
+
+ul {
+    font-size: 20px;
+    padding: 0 20px;
+    margin: 0;
+
+    li {
+        display: inline;
+        background-color: var(--text-color);
+        padding: 3px 10px;
+        border-radius: 100px;
+        color: var(--background);
+        a { 
+            text-decoration: none;
+            color:var(--background)
+        }
+    }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title-act">xos.dev</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/base.css">
+    <script src="src/js/loader.js" defer></script>
+    <script src="src/js/datetime.js" defer></script>
+    <script src="src/js/scrollbar.js" defer></script>
+    <script src="src/js/animate.js" defer></script>
+    <link rel="icon" type="image/x-icon"
+        href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Invisible_Pink_Unicorn_High_Resolution.png/1200px-Invisible_Pink_Unicorn_High_Resolution.png">
+</head>
+
+<body id="scrollcontainer">
+    <div id="mouse-move-cursor-dialog"></div>
+    <div class="copyright">
+        copyright(c) 3hy 2024
+    </div>
+    <div id="projects">
+        <div class="title projects-title-animate-loader">
+            [Projects]
+        </div>
+        <div class="item">
+            <button id="project-project-one" class="project-project" data-project-name="OPEN-CHAT" onclick="setTimeout(() => {
+                window.open('https://github.com/9JH1/OPEN-CHAT')
+            }, 400);">
+                a
+            </button>
+        </div>
+        <div class="item">
+            <button id="project-project-two" class="project-project" data-project-name="TERMINAL" onclick="setTimeout(() => {
+                window.open('https://github.com/9JH1/terminaldisplay')
+            }, 400);">
+                b
+            </button>
+        </div>
+        <div class="item">
+            <button id="project-project-three" class="project-project" data-project-name="Personal Website" onclick="setTimeout(() => {
+                location.reload()
+            }, 400);">
+                c
+            </button>
+        </div>
+        <div class="item">
+            <button id="project-project-three" class="project-project" data-project-name="WindowTest" onclick="setTimeout(() => {
+                window.open('https://9jh1.github.io/WindowTest/')
+            }, 400);">
+                d
+            </button>
+        </div>
+    </div>
+    <div id="noise">
+        <img src="src/img/noise.png" alt="">
+    </div>
+    <div id="extra-nav">
+        <p class="blink">++</p>
+        <p class="blink">++</p>
+    </div>
+    <div id="scrollbar">
+        <div class="scrollbar-inn">
+            <div class="scrollbar"></div>
+        </div>
+    </div>
+    <div id="cursor">
+    </div>
+    <div id="navbar">
+        <div class="left tp" id="date"></div>
+        <div class="cent tp animate-cent-tag" id="text-animate-welcome-to"
+            onclick="window.open('https://example.com','_blank')">
+            <div class="welcome">welcome_to</div>
+        </div>
+        <div class="right tp" id="time"></div>
+    </div>
+    <div class="loader">
+        <div class="top-out" id="loader"></div>
+    </div>
+    <div id="main" class="page">
+        <div class="text-cont">
+            <div class="text lar-1" id="text-lar-1">MY</div>
+            <div class="text lar-2" id="text-lar-2">WEBSITE</div>
+            <div class="lin-inn">
+                <div class="cont-inn" id="lines">
+                    <div class="half">
+                        <div class="corner-box"></div>
+                        <div class="corner-box"></div>
+                    </div>
+                    <div class="half">
+                        <div class="corner-box"></div>
+                        <div class="corner-box"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
