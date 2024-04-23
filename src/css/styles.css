@@ -148,6 +148,7 @@ body {
             opacity: 0;
             transition: opacity 1s ease;
             font-weight: 600;
+
         }
 
         .item {
