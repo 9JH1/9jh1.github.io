@@ -22,25 +22,32 @@
     </div>
     <div id="projects">
         <div class="title projects-title-animate-loader">
-            Projects
+            [Projects]
         </div>
         <div class="item">
-            <button id="project-project-one" onclick="setTimeout(() => {
+            <button id="project-project-one" class="project-project" data-project-name="OPEN-CHAT" onclick="setTimeout(() => {
                 window.open('https://github.com/9JH1/OPEN-CHAT')
             }, 400);">
                 a
             </button>
         </div>
         <div class="item">
-            <button id="project-project-two" onclick="setTimeout(() => {
+            <button id="project-project-two" class="project-project" data-project-name="TERMINAL" onclick="setTimeout(() => {
                 window.open('https://github.com/9JH1/terminaldisplay')
             }, 400);">
                 a
             </button>
         </div>
         <div class="item">
-            <button id="project-project-three" onclick="setTimeout(() => {
-                window.open('https://github.com/9JH1/home-website')
+            <button id="project-project-three" class="project-project" data-project-name="Personal Website" onclick="setTimeout(() => {
+                location.reload()
+            }, 400);">
+                a
+            </button>
+        </div>
+        <div class="item">
+            <button id="project-project-three" class="project-project" data-project-name="WindowTest" onclick="setTimeout(() => {
+                window.open('https://9jh1.github.io/WindowTest/')
             }, 400);">
                 a
             </button>
@@ -63,7 +70,9 @@
     <div id="navbar">
         <div class="left tp" id="date"></div>
         <div class="cent tp animate-cent-tag" id="text-animate-welcome-to"
-            onclick="window.open('https://example.com','_blank')">welcome_to</div>
+            onclick="window.open('https://example.com','_blank')">
+            <div class="welcome">welcome_to</div>
+        </div>
         <div class="right tp" id="time"></div>
     </div>
     <div class="loader">

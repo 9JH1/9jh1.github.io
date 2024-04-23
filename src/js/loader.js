@@ -18,7 +18,7 @@ window.onload = async () => {
                         new_.remove();
                         if (a === list_.length - 1) {
                             resolve();
-                            // wtf, i cant remeber coding this. it works and thats fine
+                            // wtf, i cant remenber coding this. it works and thats fine
                         }
                     }, 300);
                 }, 70);
@@ -42,19 +42,13 @@ window.onload = async () => {
                         document.getElementsByClassName("projects-title-animate-loader")[0].style.opacity = 1;
 
                         setTimeout(() => {
-                            coolTextFunc(document.getElementById("project-project-one"), "OPEN-CHAT");
-                            coolTextFunc(document.getElementById("project-project-two"), "Terminal");
-                            coolTextFunc(document.getElementById("project-project-three"), "xos");
-                            document.getElementById("project-project-one").addEventListener("click", () => {
-                                coolTextFunc(document.getElementById("project-project-one"), "OPEN-CHAT");
-                            })
-
-                            document.getElementById("project-project-two").addEventListener("click", () => {
-                                coolTextFunc(document.getElementById("project-project-two"), "Terminal");
-                            })
-
-                            document.getElementById("project-project-three").addEventListener("click", () => {
-                                coolTextFunc(document.getElementById("project-project-three"), "xos");
+                            document.querySelectorAll(".project-project").forEach((item_ele, iter) => {
+                                setTimeout(() => {
+                                    coolTextFunc(item_ele, item_ele.getAttribute("data-project-name"))
+                                }, 100 * iter);
+                                item_ele.addEventListener("click", () => {
+                                    coolTextFunc(item_ele, item_ele.getAttribute("data-project-name"))
+                                })
                             })
                         }, 400);
                     }, 500);
@@ -220,14 +214,6 @@ document.addEventListener("mousemove", (event) => {
     mouseMover.style.marginLeft = event.clientX + "px";
 
 })
-document.getElementById("text-animate-welcome-to").addEventListener("mouseenter", () => {
-    coolTextFunc(document.getElementById("text-animate-welcome-to"), "contact");
-
-})
-document.getElementById("text-animate-welcome-to").addEventListener("mouseleave", () => {
-    coolTextFunc(document.getElementById("text-animate-welcome-to"), "welcome_to")
-})
-
 
 
 parallax("noise", 100);
