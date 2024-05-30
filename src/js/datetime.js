@@ -2,7 +2,7 @@ function setDateTime() {
     document.getElementById("time").innerText = new Date().toLocaleTimeString(
         'en-US', {
         hour12: false,
-        hour: "numeric",
+        hour: "numeric", 
         minute: "numeric",
         hour12: true, 
     });
