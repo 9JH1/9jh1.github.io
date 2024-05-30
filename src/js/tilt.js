@@ -1,5 +1,5 @@
 setTiltEffect(document.getElementsByClassName("lin-inn")[0], {
-    max: 3,
+    max: 30,
     perspective: 500,
     scale: 1.0,
     speed: 500,
