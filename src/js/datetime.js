@@ -1,5 +1,4 @@
 function setDateTime() {
-    document.getElementById("date").innerText = new Date().toLocaleDateString();
     document.getElementById("time").innerText = new Date().toLocaleTimeString(
         'en-US', {
         hour12: false,
@@ -7,8 +6,9 @@ function setDateTime() {
         minute: "numeric",
         hour12: true,
     });
-    document.getElementById("date").innerHTML = String(document.getElementById("date").innerHTML).replace(new RegExp("/", "gm"), "<span class='blink'>/</span>");
     document.getElementById("time").innerHTML = String(document.getElementById("time").innerHTML).replace(":", "<span class='blink'>:</span>");
+
+    document.getElementById("date").innerHTML = `${event.clientX}x-${event.clientY}y`
 }
 
 setDateTime();
@@ -22,5 +22,5 @@ setInterval(() => {
 
 
 document.addEventListener("mousemove", event=>{
-    document.getElementById("date").innerHTML = `${event.clientX}x-${event.clientY}y`;
+    document.getElementById("date").innerHTML = `${event.clientX}x-${event.clientY}y`
 })
