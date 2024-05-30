@@ -18,3 +18,9 @@ setDateTime();
 setInterval(() => {
     setDateTime();
 }, 60000)
+
+
+
+document.addEventListener("mousemove", event=>{
+    document.getElementById("date").innerHTML = `${event.clientX}x-${event.clientY}y`;
+})
