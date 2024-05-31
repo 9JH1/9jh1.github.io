@@ -451,7 +451,7 @@ body {
     }
 }
 
-@media screen and (max-width:1120px) {
+@media screen and (orientation: portrait) {
 
     .loader {
         .top-out {
@@ -461,8 +461,8 @@ body {
 
     #projects {
         width: 100% !important;
-        height: 30vh !important;
         top: unset !important;
+        height:fit-content !important;
         bottom: 5vh !important;
         display: unset !important;
 

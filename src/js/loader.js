@@ -172,12 +172,6 @@ function parallax(elementId, divider) {
         parallax.style.transition = "all  0s";
       }, 300);
     });
-
-    document.addEventListener("mouseout", () => {
-      parallax.style.transform = "translate(0px, 0px)";
-      parallax.style.webkitTransform = "translate(0px, 0px)";
-      parallax.style.mozTransform = "translate(0px, 0px)";
-    });
   }
 }
 function setTiltEffect(element, tiltEffectSettings) {
@@ -220,7 +214,6 @@ function setTiltEffect(element, tiltEffectSettings) {
   }
 
   function cardMouseLeave(event) {
-    card.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
     setTransition();
   }
 
