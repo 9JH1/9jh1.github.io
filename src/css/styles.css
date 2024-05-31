@@ -371,7 +371,7 @@ body {
     overflow-y: hidden;
 
     .inn {
-        transform: translateY(100%);
+        transform: translateY(100%) rotate(10deg);
         animation: animate-item 2s ease forwards;
         /*-webkit-text-fill-color: transparent;
         background-color: #0d61ff;
@@ -436,7 +436,6 @@ body {
     display: inline-block;
     overflow-y: hidden;
     margin-left: 5px;
-
     .inner-active-text-item {
         text-wrap: nowrap;
         opacity: 0;
