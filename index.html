@@ -11,6 +11,7 @@
     <script src="src/js/scrollbar.js" defer></script>
     <script src="src/js/animate.js" defer></script>
     <script src="src/js/console.js" defer></script>
+    <script src="src/js/aboutme.js" defer></script>
 
     <link rel="icon" type="image/x-icon"
         href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Invisible_Pink_Unicorn_High_Resolution.png/1200px-Invisible_Pink_Unicorn_High_Resolution.png">
@@ -77,8 +78,15 @@
     <div id="navbar">
         <div class="left tp" id="date"></div>
         <div class="cent tp animate-cent-tag" id="text-animate-welcome-to"
-            onclick="window.open('https://example.com','_blank')">
-            <div class="welcome">welcome_to</div>
+            onclick="aboutMe()">
+            <div class="welcome">
+                <div class="fancy-text-effect-two">
+                    <div class="inner">
+                        <div class="hover">about_me</div>
+                        <div class="show">welcome_to</div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="right tp" id="time"></div>
     </div>
