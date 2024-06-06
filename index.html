@@ -52,7 +52,22 @@
             <button id="project-project-five" class="project-project" data-project-name="LyricsLive" onclick="setTimeout(() => {
                 window.open('https://9jh1.github.io/LyricsLive/')
             }, 400);" title="2024">
+                d
+            </button>
+        </div>
+        <div class="item">
+            <button id="project-project-six" class="project-project" data-project-name="Portfolio WIP" onclick="setTimeout(() => {
+                window.open('https://9jh1.github.io/xos/')
+            }, 400);" title="2021-2023">
                 e
+            </button>
+        </div>
+        
+        <div class="item">
+            <button id="project-project-seven" class="project-project" data-project-name="Home Server" onclick="setTimeout(() => {
+                window.open('https://github.com/9JH1/home-server')
+            }, 400);" title="2024">
+                f
             </button>
         </div>
     </div>
@@ -72,8 +87,7 @@
     </div>
     <div id="navbar">
         <div class="left tp" id="date"></div>
-        <div class="cent tp animate-cent-tag" id="text-animate-welcome-to"
-            onclick="aboutMe()">
+        <div class="cent tp animate-cent-tag" id="text-animate-welcome-to">
             <div class="welcome">
                 <div class="fancy-text-effect-two">
                     <div class="inner">
@@ -106,7 +120,23 @@
             </div>
         </div>
     </div>
-    <div id="about" class="page"></div>
+    <div id="about" class="page">
+        <div class="half">
+            Hello, Im a developer and designer,<br> <br>
+            I specialize in software and websites but ive also had experience with hardware and electronics.
+            I started programming in 2020 and I plan to persue a career in either software or website development
+        </div>
+        <div class="half">
+            <div class="text">HIRE ME</div>
+            <div class="form">
+                <input type="email" name="email" id="form-email" placeholder="Email"
+                    style="border-top-right-radius: 10px">
+                <textarea name="message" id="form-body"
+                    onclick="document.getElementById('form-body').innerHTML=''">Body</textarea>
+                <button class="send" id="form-send">Send</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
