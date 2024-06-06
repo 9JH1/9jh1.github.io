@@ -76,7 +76,9 @@ async function loadALl() {
   }, 300);
   //});
 }
-
+setTimeout(() => {
+    document.body.style.overflowY = "visible"
+}, 5000);
 const effectRes = [7, 8];
 let effectResCount = effectRes[0] * effectRes[1];
 const effectEle = document.getElementById("effect");
