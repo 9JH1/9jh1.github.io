@@ -22,16 +22,16 @@ document.addEventListener("scroll", () => {
         document.getElementById("navbar").style.transform = "translateY(-60px)";
         document.getElementById("extra-nav").style.transform = "translateY(60px)";
         document.getElementById("lines").style.opacity = 0;
+        document.getElementById("projects").style.opacity = 0;
 
     } else {
         document.getElementById("navbar").style.transform = "translateY(0px)";
         document.getElementById("extra-nav").style.transform = "translateY(0px)";
         document.getElementById("lines").style.opacity = 1;
+        document.getElementById("projects").style.opacity = 1;
     }
     document.getElementById("main").style.opacity = (100 - window.scrollY / 10) / 100;
     document.getElementById("main").style.height = base_main - window.scrollY / 3 + "px";
-
-
 });
 
 if ('scrollRestoration' in history) {
