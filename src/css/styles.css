@@ -135,18 +135,18 @@ body {
             justify-content: end;
             gap: 20px;
             overflow: hidden;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
 
 
             .text {
                 font-family: 'Roboto Condensed';
-                font-weight: 900;
+                font-weight: 900; 
                 font-size: 7vw;
             }
 
             .form {
                 overflow: hidden;
-
-
                 * {
                     font-family: 'IBM Plex Mono';
                     background-color: white;
@@ -162,7 +162,6 @@ body {
                     resize: none;
                     margin-bottom: 3px;
                     font-size: 1em;
-
                 }
 
                 #form-body {
@@ -609,6 +608,17 @@ body {
         .text-cont {
             .text {
                 margin-left: 40px !important;
+            }
+        }
+    }
+    #about { 
+        display:block !important;
+        .half {
+            width:100% !important;
+            justify-content: space-between !important;
+            * { 
+                border-top-right-radius: 0px !important;
+                width:40%;
             }
         }
     }
