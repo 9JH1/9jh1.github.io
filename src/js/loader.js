@@ -77,7 +77,7 @@ async function loadALl() {
   //});
 }
 setTimeout(() => {
-    document.body.style.overflowY = "visible"
+  document.body.style.overflowY = "visible";
 }, 5000);
 const effectRes = [7, 8];
 let effectResCount = effectRes[0] * effectRes[1];
@@ -100,12 +100,12 @@ for (let i = 0; i < effectRes[0]; i++) {
 
     setTimeout(() => {
       newUnit.style.opacity = 0;
-      effectResCount--
-      if(effectResCount == 0){ 
-setTimeout(() => {
-    effectEle.remove();
-    loadALl();
-}, 700);
+      effectResCount--;
+      if (effectResCount == 0) {
+        setTimeout(() => {
+          effectEle.remove();
+          loadALl();
+        }, 700);
       }
     }, 1000 + Math.random() * 1000);
   }

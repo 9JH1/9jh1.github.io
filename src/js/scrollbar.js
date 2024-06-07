@@ -39,3 +39,12 @@ if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
 window.scrollTo(0, 0);
+document
+  .getElementById("text-animate-welcome-to")
+  .addEventListener("click", () => {
+    window.scroll({
+      top: document.getElementById("about").offsetTop,
+      left: 0,
+      behavior: "smooth",
+    });
+  });

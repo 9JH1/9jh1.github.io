@@ -4,10 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 
 :root {
-    --background: black;
-    --text-color: white;
-    --foreground: rgb(8, 8, 8);
-    --text-disabled: grey;
+    --background: rgb(30, 11, 29);
+    --text-color: rgb(171, 217, 235);
+    --foreground: var(--background);
+    --text-disabled: rgb(187, 142, 179);
 }
 
 #noise {
@@ -67,61 +67,13 @@ body {
     overflow-y: hidden;
     cursor: default;
 
-    .about-me {
-        width: 100vw;
-        height: 100vh;
-        background-color: rgb(0, 0, 0);
-        position: fixed;
-        top: 0;
-        left: 0;
-        transition: opacity 1s ease-in-out;
-        z-index: 10000000000;
-        padding: 30px;
-        box-sizing: border-box;
-
-        display: flex;
-        justify-content: center;
-
-        .info {
-            border: 1px solid rgb(104, 103, 103);
-            width: fit-content;
-            height: fit-content;
-            overflow: hidden;
-            padding: 10px;
-
-            .multi-line {
-                display: flex;
-                align-items: center;
-
-                .title {
-                    text-align: end;
-                    width: 48.5%;
-                }
-
-                .gap {
-                    width: 5%;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                .answer {
-                    width: 48.5%;
-                }
-            }
-
-        }
-    }
-
     #about {
         width: 100vw;
         height: fit-content;
         display: flex;
         z-index: 1000000;
-        background: white;
-        color: black;
+        background: var(--text-color);
+        color: var(--background);
         box-sizing: border-box;
         padding: 10px;
         justify-content: space-between;
@@ -147,13 +99,13 @@ body {
             .form {
                 * {
                     font-family: 'IBM Plex Mono';
-                    background-color: white;
+                    background: var(--text-color);
                     border: none;
-                    box-shadow: 0px 0px 0px 3px rgb(0, 0, 0) inset;
-                    color: black;
+                    box-shadow: 0px 0px 0px 3px var(--background) inset;
+                    color: var(--background);
                     outline: none;
                     min-width: 100%;
-                    padding: 3px;
+                    padding: 4px;
                     margin: 0px;
                     box-sizing: border-box;
                     width: 3vw;
@@ -164,8 +116,8 @@ body {
 
                 #form-body {
                     height: 3vw;
-                    color: grey;
-                }
+                    color: var(--text-disabled);
+                } 
             }
         }
     }
@@ -174,7 +126,7 @@ body {
     #main {
         width: 100vw;
         height: 100vh;
-        background-color: black;
+        background-color: var(--background);
     }
 
     .loader {
@@ -183,7 +135,7 @@ body {
         position: fixed;
         z-index: 100;
         transition: opacity 0.3s ease;
-        color: rgb(63, 63, 63);
+        color: var(--text-disabled);
 
         .top-out {
             width: 40%;
@@ -220,10 +172,10 @@ body {
     #mouse-move-cursor-dialog {
         width: fit-content;
         height: fit-content;
-        background-color: rgb(0, 0, 0);
+        background-color: var(--background);
         padding: 10px;
         opacity: 0.9;
-        border: solid 2px rgb(255, 255, 255);
+        border: solid 2px var(--text-color);
         position: fixed;
         pointer-events: none;
         transform: translate(-50%, -50%);
@@ -255,7 +207,7 @@ body {
         .title,
         .item {
             width: 100%;
-            color: grey;
+            color: var(--text-disabled);
             display: flex;
             align-items: center;
             justify-content: end;
@@ -268,7 +220,7 @@ body {
         .title {
             opacity: 0;
             font-size: 1.4em;
-            color: white;
+            color: var(--text-color);
             font-weight: 600;
             transition: all 1s;
 
@@ -278,7 +230,7 @@ body {
             button {
                 font-family: "Silkscreen", sans-serif;
                 border: unset;
-                color: #ffffff;
+                color: var(--text-color);
                 z-index: 1;
                 background: transparent;
                 position: relative;
@@ -298,13 +250,13 @@ body {
                 right: 0;
                 height: 100%;
                 width: 0;
-                background-color: #ffffff;
+                background-color: var(--text-color);
                 z-index: -1;
                 transition: all 250ms
             }
 
             button:hover {
-                color: #000000;
+                color: var(--background);
             }
 
             button:hover::before {
@@ -434,7 +386,7 @@ body {
             .cont-inn {
                 width: 90%;
                 height: 90%;
-                border: inset 3px white;
+                border: inset 3px var(--text-color);
                 display: flex;
                 flex-wrap: wrap;
                 overflow: hidden;
@@ -456,7 +408,7 @@ body {
                     .corner-box {
                         width: 10px;
                         height: 10px;
-                        background: white;
+                        background: var(--text-color);
                     }
 
                 }
@@ -547,8 +499,8 @@ body {
 }
 
 ::selection {
-    background: white;
-    color: black;
+    background: var(--text-color);
+    color: var(--background);
 }
 
 * {
@@ -640,7 +592,7 @@ body {
         transition: opacity 100ms ease-out;
 
         .unit {
-            background-color: white;
+            background-color: var(--text-color);
             transition: opacity 300ms ease-out;
         }
     }
