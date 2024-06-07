@@ -10,6 +10,14 @@
     --text-disabled: rgb(187, 142, 179);
 }
 
+
+#stats { 
+    width:30px;
+    height:30px;
+    background-color: red;
+    position: fixed;
+}
+
 #noise {
     position: fixed;
     width: 100vw;
@@ -118,7 +126,7 @@ body {
                     color: var(--text-disabled);
                     opacity: 1;
                 }
-                *:hover {
+                #form-send:hover {
                     font-weight: 900;
                 }
 
@@ -128,6 +136,8 @@ body {
                 } 
                 #form-send { 
                     cursor:pointer;
+                    font-family: 'Silkscreen';
+                    font-size:0.9em
                 }
             }
         }
@@ -578,9 +588,13 @@ body {
         .half {
             width:100% !important;
             justify-content: space-between !important;
-            * { 
+            * {
                 border-top-right-radius: 0px !important;
-                width:40%;
+                margin-top:20px;
+                * {
+                    width:20vw !important;
+                    height:3vh !important;
+                }
             }
         }
     }
@@ -594,7 +608,6 @@ body {
     z-index: 10000000000000000000000000000000;
     top: 0;
     left: 0;
-
     .line {
         width: 100%;
         height: fit-content;
