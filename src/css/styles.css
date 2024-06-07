@@ -125,6 +125,9 @@ body {
                     height: 3vw;
                     color: var(--text-disabled);
                 } 
+                #form-send { 
+                    cursor:pointer;
+                }
             }
         }
     }
@@ -263,6 +266,7 @@ body {
             }
 
             button:hover {
+                
                 color: var(--background);
             }
 
@@ -286,14 +290,14 @@ body {
 
     .copyright {
         width: 100%;
-        position: absolute;
+        position: fixed;
         bottom: 0;
         left: 0;
         display: flex;
         align-items: center;
         justify-content: center;
         pointer-events: none;
-        opacity: 0.045;
+        opacity: 0.05;
     }
 
     .copyright:hover {

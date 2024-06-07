@@ -8,7 +8,7 @@ messageButton.addEventListener("click", () => {
   messageEmail.value = "";
   console.log(messageBody.value);
   messageBody.value = "Body";
-  messageBody.style.color = "var(text-disabled)";
+  messageBody.style.color = "var(--text-disabled)";
   // yes I know not encrypted or anything, ah well :)
   /*Email.send({
     Host: "smtp.gmail.com",
@@ -22,5 +22,4 @@ messageButton.addEventListener("click", () => {
 });
 messageBody.addEventListener("click", () => {
   messageBody.value = "";
-  messageBody.style.color = "var(--background)";
 });
