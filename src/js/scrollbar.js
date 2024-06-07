@@ -48,3 +48,20 @@ document
       behavior: "smooth",
     });
   });
+
+(function () {
+  let lastDevicePixelRatio = window.devicePixelRatio;
+
+  function checkZoom() {
+    const currentDevicePixelRatio = window.devicePixelRatio;
+    if (currentDevicePixelRatio !== lastDevicePixelRatio) {
+      lastDevicePixelRatio = currentDevicePixelRatio;
+      onZoomChange(currentDevicePixelRatio);
+    }
+  }
+  function onZoomChange(ratio) {
+    location.reload;
+  }
+  setInterval(checkZoom, 100);
+  window.addEventListener("resize", checkZoom);
+})();
