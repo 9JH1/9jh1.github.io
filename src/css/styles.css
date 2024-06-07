@@ -116,6 +116,7 @@ body {
                 }
                 *::placeholder {
                     color: var(--text-disabled);
+                    opacity: 1;
                 }
                 *:hover {
                     font-weight: 900;
