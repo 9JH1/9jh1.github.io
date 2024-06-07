@@ -76,6 +76,7 @@ body {
     cursor: default;
 
     #about {
+        overflow:hidden;
         width: 100vw;
         height: fit-content;
         display: flex;

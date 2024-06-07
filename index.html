@@ -28,6 +28,19 @@
       <div class="title projects-title-animate-loader">[Projects]</div>
       <div class="item">
         <button
+          id="project-project-eight"
+          class="project-project"
+          data-project-name="Designs"
+          onclick="setTimeout(() => {
+                window.open('https://github.com/9JH1/designs')
+            }, 4000);"
+          title="2020-2024"
+        >
+          f
+        </button>
+      </div>
+      <div class="item">
+        <button
           id="project-project-one"
           class="project-project"
           data-project-name="OPEN-CHAT"
@@ -99,7 +112,7 @@
           data-project-name="Home Server"
           onclick="setTimeout(() => {
                 window.open('https://github.com/9JH1/home-server')
-            }, 400);"
+            }, 4000);"
           title="2024"
         >
           f
@@ -155,16 +168,16 @@
       </div>
     </div>
     <div id="about" class="page">
-      <div class="half">
-        Hello 👋, Im a developer and designer,<br />
+      <div class="half" data-animation="opacity">
+        Hello 👋, I'm a developer and designer,<br />
         <br />
-        I specialize in software and websites but ive also had experience with
+        I specialize in software and websites but I've also had experience with
         hardware and electronics. I started programming in 2020 and I plan to
         pursue a career in either software or website development.
       </div>
       <div class="half">
-        <div class="text">HIRE ME</div>
-        <div class="form">
+        <div class="text" data-animation="opacity">HIRE ME</div>
+        <div class="form" data-animation="opacity">
           <input
             type="email"
             name="email"
