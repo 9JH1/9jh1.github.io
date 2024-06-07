@@ -134,7 +134,6 @@ body {
             align-items: center;
             justify-content: end;
             gap: 20px;
-            overflow: hidden;
             box-sizing: border-box;
             -moz-box-sizing: border-box;
 
@@ -146,7 +145,6 @@ body {
             }
 
             .form {
-                overflow: hidden;
                 * {
                     font-family: 'IBM Plex Mono';
                     background-color: white;
