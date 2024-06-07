@@ -56,11 +56,8 @@ document
     const currentDevicePixelRatio = window.devicePixelRatio;
     if (currentDevicePixelRatio !== lastDevicePixelRatio) {
       lastDevicePixelRatio = currentDevicePixelRatio;
-      onZoomChange(currentDevicePixelRatio);
+      location.reload();
     }
-  }
-  function onZoomChange(ratio) {
-    location.reload;
   }
   setInterval(checkZoom, 100);
   window.addEventListener("resize", checkZoom);

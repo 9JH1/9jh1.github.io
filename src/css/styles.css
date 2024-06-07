@@ -18,7 +18,7 @@
     top: 0;
     left: 0;
     pointer-events: none;
-    opacity: 0.05;
+    opacity: 0.025;
     scale: 1.5;
 
     img {
