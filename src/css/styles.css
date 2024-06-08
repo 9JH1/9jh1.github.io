@@ -92,6 +92,9 @@ body {
         display: inline-block;
         transition: all 0.3s ease;
       }
+      span:hover {
+        animation: hand-shake 1s 1s ease;
+      }
       .text {
         font-family: "Roboto Condensed";
         font-weight: 900;
