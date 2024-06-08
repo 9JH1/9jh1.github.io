@@ -311,6 +311,7 @@ function addLoaderAnimation() {
         if (effectResCount == 0) {
           setTimeout(() => {
             effectEle.remove();
+            document.body.background = "var(--background)";
             loadAll();
           }, 700);
         }
