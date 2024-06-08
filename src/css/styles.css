@@ -90,6 +90,7 @@ body {
       -moz-box-sizing: border-box;
       span {
         display: inline-block;
+        width: fit-content !important;
         transition: all 0.3s ease;
       }
       span:hover {
