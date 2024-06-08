@@ -10,13 +10,6 @@
   --text-disabled: rgb(187, 142, 179);
 }
 
-#stats {
-  width: 30px;
-  height: 30px;
-  background-color: red;
-  position: fixed;
-}
-
 #noise {
   position: fixed;
   width: 100vw;
@@ -95,14 +88,16 @@ body {
       gap: 20px;
       box-sizing: border-box;
       -moz-box-sizing: border-box;
-
+      span {
+        display: inline-block;
+        transition: all 0.3s ease;
+      }
       .text {
         font-family: "Roboto Condensed";
         font-weight: 900;
         font-size: 7vw;
         line-height: 6vw;
       }
-
       .form {
         * {
           font-family: "IBM Plex Mono";
@@ -521,6 +516,23 @@ body {
   }
 }
 
+@keyframes hand-shake {
+  20% {
+    transform: rotate(20deg) scale(1.2);
+  }
+  40% {
+    transform: rotate(-20deg) scale(1.2);
+  }
+  60% {
+    transform: rotate(20deg) scale(1.2);
+  }
+  80% {
+    transform: rotate(-20deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
 @keyframes text-ani {
   to {
     opacity: 1;

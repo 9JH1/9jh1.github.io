@@ -24,7 +24,7 @@ const navbar = document.getElementById("navbar");
 const time = document.getElementById("time");
 const main = document.getElementById("main");
 const date = document.getElementById("date");
-
+const handShakeElement = document.getElementById("hand-shake");
 //------------------------------------------------------
 //                    MAIN FUNCTIONS
 //------------------------------------------------------
@@ -443,6 +443,15 @@ function animate(class_, delay_) {
   });
 }
 
+//observer for hand shake
+function checkHandShakeObserve() {
+  if (handShakeElement.getBoundingClientRect().y < window.innerHeight) {
+    console.log("test");
+    document.removeEventListener("scroll", checkHandShakeObserve);
+    handShakeElement.style.animation = "hand-shake 1s 1s ease";
+  }
+}
+
 //set the time widget
 function setTime() {
   time.innerHTML = String(
@@ -500,6 +509,7 @@ function baseWebsite() {
   });
   date.innerHTML = "0x-0y";
   setScrollBarScript();
+  document.addEventListener("scroll", checkHandShakeObserve);
 }
 
 baseWebsite();
