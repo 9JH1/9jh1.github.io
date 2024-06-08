@@ -402,7 +402,7 @@ async function loadAll() {
                 .forEach((element, index) => {
                   const newProjectButton = document.createElement("button");
                   const newItemProject = document.createElement("div");
-                  newProjectButton.innerHTML = "wassup bbg";
+                  newProjectButton.innerText = "made by 3hy";
                   newItemProject.classList.add("item");
                   newProjectButton.addEventListener("click", () => {
                     setTimeout(() => {
