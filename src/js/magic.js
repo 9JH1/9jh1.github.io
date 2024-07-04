@@ -485,6 +485,7 @@ function baseWebsite() {
   parallax("text-lar-2", 30);
 
   //message button triggers
+  messageBody.value = "Body";
   messageButton.addEventListener("click", () => {
     window.open(`
       https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${encodeURIComponent(
@@ -493,10 +494,9 @@ function baseWebsite() {
       "HIRE-ME-CALLBACK from " + messageEmail.value
     )}&body=${encodeURIComponent(messageBody.value)}`);
     messageEmail.value = "";
-    messageBody.value = "Body";
     messageBody.style.color = "var(--text-disabled)";
   });
-  messageBody.addEventListener("click", () => {
+  messageBody.addEventListener("focus", () => {
     messageBody.value = "";
   });
 
