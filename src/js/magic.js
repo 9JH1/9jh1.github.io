@@ -349,8 +349,8 @@ function setScrollBarScript() {
       navbar.style.transform = "translateY(0px)";
       navbarExtra.style.transform = "translateY(0px)";
     }
-    main.style.opacity = (100 - window.scrollY / 2) / 100;
-    projects.style.opacity = (100 - window.scrollY / 2) / 100;
+    main.style.opacity = (100 - window.scrollY / 7) / 100;
+    projects.style.opacity = (100 - window.scrollY / 7) / 100;
     //main.style.height = base_main - window.scrollY / 3 + "px";
   });
 
@@ -419,6 +419,13 @@ async function loadAll() {
                 });
             });
           document.body.style.overflowY = "scroll";
+          document.querySelectorAll(".inn").forEach((element) => {
+            element.style.transition = "all 0.5s ease";
+            setTimeout(() => {
+              element.style.textShadow =
+                "var(--text-color) 0px 0px 20px, var(--text-aberration-one) 0px 0px 8px, var(--text-aberration-two) 0px 0px 6px";
+            }, Math.round(Math.random() * 1000));
+          });
           //------------------------------------------------------
         }, 500);
       }, 500);

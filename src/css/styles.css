@@ -4,11 +4,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
 
 :root {
+  --background: rgb(0, 0, 0);
+  --text-color: rgb(255, 255, 255);
+  --foreground: var(--background);
+  --text-disabled: rgb(121, 121, 121);
+  --text-aberration-one: rgb(121, 121, 121);
+  --text-aberration-two: rgb(121, 121, 121);
+}
+/*
   --background: rgb(30, 11, 29);
   --text-color: rgb(171, 217, 235);
   --foreground: var(--background);
   --text-disabled: rgb(187, 142, 179);
-}
+*/
 
 #noise {
   position: fixed;
@@ -65,7 +73,27 @@ body {
   scrollbar-width: none;
   overflow-y: hidden;
   cursor: default;
-
+  #journal {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 20px;
+    .message {
+      padding: 10px;
+      box-sizing: border-box;
+      width: 100vw;
+      height: fit-content;
+      border-bottom: solid 3px var(--text-color);
+      .title {
+        width: 100%;
+        font-size: 50px;
+        font-weight: 700;
+      }
+      .timestamp {
+        color: var(--text-disabled);
+        margin-bottom: 10px;
+      }
+    }
+  }
   #about {
     overflow: hidden;
     width: 100vw;
@@ -77,7 +105,7 @@ body {
     box-sizing: border-box;
     padding: 10px;
     justify-content: space-between;
-    border-radius: 20px 20px 0px 0px;
+    border-radius: 20px 20px 20px 20px;
 
     .half {
       width: 45vw;
@@ -123,6 +151,9 @@ body {
         #form-send:hover {
           font-weight: 900;
         }
+        #form-email {
+          border-top-right-radius: 10px;
+        }
 
         #form-body {
           height: 3vw;
@@ -134,6 +165,7 @@ body {
           cursor: pointer;
           font-family: "Silkscreen";
           font-size: 0.9em;
+          border-bottom-right-radius: 10px;
         }
       }
     }
@@ -444,11 +476,11 @@ body {
 .animate-item {
   display: inline-flex;
   background: var(--background);
-  overflow-y: hidden;
 
   .inn {
     transform: translateY(100%) rotate(10deg);
     animation: animate-item 2s ease forwards;
+    text-shadow: rgba(255, 255, 255, 0.67) 0px 0px 0px;
     /*-webkit-text-fill-color: transparent;
         background-color: #0d61ff;
         background-image: url(https://media.giphy.com/media/9JxkPTP3alOykb8PmQ/source.gif);
