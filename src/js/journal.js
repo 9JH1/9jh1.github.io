@@ -12,7 +12,6 @@ if (window.location.search) {
           document.body.classList = null;
           document.body.style.cssText = null;
           document.body.innerText = JSON.stringify(data[key]);
-
           setTimeout(() => {
             console.clear();
           }, 3000);
