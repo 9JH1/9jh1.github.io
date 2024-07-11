@@ -74,6 +74,7 @@ body {
   overflow-y: hidden;
   cursor: default;
   #journal {
+    display: none;
     width: 100vw;
     height: 100vh;
     padding-top: 20px;
