@@ -14,6 +14,7 @@
   --text-color: rgb(171, 217, 235);
   --foreground: var(--background);
   --text-disabled: rgb(187, 142, 179);
+  --loader-color: var(--text-color);
 */
 
 #noise {
