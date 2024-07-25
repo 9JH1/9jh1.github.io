@@ -3,7 +3,6 @@
 //                      MAIN VARS
 //------------------------------------------------------
 const effectRes = [10, 10];
-console.log(effectRes);
 let effectResCount = effectRes[0] * effectRes[1];
 const effectEle = document.getElementById("effect");
 const scrollbar = document.getElementsByClassName("scrollbar")[0];
@@ -182,9 +181,8 @@ function animateTextPar(element, duration) {
       const nc = document.createElement("div");
       nc.innerHTML = `<div class="inner-active-text-item"> ${mainE_text[item]}</div>`;
       nc.classList.add("active-text-item");
-      nc.firstChild.style.animation = `text-ani 0.3s ease-out forwards ${
-        (item * duration) / 1000
-      }s`;
+      nc.firstChild.style.animation = `text-ani 0.3s ease-out forwards ${(item * duration) / 1000
+        }s`;
       mainE.append(nc);
     }
   }
@@ -264,14 +262,14 @@ function setTiltEffect(element, tiltEffectSettings) {
       rotateXUncapped < -tiltEffectSettings.max
         ? -tiltEffectSettings.max
         : rotateXUncapped > tiltEffectSettings.max
-        ? tiltEffectSettings.max
-        : rotateXUncapped;
+          ? tiltEffectSettings.max
+          : rotateXUncapped;
     const rotateY =
       rotateYUncapped < -tiltEffectSettings.max
         ? -tiltEffectSettings.max
         : rotateYUncapped > tiltEffectSettings.max
-        ? tiltEffectSettings.max
-        : rotateYUncapped;
+          ? tiltEffectSettings.max
+          : rotateYUncapped;
 
     card.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) 
                           scale3d(${tiltEffectSettings.scale}, ${tiltEffectSettings.scale}, ${tiltEffectSettings.scale})`;
@@ -340,9 +338,8 @@ function setScrollBarScript() {
       return documentHeight - windowHeight;
     };
     const percentage = Math.round((scroll_ / limit()) * 100);
-    scrollbar.style.marginTop = `${
-      (scrollbarInn.clientHeight / 100) * percentage - 20
-    }px`; // Assigning marginTop in pixels;
+    scrollbar.style.marginTop = `${(scrollbarInn.clientHeight / 100) * percentage - 20
+      }px`; // Assigning marginTop in pixels;
     if (window.scrollY >= 10) {
       navbar.style.transform = "translateY(-60px)";
       navbarExtra.style.transform = "translateY(60px)";
@@ -444,7 +441,6 @@ async function loadAll() {
                       element[2]
                     )} Days Ago )`;
                   } else {
-                    console.log(daysSince(element[2]));
                     newProjectButton.title = element[2];
                   }
                   if (element[3]) {
@@ -485,7 +481,6 @@ function animate(class_, delay_) {
 //observer for hand shake
 function checkHandShakeObserve() {
   if (handShakeElement.getBoundingClientRect().y < window.innerHeight) {
-    console.log("test");
     document.removeEventListener("scroll", checkHandShakeObserve);
     handShakeElement.style.animation = "hand-shake 1s 1s ease";
   }
@@ -531,8 +526,8 @@ function baseWebsite() {
   messageButton.addEventListener("click", () => {
     window.open(`
       https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${encodeURIComponent(
-        "tkf.x1os@gmail.com"
-      )}&su=${encodeURIComponent(
+      "tkf.x1os@gmail.com"
+    )}&su=${encodeURIComponent(
       "HIRE-ME-CALLBACK from " + messageEmail.value
     )}&body=${encodeURIComponent(messageBody.value)}`);
     messageEmail.value = "";
