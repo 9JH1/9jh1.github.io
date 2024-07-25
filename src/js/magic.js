@@ -1,8 +1,10 @@
-// standard animation lib written by 3hy @9JH1 on github
+
+// standard lib written by 3hy @9JH1 on github
 //------------------------------------------------------
 //                      MAIN VARS
 //------------------------------------------------------
-const effectRes = [14, 8];
+const effectRes = [10, 10];
+console.log(effectRes);
 let effectResCount = effectRes[0] * effectRes[1];
 const effectEle = document.getElementById("effect");
 const scrollbar = document.getElementsByClassName("scrollbar")[0];
@@ -13,11 +15,11 @@ const welcomeBanner = document.getElementById("text-animate-welcome-to");
 const projectsTitleAnimateLoader = document.getElementsByClassName(
   "projects-title-animate-loader"
 )[0];
+
 const messageEmail = document.getElementById("form-email");
 const messageBody = document.getElementById("form-body");
 const messageButton = document.getElementById("form-send");
-const mouseMover = document.getElementById("mouse-move-cursor-dialog");
-const loader_page = document.getElementsByClassName("loader")[0];
+const mouseMover = document.getElementById("mouse-move-cursor-dialog"); const loader_page = document.getElementsByClassName("loader")[0];
 const navbarExtra = document.getElementById("extra-nav");
 const loader = document.getElementById("loader");
 const navbar = document.getElementById("navbar");
@@ -180,9 +182,8 @@ function animateTextPar(element, duration) {
       const nc = document.createElement("div");
       nc.innerHTML = `<div class="inner-active-text-item"> ${mainE_text[item]}</div>`;
       nc.classList.add("active-text-item");
-      nc.firstChild.style.animation = `text-ani 0.3s ease-out forwards ${
-        (item * duration) / 1000
-      }s`;
+      nc.firstChild.style.animation = `text-ani 0.3s ease-out forwards ${(item * duration) / 1000
+        }s`;
       mainE.append(nc);
     }
   }
@@ -262,14 +263,14 @@ function setTiltEffect(element, tiltEffectSettings) {
       rotateXUncapped < -tiltEffectSettings.max
         ? -tiltEffectSettings.max
         : rotateXUncapped > tiltEffectSettings.max
-        ? tiltEffectSettings.max
-        : rotateXUncapped;
+          ? tiltEffectSettings.max
+          : rotateXUncapped;
     const rotateY =
       rotateYUncapped < -tiltEffectSettings.max
         ? -tiltEffectSettings.max
         : rotateYUncapped > tiltEffectSettings.max
-        ? tiltEffectSettings.max
-        : rotateYUncapped;
+          ? tiltEffectSettings.max
+          : rotateYUncapped;
 
     card.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) 
                           scale3d(${tiltEffectSettings.scale}, ${tiltEffectSettings.scale}, ${tiltEffectSettings.scale})`;
@@ -319,7 +320,6 @@ function addLoaderAnimation() {
     }
   }
 }
-
 //set scrollbar script propertys
 function setScrollBarScript() {
   document.addEventListener("scroll", () => {
@@ -339,9 +339,8 @@ function setScrollBarScript() {
       return documentHeight - windowHeight;
     };
     const percentage = Math.round((scroll_ / limit()) * 100);
-    scrollbar.style.marginTop = `${
-      (scrollbarInn.clientHeight / 100) * percentage - 20
-    }px`; // Assigning marginTop in pixels;
+    scrollbar.style.marginTop = `${(scrollbarInn.clientHeight / 100) * percentage - 20
+      }px`; // Assigning marginTop in pixels;
     if (window.scrollY >= 10) {
       navbar.style.transform = "translateY(-60px)";
       navbarExtra.style.transform = "translateY(60px)";
@@ -379,7 +378,6 @@ function setScrollBarScript() {
     window.addEventListener("resize", checkZoom);
   })();
 }
-
 // load #main and all its effects
 async function loadAll() {
   loader_page.style.opacity = 0;
@@ -415,21 +413,19 @@ async function loadAll() {
                   projects.append(newItemProject);
                   setTimeout(() => {
                     coolTextFunc(newProjectButton, element[0]);
-                  }, 100 * index);
+                  }, 300 * index);
                 });
             });
           document.body.style.overflowY = "scroll";
-          document.querySelectorAll(".inn").forEach((element) => {
-            element.style.transition = "all 0.5s ease";
-            setTimeout(() => {
-              element.style.textShadow =
-                "var(--text-color) 0px 0px 20px, var(--text-aberration-one) 0px 0px 8px, var(--text-aberration-two) 0px 0px 6px";
-            }, Math.round(Math.random() * 1000));
-          });
           //------------------------------------------------------
         }, 500);
       }, 500);
     }, 200);
+    setTimeout(() => {
+      document.getElementById("text-lar-1").innerText = "MY";
+      document.getElementById("text-lar-2").innerText = "WEBSITE";
+
+    }, 3000);
   }, 300);
 }
 // animate in the MY WEBSITE text
@@ -450,7 +446,6 @@ function animate(class_, delay_) {
     }, index * delay_);
   });
 }
-
 //observer for hand shake
 function checkHandShakeObserve() {
   if (handShakeElement.getBoundingClientRect().y < window.innerHeight) {
@@ -459,7 +454,6 @@ function checkHandShakeObserve() {
     handShakeElement.style.animation = "hand-shake 1s 1s ease";
   }
 }
-
 //set the time widget
 function setTime() {
   time.innerHTML = String(
@@ -471,7 +465,6 @@ function setTime() {
     })
   ).replace(":", "<span class='blink'>:</span>");
 }
-
 // load the loaders triggers and loader
 function baseWebsite() {
   //load the loader :D
@@ -480,24 +473,37 @@ function baseWebsite() {
   window.addEventListener("DOMContentLoaded", addCustomKeyframe);
   // window frame tilt settings and trigger
   setTiltEffect(document.getElementsByClassName("lin-inn")[0], {
-    max: 3,
+    max: 30,
     perspective: 1500,
     scale: 1.0,
-    speed: 500,
+    speed: 5000,
     easing: "cubic-bezier(.03,.98,.52,.99)",
   });
   // parallax triggers
   parallax("noise", 100);
   parallax("text-lar-1", 30);
   parallax("text-lar-2", 30);
-
+  setTiltEffect(document.getElementById("text-lar-1"), {
+    max: 10,
+    perspective: 1500,
+    scale: 1.0,
+    speed: 5000,
+    easing: "cubic-bezier(.03,.98,.52,.99)",
+  });
+  setTiltEffect(document.getElementById("text-lar-2"), {
+    max: 10,
+    perspective: 1500,
+    scale: 1.0,
+    speed: 5000,
+    easing: "cubic-bezier(.03,.98,.52,.99)",
+  });
   //message button triggers
   messageBody.value = "Body";
   messageButton.addEventListener("click", () => {
     window.open(`
       https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${encodeURIComponent(
-        "tkf.x1os@gmail.com"
-      )}&su=${encodeURIComponent(
+      "tkf.x1os@gmail.com"
+    )}&su=${encodeURIComponent(
       "HIRE-ME-CALLBACK from " + messageEmail.value
     )}&body=${encodeURIComponent(messageBody.value)}`);
     messageEmail.value = "";

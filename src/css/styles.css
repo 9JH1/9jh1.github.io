@@ -1,15 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
 
 :root {
-  --background: rgb(0, 0, 0);
-  --text-color: rgb(255, 255, 255);
+  --background: rgb(29, 29, 29);
+  --text-color: rgb(201, 201, 201);
   --foreground: var(--background);
-  --text-disabled: rgb(121, 121, 121);
-  --text-aberration-one: rgb(121, 121, 121);
-  --text-aberration-two: rgb(121, 121, 121);
+  --text-disabled: rgb(112, 83, 122);
 }
 /*
   --background: rgb(30, 11, 29);
@@ -216,6 +213,7 @@ body {
       font-size: 1.6em;
       margin-left: var(--margin);
       margin-right: var(--margin);
+      color: var(--text-disabled);
     }
   }
 
@@ -271,7 +269,6 @@ body {
       font-size: 1.4em;
       color: var(--text-color);
       font-weight: 600;
-      transition: all 1s;
     }
 
     .item {
@@ -414,7 +411,7 @@ body {
       pointer-events: none;
       top: 0;
       left: 0;
-      opacity: 0.1;
+      opacity: 0.2;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
@@ -423,15 +420,10 @@ body {
       .cont-inn {
         width: 90%;
         height: 90%;
-        border: inset 3px var(--text-color);
+        border: solid 3px var(--text-color);
         display: flex;
         flex-wrap: wrap;
         overflow: hidden;
-
-        background-image: url("");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
 
         .half {
           width: 100%;
@@ -458,15 +450,15 @@ body {
 
 @keyframes blink {
   0% {
-    color: var(--text-color);
+    opacity:1;
   }
 
   50% {
-    color: transparent;
+    opacity:0;
   }
 
   100% {
-    color: var(--text-color);
+    opacity:1;
   }
 }
 
