@@ -637,11 +637,16 @@ body {
     width: fit-content;
     display: flex;
 
-    transition: opacity 100ms ease-out;
+    transition: all 400ms ease-in-out;
 
     .unit {
       background-color: var(--loader-color);
-      transition: opacity 300ms ease-out;
+      transition: all 400ms ease-in-out;
     }
   }
+}
+#cursor { 
+  width:10px;
+  height:10px;
+  position:fixed;
 }

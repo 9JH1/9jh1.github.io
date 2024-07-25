@@ -2,8 +2,8 @@
 //------------------------------------------------------
 //                      MAIN VARS
 //------------------------------------------------------
-const effectRes = [10, 10];
-let effectResCount = effectRes[0] * effectRes[1];
+const effectRes = [Math.round(window.innerHeight / (window.innerHeight / 10)), Math.round(window.innerWidth / (window.innerHeight / 10))];
+let effectResCount = Math.round(effectRes[0] * effectRes[1]);
 const effectEle = document.getElementById("effect");
 const scrollbar = document.getElementsByClassName("scrollbar")[0];
 const scrollbarInn = document.getElementsByClassName("scrollbar-inn")[0];
@@ -299,23 +299,25 @@ function addLoaderAnimation() {
       newLine.append(newUnit);
       // wtf why doesn't this work
       newUnit.style.width =
-        effectEle.getBoundingClientRect().width / Number(effectRes[1]) + "px";
+        "10vh";
       newUnit.style.height =
-        effectEle.getBoundingClientRect().height / Number(effectRes[0]) + "px";
+        "10vh";
       newLine.style.height =
-        effectEle.getBoundingClientRect().height / Number(effectRes[0]) + "px";
+        "10vh";
 
       setTimeout(() => {
         newUnit.style.opacity = 0;
+        newUnit.style.scale = "0.9"
+        newUnit.style.filter = "blur(10px)"
         effectResCount--;
         if (effectResCount == 0) {
           setTimeout(() => {
             effectEle.remove();
             document.body.style.background = "var(--background)";
-            loadAll();
+            loadAll()
           }, 700);
         }
-      }, 1000 + Math.random() * 1000);
+      }, 1000 + Math.random() * 500);
     }
   }
 }
@@ -548,6 +550,12 @@ function baseWebsite() {
   date.innerHTML = "0x-0y";
   setScrollBarScript();
   document.addEventListener("scroll", checkHandShakeObserve);
+  document.addEventListener("mouseMove", event => {
+    console.log("working")
+    document.getElementById("cursor").style.marginLeft = event.clientX + "px";
+    document.getElementById("cursor").style.marginTop = event.clientY + "px";
+  });
 }
 
 baseWebsite();
+
