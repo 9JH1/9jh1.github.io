@@ -250,7 +250,6 @@ body {
     flex-direction: column;
     white-space: nowrap;
     z-index: 100000;
-
     .title,
     .item {
       width: 100%;
@@ -270,7 +269,6 @@ body {
       color: var(--text-color);
       font-weight: 600;
     }
-
     .item {
       button {
         font-family: "Silkscreen", sans-serif;
@@ -315,6 +313,11 @@ body {
       .hover-prefix {
         opacity: 0;
         transition: all 250ms;
+      }
+    }
+    .new {
+      button {
+        background: var(--text-disabled);
       }
     }
   }
@@ -450,15 +453,15 @@ body {
 
 @keyframes blink {
   0% {
-    opacity:1;
+    opacity: 1;
   }
 
   50% {
-    opacity:0;
+    opacity: 0;
   }
 
   100% {
-    opacity:1;
+    opacity: 1;
   }
 }
 
