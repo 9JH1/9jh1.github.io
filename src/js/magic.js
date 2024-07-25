@@ -483,14 +483,7 @@ function baseWebsite() {
   parallax("noise", 100);
   parallax("text-lar-1", 30);
   parallax("text-lar-2", 30);
-  setTiltEffect(document.getElementById("text-lar-1"), {
-    max: 10,
-    perspective: 1500,
-    scale: 1.0,
-    speed: 5000,
-    easing: "cubic-bezier(.03,.98,.52,.99)",
-  });
-  setTiltEffect(document.getElementById("text-lar-2"), {
+  setTiltEffect(document.getElementById("text-subtle"), {
     max: 10,
     perspective: 1500,
     scale: 1.0,
