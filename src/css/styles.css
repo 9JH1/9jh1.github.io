@@ -35,7 +35,7 @@
 }
 
 .fancy-text-effect-two {
-  --height: 20px;
+  --height: 2vh;
   width: fit-content;
   height: var(--height);
   overflow: hidden;
@@ -102,9 +102,9 @@ body {
     background: var(--text-color);
     color: var(--background);
     box-sizing: border-box;
-    padding: 10px;
+    padding: 2vw;
     justify-content: space-between;
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 2vw 2vw 2vw 2vw;
 
     .half {
       width: 45vw;
@@ -112,13 +112,12 @@ body {
       display: flex;
       align-items: center;
       justify-content: end;
-      gap: 20px;
       box-sizing: border-box;
+      gap: 2vw;
       -moz-box-sizing: border-box;
       span {
         display: inline-block;
         width: fit-content !important;
-        transition: all 0.3s ease;
       }
       .text {
         font-family: "Roboto Condensed";
@@ -131,16 +130,16 @@ body {
           font-family: "IBM Plex Mono";
           background-color: var(--text-color);
           border: none;
-          box-shadow: 0px 0px 0px 3px var(--background) inset;
+          box-shadow: 0px 0px 0px 0.4vw var(--background) inset;
           color: var(--background);
           outline: none;
           min-width: 100%;
-          padding: 4px;
+          padding: 1vw;
           margin: 0px;
           box-sizing: border-box;
           width: 3vw;
           resize: none;
-          margin-bottom: 3px;
+          margin-bottom: 0.7vw;
           font-size: 1em;
         }
         *::placeholder {
@@ -151,20 +150,21 @@ body {
           font-weight: 900;
         }
         #form-email {
-          border-top-right-radius: 10px;
+          border-top-right-radius: 2vw;
         }
 
         #form-body {
           height: 3vw;
           color: var(--background);
-          padding: 4px;
+          padding: 0.5vw 1vw;
           box-sizing: border-box;
         }
         #form-send {
           cursor: pointer;
           font-family: "Silkscreen";
           font-size: 0.9em;
-          border-bottom-right-radius: 10px;
+          padding: 0;
+          border-bottom-right-radius: 2vw;
         }
       }
     }
@@ -178,7 +178,6 @@ body {
   }
 
   .loader {
-    padding: 20px;
     box-sizing: border-box;
     position: fixed;
     z-index: 100;
@@ -200,20 +199,19 @@ body {
 
   #extra-nav {
     width: 100vw;
-    height: 30px;
+    height: 4vh;
     position: fixed;
     bottom: 0%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transform: translateY(60px);
+    transform: translateY(10vh);
     transition: transform 1s ease;
+    padding: 0px 3vh;
+    box-sizing: border-box;
 
     p {
-      --margin: 20px;
       font-size: 1.6em;
-      margin-left: var(--margin);
-      margin-right: var(--margin);
       color: var(--text-disabled);
     }
   }
@@ -222,7 +220,7 @@ body {
     width: fit-content;
     height: fit-content;
     background-color: var(--background);
-    padding: 10px;
+    padding: 0px;
     opacity: 0.9;
     border: solid 2px var(--text-color);
     position: fixed;
@@ -244,7 +242,7 @@ body {
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: center;
-    padding-left: 20px;
+    padding-left: 3vw;
     font-family: "Silkscreen", sans-serif;
     overflow-y: scroll;
     overflow-x: visible;
@@ -258,7 +256,7 @@ body {
       display: flex;
       align-items: center;
       justify-content: end;
-      padding: 0px 20px;
+      padding: 0px 3vw;
       box-sizing: border-box;
       min-height: fit-content;
       height: fit-content;
@@ -279,7 +277,7 @@ body {
         background: transparent;
         position: relative;
         overflow: hidden;
-        transition: 250ms;
+        /*transition: 250ms;*/
         padding: 0px;
         margin: 0px;
         opacity: 0;
@@ -296,7 +294,7 @@ body {
         width: 0;
         background-color: var(--text-color);
         z-index: -1;
-        transition: all 250ms;
+        transition: width 250ms;
       }
 
       button:hover {
@@ -313,7 +311,7 @@ body {
 
       .hover-prefix {
         opacity: 0;
-        transition: all 250ms;
+        transition: opacity 250ms;
       }
     }
     .new {
@@ -341,16 +339,16 @@ body {
 
   #navbar {
     width: 100vw;
-    height: 30px;
+    height: 4vh;
     position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     top: 0;
-    padding: 0px 20px;
+    padding: 0px 3vh;
     box-sizing: border-box;
     z-index: 98;
-    transform: translateY(-60px);
+    transform: translateY(-10vh);
     transition: transform 1s ease;
     color: var(--text-disabled);
 
@@ -400,16 +398,12 @@ body {
         font-size: 17vw;
         overflow-y: hidden;
         overflow-x: visible;
-        margin-left: 20px;
+        margin-left: 3vw;
       }
     }
 
-    #lines {
-      transition: all 1s ease;
-    }
-
     .lin-inn {
-      width: calc(100% - 6px);
+      width: calc(100% - 1.5vw);
       height: 100%;
       position: absolute;
       pointer-events: none;
@@ -424,7 +418,7 @@ body {
       .cont-inn {
         width: 90%;
         height: 90%;
-        border: solid 3px var(--text-color);
+        border: solid 0.75vw var(--text-color);
         display: flex;
         flex-wrap: wrap;
         overflow: hidden;
@@ -438,8 +432,8 @@ body {
           background-color: transparent;
 
           .corner-box {
-            width: 10px;
-            height: 10px;
+            width: 2vw;
+            height: 2vw;
             background: var(--text-color);
           }
         }
@@ -486,36 +480,6 @@ body {
   }
 }
 
-#scrollbar {
-  background: transparent;
-  position: fixed;
-  top: 0%;
-  right: 0%;
-  width: 10px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  margin-right: 2px;
-  transform: translateX(12px);
-  transition: all 1s ease;
-  z-index: 97;
-
-  .scrollbar-inn {
-    width: 100%;
-    height: 60%;
-    background: var(--foreground);
-    border-radius: 100px;
-    overflow: hidden;
-
-    .scrollbar {
-      width: 100%;
-      height: 40px;
-      background: var(--text-disabled);
-      border-radius: 100px;
-    }
-  }
-}
-
 @keyframes animate-item {
   to {
     transform: translateY(0%);
@@ -539,12 +503,12 @@ body {
   width: fit-content;
   display: inline-block;
   overflow-y: hidden;
-  margin-left: 5px;
+  margin-left: 2vw;
 
   .inner-active-text-item {
     text-wrap: nowrap;
     opacity: 0;
-    transform: rotate(2deg) translateY(10px);
+    transform: rotate(2deg) translateY(2vw);
   }
 }
 
@@ -589,7 +553,7 @@ body {
     .item,
     .title {
       justify-content: start !important;
-      padding: 0px 40px !important;
+      padding: 0px 3vw !important;
 
       button::before {
         right: unset !important;
@@ -601,7 +565,7 @@ body {
   #main {
     .text-cont {
       .text {
-        margin-left: 40px !important;
+        margin-left: 3vw !important;
       }
     }
   }
@@ -612,7 +576,7 @@ body {
       justify-content: space-between !important;
       * {
         border-top-right-radius: 0px !important;
-        margin-top: 20px;
+        margin-top: 1vh;
         * {
           width: 20vw !important;
           height: 3vh !important;

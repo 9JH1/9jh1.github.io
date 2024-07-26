@@ -318,7 +318,6 @@ function addLoaderAnimation() {
       setTimeout(() => {
         newUnit.style.opacity = 0;
         newUnit.style.scale = "0.9";
-        newUnit.style.filter = "blur(10px)";
         effectResCount--;
         if (effectResCount == 0) {
           setTimeout(() => {
@@ -354,8 +353,8 @@ function setScrollBarScript() {
       (scrollbarInn.clientHeight / 100) * percentage - 20
     }px`; // Assigning marginTop in pixels;
     if (window.scrollY >= 10) {
-      navbar.style.transform = "translateY(-60px)";
-      navbarExtra.style.transform = "translateY(60px)";
+      navbar.style.transform = "translateY(-6vh)";
+      navbarExtra.style.transform = "translateY(6vh)";
     } else {
       navbar.style.transform = "translateY(0px)";
       navbarExtra.style.transform = "translateY(0px)";
