@@ -1,12 +1,12 @@
 [
-    ["Designs"             , "https://github.com/9JH1/designs"             , "08/06/2024" , " [DEPRECATED]" ],
-    ["Terminal Emulator"   , "https://github.com/9JH1/terminaldisplay"     , "27/12/2023" , ""              ],
-    ["Home Server"         , "https://github.com/9JH1/home-server"         , "25/05/2024" , ""              ],
-    ["LyricsLive"          , "https://9JH1.github.io/LyricsLive/"          , "26/04/2024" , " [FINISHED]"   ],
-    ["I3 Wallpaper Engine" , "https://github.com/9jh1/i3-wallpaper-engine" , "14/05/2024" , " [WIP]"        ],
-    ["X3A"                 , "https://github.com/9jh1/X3A"                 , "26/03/2024" , " [WIP]"        ],
-    ["wallpaper-effect"    , "https://9JH1.github.io/background-dynamic/"  , "11/07/2024" , " [FINISHED]"   ],
-    ["auto runner"         , "https://github.com/9JH1/arr"                 , "28/06/2024" , " [FINISHED]"   ],
-    ["todo list"           , "https://9JH1.github.io/TODO-list/"           , "19/07/2024" , " [FINISHED]"   ],
-    ["Portfolio"           , "https://github.com/9jh1/home"                , "07/03/2024" , " [UPDATING ]"  ]
+    [ "Designs"             , "https://github.com/9JH1/designs"             , "08/06/2024" , " [DEPRECATED]" ] ,
+    [ "Terminal Emulator"   , "https://github.com/9JH1/terminaldisplay"     , "27/12/2023" , ""              ] ,
+    [ "Home Server"         , "https://github.com/9JH1/home-server"         , "25/05/2024" , ""              ] ,
+    [ "LyricsLive"          , "https://9JH1.github.io/LyricsLive/"          , "26/04/2024" , " [FINISHED]"   ] ,
+    [ "I3 Wallpaper Engine" , "https://github.com/9jh1/i3-wallpaper-engine" , "14/05/2024" , " [WIP]"        ] ,
+    [ "X3A"                 , "https://github.com/9jh1/X3A"                 , "26/03/2024" , " [WIP]"        ] ,
+    [ "wallpaper-effect"    , "https://9JH1.github.io/background-dynamic/"  , "11/07/2024" , " [FINISHED]"   ] ,
+    [ "auto runner"         , "https://github.com/9JH1/arr"                 , "28/06/2024" , " [FINISHED]"   ] ,
+    [ "todo list"           , "https://9JH1.github.io/TODO-list/"           , "19/07/2024" , " [FINISHED]"   ] ,
+    [ "Portfolio"           , "https://github.com/9jh1/home"                , "07/03/2024" , " [UPDATING ]"  ]
 ]

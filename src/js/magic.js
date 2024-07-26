@@ -2,7 +2,10 @@
 //------------------------------------------------------
 //                      MAIN VARS
 //------------------------------------------------------
-const effectRes = [Math.round(window.innerHeight / (window.innerHeight / 10)), Math.round(window.innerWidth / (window.innerHeight / 10))];
+const effectRes = [
+  Math.round(window.innerHeight / (window.innerHeight / 10)),
+  Math.round(window.innerWidth / (window.innerHeight / 10)),
+];
 let effectResCount = Math.round(effectRes[0] * effectRes[1]);
 const effectEle = document.getElementById("effect");
 const scrollbar = document.getElementsByClassName("scrollbar")[0];
@@ -26,6 +29,9 @@ const time = document.getElementById("time");
 const main = document.getElementById("main");
 const date = document.getElementById("date");
 const handShakeElement = document.getElementById("hand-shake");
+const textLarOne = document.getElementById("text-lar-1");
+
+const textLarTwo = document.getElementById("text-lar-2");
 //------------------------------------------------------
 //                    MAIN FUNCTIONS
 //------------------------------------------------------
@@ -181,8 +187,9 @@ function animateTextPar(element, duration) {
       const nc = document.createElement("div");
       nc.innerHTML = `<div class="inner-active-text-item"> ${mainE_text[item]}</div>`;
       nc.classList.add("active-text-item");
-      nc.firstChild.style.animation = `text-ani 0.3s ease-out forwards ${(item * duration) / 1000
-        }s`;
+      nc.firstChild.style.animation = `text-ani 0.3s ease-out forwards ${
+        (item * duration) / 1000
+      }s`;
       mainE.append(nc);
     }
   }
@@ -262,14 +269,14 @@ function setTiltEffect(element, tiltEffectSettings) {
       rotateXUncapped < -tiltEffectSettings.max
         ? -tiltEffectSettings.max
         : rotateXUncapped > tiltEffectSettings.max
-          ? tiltEffectSettings.max
-          : rotateXUncapped;
+        ? tiltEffectSettings.max
+        : rotateXUncapped;
     const rotateY =
       rotateYUncapped < -tiltEffectSettings.max
         ? -tiltEffectSettings.max
         : rotateYUncapped > tiltEffectSettings.max
-          ? tiltEffectSettings.max
-          : rotateYUncapped;
+        ? tiltEffectSettings.max
+        : rotateYUncapped;
 
     card.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) 
                           scale3d(${tiltEffectSettings.scale}, ${tiltEffectSettings.scale}, ${tiltEffectSettings.scale})`;
@@ -298,23 +305,20 @@ function addLoaderAnimation() {
       newUnit.classList.add("unit");
       newLine.append(newUnit);
       // wtf why doesn't this work
-      newUnit.style.width =
-        "10vh";
-      newUnit.style.height =
-        "10vh";
-      newLine.style.height =
-        "10vh";
+      newUnit.style.width = "10vh";
+      newUnit.style.height = "10vh";
+      newLine.style.height = "10vh";
 
       setTimeout(() => {
         newUnit.style.opacity = 0;
-        newUnit.style.scale = "0.9"
-        newUnit.style.filter = "blur(10px)"
+        newUnit.style.scale = "0.9";
+        newUnit.style.filter = "blur(10px)";
         effectResCount--;
         if (effectResCount == 0) {
           setTimeout(() => {
             effectEle.remove();
             document.body.style.background = "var(--background)";
-            loadAll()
+            loadAll();
           }, 700);
         }
       }, 1000 + Math.random() * 500);
@@ -340,8 +344,9 @@ function setScrollBarScript() {
       return documentHeight - windowHeight;
     };
     const percentage = Math.round((scroll_ / limit()) * 100);
-    scrollbar.style.marginTop = `${(scrollbarInn.clientHeight / 100) * percentage - 20
-      }px`; // Assigning marginTop in pixels;
+    scrollbar.style.marginTop = `${
+      (scrollbarInn.clientHeight / 100) * percentage - 20
+    }px`; // Assigning marginTop in pixels;
     if (window.scrollY >= 10) {
       navbar.style.transform = "translateY(-60px)";
       navbarExtra.style.transform = "translateY(60px)";
@@ -452,6 +457,18 @@ async function loadAll() {
                 });
             });
           document.body.style.overflowY = "scroll";
+          document
+            .getElementById("text-subtle")
+            .addEventListener("click", () => {
+              textLarOne.innerHTML = "";
+              textLarTwo.innerHTML = "";
+              coolTextFunc(textLarOne, "MY");
+              coolTextFunc(textLarTwo, "WEBSITE");
+              setTimeout(() => {
+                document.getElementById("text-lar-1").innerText = "MY";
+                document.getElementById("text-lar-2").innerText = "WEBSITE";
+              }, 3000);
+            });
           //------------------------------------------------------
         }, 500);
       }, 500);
@@ -528,8 +545,8 @@ function baseWebsite() {
   messageButton.addEventListener("click", () => {
     window.open(`
       https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${encodeURIComponent(
-      "tkf.x1os@gmail.com"
-    )}&su=${encodeURIComponent(
+        "tkf.x1os@gmail.com"
+      )}&su=${encodeURIComponent(
       "HIRE-ME-CALLBACK from " + messageEmail.value
     )}&body=${encodeURIComponent(messageBody.value)}`);
     messageEmail.value = "";
@@ -548,7 +565,7 @@ function baseWebsite() {
     date.innerHTML = `${event.clientX}x-${event.clientY}y`;
 
     document.getElementById("cursor").style.opacity = 1;
-    console.log(document.body.style.cursor)
+    console.log(document.body.style.cursor);
     const element = document.elementFromPoint(event.clientX, event.clientY);
     const style = window.getComputedStyle(element);
     const cursorStyle = style.cursor;
@@ -556,14 +573,18 @@ function baseWebsite() {
       document.getElementById("cursor").style.width = "50px";
       document.getElementById("cursor").style.height = "50px";
       document.getElementById("cursor").style.opacity = 0.2;
+      document.getElementById("cursor").style.filter = "blur(5px)";
     } else {
       document.getElementById("cursor").style.width = "30px";
       document.getElementById("cursor").style.height = "30px";
       document.getElementById("cursor").style.opacity = 1;
+      document.getElementById("cursor").style.filter = "blur(0px)";
     }
     document.getElementById("cursor").style.marginLeft = event.clientX + "px";
     document.getElementById("cursor").style.marginTop = event.clientY + "px";
-
+  });
+  document.addEventListener("mouseleave", () => {
+    document.getElementById("cursor").style.opacity = 0;
   });
   date.innerHTML = "0x-0y";
   setScrollBarScript();
@@ -572,9 +593,7 @@ function baseWebsite() {
 
 baseWebsite();
 
-
-
-document.addEventListener('mousemove', function (event) {
+document.addEventListener("mousemove", function (event) {
   // Get the mouse coordinates relative to the viewport
   const x = event.clientX;
   const y = event.clientY;
