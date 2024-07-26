@@ -546,16 +546,48 @@ function baseWebsite() {
   // change the mouse move view
   document.addEventListener("mousemove", (event) => {
     date.innerHTML = `${event.clientX}x-${event.clientY}y`;
+
+    document.getElementById("cursor").style.opacity = 1;
+    console.log(document.body.style.cursor)
+    const element = document.elementFromPoint(event.clientX, event.clientY);
+    const style = window.getComputedStyle(element);
+    const cursorStyle = style.cursor;
+    if (cursorStyle == "pointer") {
+      document.getElementById("cursor").style.width = "50px";
+      document.getElementById("cursor").style.height = "50px";
+      document.getElementById("cursor").style.opacity = 0.2;
+    } else {
+      document.getElementById("cursor").style.width = "30px";
+      document.getElementById("cursor").style.height = "30px";
+      document.getElementById("cursor").style.opacity = 1;
+    }
+    document.getElementById("cursor").style.marginLeft = event.clientX + "px";
+    document.getElementById("cursor").style.marginTop = event.clientY + "px";
+
   });
   date.innerHTML = "0x-0y";
   setScrollBarScript();
   document.addEventListener("scroll", checkHandShakeObserve);
-  document.addEventListener("mouseMove", event => {
-    console.log("working")
-    document.getElementById("cursor").style.marginLeft = event.clientX + "px";
-    document.getElementById("cursor").style.marginTop = event.clientY + "px";
-  });
 }
 
 baseWebsite();
 
+
+
+document.addEventListener('mousemove', function (event) {
+  // Get the mouse coordinates relative to the viewport
+  const x = event.clientX;
+  const y = event.clientY;
+
+  // Get the element under the mouse pointer
+  const element = document.elementFromPoint(x, y);
+
+  // Get the computed style of the element
+  const style = window.getComputedStyle(element);
+
+  // Get the cursor style from the computed style
+  const cursorStyle = style.cursor;
+
+  // Log the mouse coordinates and cursor style to the console
+  console.log(`Mouse position: X: ${x}, Y: ${y}, Cursor: ${cursorStyle}`);
+});
