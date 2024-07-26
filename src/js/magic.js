@@ -370,19 +370,6 @@ function setScrollBarScript() {
       behavior: "smooth",
     });
   });
-  (function () {
-    let lastDevicePixelRatio = window.devicePixelRatio;
-
-    function checkZoom() {
-      const currentDevicePixelRatio = window.devicePixelRatio;
-      if (currentDevicePixelRatio !== lastDevicePixelRatio) {
-        lastDevicePixelRatio = currentDevicePixelRatio;
-        location.reload();
-      }
-    }
-    setInterval(checkZoom, 100);
-    window.addEventListener("resize", checkZoom);
-  })();
 }
 // load #main and all its effects
 async function loadAll() {
@@ -592,21 +579,3 @@ function baseWebsite() {
 }
 
 baseWebsite();
-
-document.addEventListener("mousemove", function (event) {
-  // Get the mouse coordinates relative to the viewport
-  const x = event.clientX;
-  const y = event.clientY;
-
-  // Get the element under the mouse pointer
-  const element = document.elementFromPoint(x, y);
-
-  // Get the computed style of the element
-  const style = window.getComputedStyle(element);
-
-  // Get the cursor style from the computed style
-  const cursorStyle = style.cursor;
-
-  // Log the mouse coordinates and cursor style to the console
-  console.log(`Mouse position: X: ${x}, Y: ${y}, Cursor: ${cursorStyle}`);
-});
