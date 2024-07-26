@@ -216,19 +216,21 @@ function parallax(elementId, divider) {
     });
   }
 }
-// animates text in
-function coolTextFunc(element, text) {
+
+function coolTextFunc(
+  element,
+  text,
+  brackets = true,
+  timeout = 20,
+  changes = 3
+) {
   element.style.opacity = 1;
   let virtual_origin = String(text);
   let render_list = [];
   charSet = "1234567890#@$&%";
   for (let letter = 0; letter < virtual_origin.length; letter++) {
     let virtual_string_letter = virtual_origin.slice(0, letter);
-    for (
-      let randomLetter = 0;
-      randomLetter < Math.random() * 3;
-      randomLetter++
-    ) {
+    for (let randomLetter = 0; randomLetter < changes; randomLetter++) {
       let vslt = virtual_string_letter;
       vslt += charSet.charAt(Math.floor(Math.random() * charSet.length));
       render_list.push(vslt);
@@ -238,8 +240,12 @@ function coolTextFunc(element, text) {
   // this tool SOOOOO LONNG but it kinda slaps ngl
   for (let renderFor = 0; renderFor < render_list.length; renderFor++) {
     setTimeout(() => {
-      element.innerHTML = `<span class="hover-prefix">[</span>${render_list[renderFor]}<span class="hover-prefix">]</span>`;
-    }, 20 * renderFor);
+      if (brackets) {
+        element.innerHTML = `<span class="hover-prefix">[</span>${render_list[renderFor]}<span class="hover-prefix">]</span>`;
+      } else {
+        element.innerHTML = render_list[renderFor];
+      }
+    }, timeout * renderFor);
   }
 }
 // makes a element tilt and transform perspective with the mouse
@@ -449,12 +455,8 @@ async function loadAll() {
             .addEventListener("click", () => {
               textLarOne.innerHTML = "";
               textLarTwo.innerHTML = "";
-              coolTextFunc(textLarOne, "MY");
-              coolTextFunc(textLarTwo, "WEBSITE");
-              setTimeout(() => {
-                document.getElementById("text-lar-1").innerText = "MY";
-                document.getElementById("text-lar-2").innerText = "WEBSITE";
-              }, 3000);
+              coolTextFunc(textLarOne, "MY", false, 50, 10);
+              coolTextFunc(textLarTwo, "WEBSITE", false, 50, 10);
             });
           //------------------------------------------------------
         }, 500);
@@ -550,28 +552,7 @@ function baseWebsite() {
   // change the mouse move view
   document.addEventListener("mousemove", (event) => {
     date.innerHTML = `${event.clientX}x-${event.clientY}y`;
-
-    document.getElementById("cursor").style.opacity = 1;
-    console.log(document.body.style.cursor);
     const element = document.elementFromPoint(event.clientX, event.clientY);
-    const style = window.getComputedStyle(element);
-    const cursorStyle = style.cursor;
-    if (cursorStyle == "pointer") {
-      document.getElementById("cursor").style.width = "50px";
-      document.getElementById("cursor").style.height = "50px";
-      document.getElementById("cursor").style.opacity = 0.2;
-      document.getElementById("cursor").style.filter = "blur(5px)";
-    } else {
-      document.getElementById("cursor").style.width = "30px";
-      document.getElementById("cursor").style.height = "30px";
-      document.getElementById("cursor").style.opacity = 1;
-      document.getElementById("cursor").style.filter = "blur(0px)";
-    }
-    document.getElementById("cursor").style.marginLeft = event.clientX + "px";
-    document.getElementById("cursor").style.marginTop = event.clientY + "px";
-  });
-  document.addEventListener("mouseleave", () => {
-    document.getElementById("cursor").style.opacity = 0;
   });
   date.innerHTML = "0x-0y";
   setScrollBarScript();
@@ -579,3 +560,4 @@ function baseWebsite() {
 }
 
 baseWebsite();
+console.log("HIRE ME: tkf.x1os@gmail.com");

@@ -644,18 +644,3 @@ body {
     }
   }
 }
-
-#cursor {
-  opacity: 0;
-  width: 30px;
-  height: 30px;
-  background: transparent;
-  transform: translate(-50%, -50%);
-  position: fixed;
-  border: solid 5px white;
-  border-radius: 100%;
-  z-index: 10000000000000;
-  pointer-events: none;
-  transition: width 0.2s ease-in-out, height 0.2s ease-in-out,
-    opacity 0.1s ease-in-out;
-}
