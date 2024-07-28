@@ -403,7 +403,7 @@ body {
     }
 
     .lin-inn {
-      width: calc(100% - 1.5vw);
+      width: calc(100% - 0.6vw);
       height: 100%;
       position: absolute;
       pointer-events: none;
@@ -418,7 +418,7 @@ body {
       .cont-inn {
         width: 90%;
         height: 90%;
-        border: solid 0.75vw var(--text-color);
+        border: solid 0.3vw var(--text-color);
         display: flex;
         flex-wrap: wrap;
         overflow: hidden;
@@ -432,8 +432,8 @@ body {
           background-color: transparent;
 
           .corner-box {
-            width: 2vw;
-            height: 2vw;
+            width: 0.75vw;
+            height: 0.75vw;
             background: var(--text-color);
           }
         }
