@@ -316,7 +316,7 @@ function addLoaderAnimation() {
 
       setTimeout(() => {
         newUnit.style.opacity = 0;
-        newUnit.style.scale = "0.9";
+        newUnit.style.scale = 0.9;
         effectResCount--;
         if (effectResCount == 0) {
           setTimeout(() => {
@@ -348,8 +348,6 @@ function setScrollBarScript() {
       return documentHeight - windowHeight;
     };
     const percentage = Math.round((scroll_ / limit()) * 100);
-    scrollbar.style.marginTop = `${(scrollbarInn.clientHeight / 100) * percentage - 20
-      }px`; // Assigning marginTop in pixels;
     if (window.scrollY >= 10) {
       navbar.style.transform = "translateY(-6vh)";
       navbarExtra.style.transform = "translateY(6vh)";
@@ -433,7 +431,7 @@ async function loadAll() {
                   }, 300 * index);
                   if (daysSince(element[2]) < 20) {
                     newItemProject.classList.add("new");
-                    newProjectButton.title = `NEW ( ${daysSince(
+                    newProjectButton.title = `NEW(${daysSince(
                       element[2]
                     )} Days Ago )`;
                   } else {
@@ -511,8 +509,8 @@ function baseWebsite() {
   window.addEventListener("DOMContentLoaded", addCustomKeyframe);
   // window frame tilt settings and trigger
   setTiltEffect(document.getElementsByClassName("lin-inn")[0], {
-    max: 10,
-    perspective: 1500,
+    max: 15,
+    perspective: 2000,
     scale: 1.0,
     speed: 1000,
     easing: "cubic-bezier(.03,.98,.52,.99)",
@@ -522,7 +520,7 @@ function baseWebsite() {
   parallax("text-lar-1", 30);
   parallax("text-lar-2", 30);
   setTiltEffect(document.getElementById("text-subtle"), {
-    max: 10,
+    max: 15,
     perspective: 1500,
     scale: 1.0,
     speed: 5000,
@@ -532,11 +530,12 @@ function baseWebsite() {
   messageBody.value = "Body";
   messageButton.addEventListener("click", () => {
     window.open(`
-      https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${encodeURIComponent(
+https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${encodeURIComponent(
       "tkf.x1os@gmail.com"
-    )}&su=${encodeURIComponent(
+    )}& su=${encodeURIComponent(
       "HIRE-ME-CALLBACK from " + messageEmail.value
-    )}&body=${encodeURIComponent(messageBody.value)}`);
+    )
+      }& body=${encodeURIComponent(messageBody.value)} `);
     messageEmail.value = "";
     messageBody.style.color = "var(--text-disabled)";
   });
@@ -560,33 +559,3 @@ function baseWebsite() {
 
 baseWebsite();
 console.log("HIRE ME: tkf.x1os@gmail.com");
-
-
-
-function newAnimateTextParalax(parallax, divider) {
-  parallax.classList.add("parallax-Element");
-  function eventFunc() {
-    document.addEventListener("mousemove", (event) => {
-      let _mouseX =
-        (event.clientX - document.documentElement.clientWidth / 2) / divider;
-      let _mouseY =
-        (event.clientY - document.documentElement.clientHeight / 2) / divider;
-
-      parallax.style.transform = `translate(${_mouseX}px, ${_mouseY}px)`;
-      parallax.style.webkitTransform = `translate(${_mouseX}px, ${_mouseY}px)`;
-      parallax.style.mozTransform = `translate(${_mouseX}px, ${_mouseY}px)`;
-
-      setTimeout(() => {
-        parallax.style.transition = "all  0s";
-      }, 300);
-    });
-    parallax.addEventListener("mouseleave", () => {
-      parallax.removeEventListener("mouseover", eventFunc);
-    })
-  }
-  // finally fixed this bs
-  if (window.innerWidth >= 770) {
-    parallax.addEventListener("mouseover", eventFunc);
-
-  }
-}

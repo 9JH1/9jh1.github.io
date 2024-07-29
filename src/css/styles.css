@@ -9,6 +9,7 @@
   --text-disabled: rgb(112, 83, 122);
   --loader-color: white;
 }
+
 /*
   --background: rgb(30, 11, 29);
   --text-color: rgb(171, 217, 235);
@@ -71,28 +72,33 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow-y: hidden;
+
   #journal {
     display: none;
     width: 100vw;
     height: 100vh;
     padding-top: 20px;
+
     .message {
       padding: 10px;
       box-sizing: border-box;
       width: 100vw;
       height: fit-content;
       border-bottom: solid 3px var(--text-color);
+
       .title {
         width: 100%;
         font-size: 50px;
         font-weight: 700;
       }
+
       .timestamp {
         color: var(--text-disabled);
         margin-bottom: 10px;
       }
     }
   }
+
   #about {
     overflow: hidden;
     width: 100vw;
@@ -102,8 +108,9 @@ body {
     background: var(--text-color);
     color: var(--background);
     box-sizing: border-box;
-    padding: 2vw;
+    padding: 1em;
     justify-content: space-between;
+    -moz-box-sizing: border-box;
     border-radius: 2vw 2vw 0px 0px;
 
     .half {
@@ -115,26 +122,29 @@ body {
       box-sizing: border-box;
       gap: 2vw;
       -moz-box-sizing: border-box;
+
       span {
         display: inline-block;
         width: fit-content !important;
       }
+
       .text {
         font-family: "Roboto Condensed";
         font-weight: 900;
         font-size: 7vw;
         line-height: 6vw;
       }
+
       .form {
         * {
           font-family: "IBM Plex Mono";
           background-color: var(--text-color);
           border: none;
-          box-shadow: 0px 0px 0px 0.4vw var(--background) inset;
+          box-shadow: 0px 0px 0px 0.3em var(--background) inset;
           color: var(--background);
           outline: none;
           min-width: 100%;
-          padding: 1vw;
+          padding: 0.4em;
           margin: 0px;
           box-sizing: border-box;
           width: 3vw;
@@ -142,15 +152,18 @@ body {
           margin-bottom: 0.7vw;
           font-size: 1em;
         }
+
         *::placeholder {
           color: var(--background);
           opacity: 1;
         }
+
         #form-send:hover {
           font-weight: 900;
         }
+
         #form-email {
-          border-top-right-radius: 2vw;
+          border-top-right-radius: 1.2em
         }
 
         #form-body {
@@ -159,12 +172,13 @@ body {
           padding: 0.5vw 1vw;
           box-sizing: border-box;
         }
+
         #form-send {
           cursor: pointer;
           font-family: "Silkscreen";
           font-size: 0.9em;
-          padding: 0;
-          border-bottom-right-radius: 2vw;
+          padding: 0.5em;
+          border-bottom-right-radius: 1.2em;
         }
       }
     }
@@ -249,6 +263,7 @@ body {
     flex-direction: column;
     white-space: nowrap;
     z-index: 100000;
+
     .title,
     .item {
       width: 100%;
@@ -260,7 +275,7 @@ body {
       box-sizing: border-box;
       min-height: fit-content;
       height: fit-content;
-      
+
     }
 
     .title {
@@ -268,9 +283,10 @@ body {
       font-size: 1.4em;
       color: var(--text-color);
       font-weight: 600;
-    transition: opacity 0.5s ease;
-    cursor:default;
+      transition: opacity 0.5s ease;
+      cursor: default;
     }
+
     .item {
       button {
         font-family: "Silkscreen", sans-serif;
@@ -302,7 +318,7 @@ body {
 
       button:hover {
         color: var(--background);
-        scale:1.1;
+        scale: 1.1;
         transition: scale 0.3s ease-in-out;
       }
 
@@ -319,6 +335,7 @@ body {
         transition: opacity 250ms;
       }
     }
+
     .new {
       button {
         background: var(--text-disabled);
@@ -521,19 +538,24 @@ body {
   20% {
     transform: rotate(20deg) scale(1.2);
   }
+
   40% {
     transform: rotate(-20deg) scale(1.2);
   }
+
   60% {
     transform: rotate(20deg) scale(1.2);
   }
+
   80% {
     transform: rotate(-20deg) scale(1.2);
   }
+
   100% {
     transform: rotate(0deg) scale(1);
   }
 }
+
 @keyframes text-ani {
   to {
     opacity: 1;
@@ -574,14 +596,18 @@ body {
       }
     }
   }
+
   #about {
     display: block !important;
+
     .half {
       width: 100% !important;
       justify-content: space-between !important;
+
       * {
         border-top-right-radius: 0px !important;
         margin-top: 1vh;
+
         * {
           width: 20vw !important;
           height: 3vh !important;
@@ -599,6 +625,7 @@ body {
   z-index: 10000000000000000000000000000000;
   top: 0;
   left: 0;
+
   .line {
     width: 100%;
     height: fit-content;
