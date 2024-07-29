@@ -3,8 +3,8 @@
 //                      MAIN VARS
 //------------------------------------------------------
 const effectRes = [
-  Math.round(window.innerHeight / (window.innerHeight / 10)),
-  Math.round(window.innerWidth / (window.innerHeight / 10)),
+  Math.ceil(window.innerHeight / (window.innerHeight / 5)),
+  Math.ceil(window.innerWidth / (window.innerHeight / 5)),
 ];
 let effectResCount = Math.round(effectRes[0] * effectRes[1]);
 const effectEle = document.getElementById("effect");
@@ -187,9 +187,8 @@ function animateTextPar(element, duration) {
       const nc = document.createElement("div");
       nc.innerHTML = `<div class="inner-active-text-item"> ${mainE_text[item]}</div>`;
       nc.classList.add("active-text-item");
-      nc.firstChild.style.animation = `text-ani 0.3s ease-out forwards ${
-        (item * duration) / 1000
-      }s`;
+      nc.firstChild.style.animation = `text-ani 0.3s ease-out forwards ${(item * duration) / 1000
+        }s`;
       mainE.append(nc);
     }
   }
@@ -275,14 +274,14 @@ function setTiltEffect(element, tiltEffectSettings) {
       rotateXUncapped < -tiltEffectSettings.max
         ? -tiltEffectSettings.max
         : rotateXUncapped > tiltEffectSettings.max
-        ? tiltEffectSettings.max
-        : rotateXUncapped;
+          ? tiltEffectSettings.max
+          : rotateXUncapped;
     const rotateY =
       rotateYUncapped < -tiltEffectSettings.max
         ? -tiltEffectSettings.max
         : rotateYUncapped > tiltEffectSettings.max
-        ? tiltEffectSettings.max
-        : rotateYUncapped;
+          ? tiltEffectSettings.max
+          : rotateYUncapped;
 
     card.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) 
                           scale3d(${tiltEffectSettings.scale}, ${tiltEffectSettings.scale}, ${tiltEffectSettings.scale})`;
@@ -311,9 +310,9 @@ function addLoaderAnimation() {
       newUnit.classList.add("unit");
       newLine.append(newUnit);
       // wtf why doesn't this work
-      newUnit.style.width = "10vh";
-      newUnit.style.height = "10vh";
-      newLine.style.height = "10vh";
+      newUnit.style.width = "20vh";
+      newUnit.style.height = "20vh";
+      newLine.style.height = "20vh";
 
       setTimeout(() => {
         newUnit.style.opacity = 0;
@@ -349,9 +348,8 @@ function setScrollBarScript() {
       return documentHeight - windowHeight;
     };
     const percentage = Math.round((scroll_ / limit()) * 100);
-    scrollbar.style.marginTop = `${
-      (scrollbarInn.clientHeight / 100) * percentage - 20
-    }px`; // Assigning marginTop in pixels;
+    scrollbar.style.marginTop = `${(scrollbarInn.clientHeight / 100) * percentage - 20
+      }px`; // Assigning marginTop in pixels;
     if (window.scrollY >= 10) {
       navbar.style.transform = "translateY(-6vh)";
       navbarExtra.style.transform = "translateY(6vh)";
@@ -409,7 +407,6 @@ async function loadAll() {
         navbar.style.transform = "translateY(0%)";
         navbarExtra.style.transform = "translateY(0%)";
         setTimeout(() => {
-          projectsTitleAnimateLoader.style.opacity = 1;
           //------------------------------------------------------
           fetch("src/js/projects.json")
             .then((response) => response.json())
@@ -448,6 +445,9 @@ async function loadAll() {
                   }
                 });
             });
+          setTimeout(() => {
+            projectsTitleAnimateLoader.style.opacity = 1;
+          }, 100)
           document.body.style.overflowY = "scroll";
           document
             .getElementById("text-subtle")
@@ -533,8 +533,8 @@ function baseWebsite() {
   messageButton.addEventListener("click", () => {
     window.open(`
       https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${encodeURIComponent(
-        "tkf.x1os@gmail.com"
-      )}&su=${encodeURIComponent(
+      "tkf.x1os@gmail.com"
+    )}&su=${encodeURIComponent(
       "HIRE-ME-CALLBACK from " + messageEmail.value
     )}&body=${encodeURIComponent(messageBody.value)}`);
     messageEmail.value = "";
@@ -560,3 +560,33 @@ function baseWebsite() {
 
 baseWebsite();
 console.log("HIRE ME: tkf.x1os@gmail.com");
+
+
+
+function newAnimateTextParalax(parallax, divider) {
+  parallax.classList.add("parallax-Element");
+  function eventFunc() {
+    document.addEventListener("mousemove", (event) => {
+      let _mouseX =
+        (event.clientX - document.documentElement.clientWidth / 2) / divider;
+      let _mouseY =
+        (event.clientY - document.documentElement.clientHeight / 2) / divider;
+
+      parallax.style.transform = `translate(${_mouseX}px, ${_mouseY}px)`;
+      parallax.style.webkitTransform = `translate(${_mouseX}px, ${_mouseY}px)`;
+      parallax.style.mozTransform = `translate(${_mouseX}px, ${_mouseY}px)`;
+
+      setTimeout(() => {
+        parallax.style.transition = "all  0s";
+      }, 300);
+    });
+    parallax.addEventListener("mouseleave", () => {
+      parallax.removeEventListener("mouseover", eventFunc);
+    })
+  }
+  // finally fixed this bs
+  if (window.innerWidth >= 770) {
+    parallax.addEventListener("mouseover", eventFunc);
+
+  }
+}
