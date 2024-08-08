@@ -22,7 +22,7 @@ if (window.location.search) {
 
 function clip(text) {
   navigator.clipboard.writeText(text).then(
-    function () {},
+    function () { },
     function (err) {
       console.error("Async: Could not copy text: ", err);
     }

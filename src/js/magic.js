@@ -441,6 +441,9 @@ async function loadAll() {
                     newProjectButton.title =
                       newProjectButton.title + element[3];
                   }
+                  if (element[4] == "true") {
+                    newItemProject.classList.add("favorite");
+                  }
                 });
             });
           setTimeout(() => {
