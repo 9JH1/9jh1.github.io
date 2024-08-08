@@ -8,6 +8,8 @@
   --foreground: var(--background);
   --text-disabled: rgb(112, 83, 122);
   --loader-color: white;
+  --text-favorite: rgb(138, 107, 8);
+  --text-new: var(--text-disabled);
 }
 
 /*
@@ -338,7 +340,13 @@ body {
 
     .new {
       button {
-        background: var(--text-disabled);
+        background: var(--text-new);
+      }
+    }
+
+    .favorite {
+      button {
+        background: var(--text-favorite);
       }
     }
   }
