@@ -423,12 +423,27 @@ body {
 
     .text-cont {
       .text {
-        line-height: 17vw;
-        opacity: 0;
-        font-size: 17vw;
-        overflow-y: hidden;
-        overflow-x: visible;
+        opacity: 1;
+        margin-bottom:1vw;
+        font-size: 3vw;
+        line-height:2.9vw;
+        white-space:pre;
         margin-left: 3vw;
+        height:fit-content;
+        font-family:monospace;
+        text-shadow:
+          0 0 60px var(--text-disabled),
+          0 0 10px var(--text-color)
+          ;
+          .effect {
+            opacity:0.8;
+            position: absolute;
+            width:100%;
+            background: repeating-linear-gradient(var(--background), var(--background) 10px, #9198e500 10px, #9198e500 25px);
+            height:100%;
+            top:0;
+            left:0;
+          }
       }
     }
 
@@ -497,6 +512,8 @@ body {
 .animate-item {
   display: inline-flex;
   background: var(--background);
+  white-space:pre;
+  font-size:3px;
 
   .inn {
     transform: translateY(100%) rotate(10deg);
@@ -537,7 +554,7 @@ body {
 
   .inner-active-text-item {
     text-wrap: nowrap;
-    opacity: 0;
+    opacity: 1;
     transform: rotate(2deg) translateY(2vw);
   }
 }

@@ -398,9 +398,9 @@ async function loadAll() {
   loader_page.style.opacity = 0;
   setTimeout(() => {
     loader_page.remove();
-    animate("lar-1", 20);
+    //animate("lar-1", 20);
     setTimeout(() => {
-      animate("lar-2", 20);
+      //animate("lar-2", 20);
       setTimeout(() => {
         navbar.style.transform = "translateY(0%)";
         navbarExtra.style.transform = "translateY(0%)";
@@ -453,18 +453,16 @@ async function loadAll() {
           document
             .getElementById("text-subtle")
             .addEventListener("click", () => {
-              textLarOne.innerHTML = "";
-              textLarTwo.innerHTML = "";
-              coolTextFunc(textLarOne, "MY", false, 50, 10);
-              coolTextFunc(textLarTwo, "WEBSITE", false, 50, 10);
+              //coolTextFunc(textLarOne, "MY", false, 50, 10);
+              //coolTextFunc(textLarTwo, "WEBSITE", false, 50, 10);
             });
           //------------------------------------------------------
         }, 500);
       }, 500);
     }, 200);
     setTimeout(() => {
-      document.getElementById("text-lar-1").innerText = "MY";
-      document.getElementById("text-lar-2").innerText = "WEBSITE";
+      //document.getElementById("text-lar-1").innerText = "MY";
+      //document.getElementById("text-lar-2").innerText = "WEBSITE";
     }, 3000);
   }, 300);
 }
