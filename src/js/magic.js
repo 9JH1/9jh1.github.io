@@ -565,9 +565,5 @@ console.log("HIRE ME: tkf.x1os@gmail.com");
 
 
 document.getElementById("dark").addEventListener("click", () => {
-  document.body.classList.toggle("transition-timer-dark");
   document.body.classList.toggle("dark");
-  setTimeout(() => {
-    document.body.classList.toggle("transition-timer-dark");
-  }, 1000)
 })

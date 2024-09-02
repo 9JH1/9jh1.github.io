@@ -17,13 +17,6 @@
   --color-accent: hsl(300, 80%, 80%);
 }
 
-
-.transition-timer-dark { 
-  * { 
-    transition: color 1s ease-in-out, background 1s ease-in-out !important;
-  }
-}
-
 /*
   --color-secondary: rgb(30, 11, 29);
   --color-primary: rgb(171, 217, 235);
