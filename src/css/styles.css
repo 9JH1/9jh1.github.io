@@ -3,21 +3,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
 
 :root {
-  --background: rgb(29, 29, 29);
-  --text-color: rgb(201, 201, 201);
-  --foreground: var(--background);
-  --text-disabled: rgb(112, 83, 122);
-  --loader-color: white;
-  --text-favorite: rgb(138, 107, 8);
-  --text-new: var(--text-disabled);
+  --color-primary: hsl(303, 50%, 90%);
+  --color-secondary: hsl(303, 50%, 10%);
+  --color-tertiary: hsl(3, 80%, 20%);
+  --color-accent: hsl(306, 53%, 47%);
+
+  
+}
+.dark {
+  --color-primary: hsl(305, 38%, 24%);
+  --color-secondary: hsl(0, 50%, 90%);
+  --color-tertiary: hsl(60, 80%, 80%);
+  --color-accent: hsl(300, 80%, 80%);
+}
+
+
+.transition-timer-dark { 
+  * { 
+    transition: color 1s ease-in-out, background 1s ease-in-out !important;
+  }
 }
 
 /*
-  --background: rgb(30, 11, 29);
-  --text-color: rgb(171, 217, 235);
-  --foreground: var(--background);
-  --text-disabled: rgb(187, 142, 179);
-  --loader-color: var(--text-color);
+  --color-secondary: rgb(30, 11, 29);
+  --color-primary: rgb(171, 217, 235);
+  --color-secondary: var(--color-secondary);
+  --color-accent: rgb(187, 142, 179);
+  --color-primary: var(--color-primary);
 */
 
 #noise {
@@ -65,12 +77,12 @@ body {
   font-family: "IBM Plex Mono", monospace;
   width: 100vw;
   height: 100vh;
-  background-color: var(--text-color);
+  background-color: var(--color-primary);
   margin: 0;
   padding: 0;
   font-size: calc(1.6vh);
   overflow-x: hidden;
-  color: var(--text-color);
+  color: var(--color-primary);
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow-y: hidden;
@@ -86,7 +98,7 @@ body {
       box-sizing: border-box;
       width: 100vw;
       height: fit-content;
-      border-bottom: solid 3px var(--text-color);
+      border-bottom: solid 3px var(--color-primary);
 
       .title {
         width: 100%;
@@ -95,7 +107,7 @@ body {
       }
 
       .timestamp {
-        color: var(--text-disabled);
+        color: var(--color-accent);
         margin-bottom: 10px;
       }
     }
@@ -107,8 +119,8 @@ body {
     height: fit-content;
     display: flex;
     z-index: 1000000;
-    background: var(--text-color);
-    color: var(--background);
+    background: var(--color-primary);
+    color: var(--color-secondary);
     box-sizing: border-box;
     padding: 1em;
     justify-content: space-between;
@@ -140,10 +152,10 @@ body {
       .form {
         * {
           font-family: "IBM Plex Mono";
-          background-color: var(--text-color);
+          background-color: var(--color-primary);
           border: none;
-          box-shadow: 0px 0px 0px 0.3em var(--background) inset;
-          color: var(--background);
+          box-shadow: 0px 0px 0px 0.3em var(--color-secondary) inset;
+          color: var(--color-secondary);
           outline: none;
           min-width: 100%;
           padding: 0.4em;
@@ -156,7 +168,7 @@ body {
         }
 
         *::placeholder {
-          color: var(--background);
+          color: var(--color-secondary);
           opacity: 1;
         }
 
@@ -170,7 +182,7 @@ body {
 
         #form-body {
           height: 3vw;
-          color: var(--background);
+          color: var(--color-secondary);
           padding: 0.5vw 1vw;
           box-sizing: border-box;
         }
@@ -190,7 +202,7 @@ body {
   #main {
     width: 100vw;
     height: 100vh;
-    background-color: var(--background);
+    background-color: var(--color-secondary);
   }
 
   .loader {
@@ -198,7 +210,7 @@ body {
     position: fixed;
     z-index: 100;
     transition: opacity 0.3s ease;
-    color: var(--text-disabled);
+    color: var(--color-accent);
 
     .top-out {
       width: 40%;
@@ -228,17 +240,39 @@ body {
 
     p {
       font-size: 1.6em;
-      color: var(--text-disabled);
+      color: var(--color-accent);
+    }
+    .links {
+      height:4vh;
+      display:flex;
+      flex-wrap: nowrap;
+      gap:1vh;
+
+      a { 
+        height:4vh;
+        width:4vh;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        cursor:pointer;
+
+        img { 
+          width:2.5vh;
+          height:2.5vh;
+
+        }
+        
+      }
     }
   }
 
   #mouse-move-cursor-dialog {
     width: fit-content;
     height: fit-content;
-    background-color: var(--background);
+    background-color: var(--color-secondary);
     padding: 0px;
     opacity: 0.9;
-    border: solid 2px var(--text-color);
+    border: solid 2px var(--color-primary);
     position: fixed;
     pointer-events: none;
     transform: translate(-50%, -50%);
@@ -269,7 +303,7 @@ body {
     .title,
     .item {
       width: 100%;
-      color: var(--text-disabled);
+      color: var(--color-accent);
       display: flex;
       align-items: center;
       justify-content: end;
@@ -283,7 +317,7 @@ body {
     .title {
       opacity: 0;
       font-size: 1.4em;
-      color: var(--text-color);
+      color: var(--color-primary);
       font-weight: 600;
       transition: opacity 0.5s ease;
       cursor: default;
@@ -293,7 +327,7 @@ body {
       button {
         font-family: "Silkscreen", sans-serif;
         border: unset;
-        color: var(--text-color);
+        color: var(--color-primary);
         z-index: 1;
         background: transparent;
         position: relative;
@@ -313,13 +347,13 @@ body {
         right: 0;
         height: 100%;
         width: 0;
-        background-color: var(--text-color);
+        background-color: var(--color-primary);
         z-index: -1;
         transition: width 250ms;
       }
 
       button:hover {
-        color: var(--background);
+        color: var(--color-secondary);
         scale: 1.1;
         transition: scale 0.3s ease-in-out;
       }
@@ -340,13 +374,13 @@ body {
 
     .new {
       button {
-        background: var(--text-new);
+        background: var(--color-accent);
       }
     }
 
     .favorite {
       button {
-        background: var(--text-favorite);
+        background: var(--color-accent);
       }
     }
   }
@@ -380,7 +414,7 @@ body {
     z-index: 98;
     transform: translateY(-10vh);
     transition: transform 1s ease;
-    color: var(--text-disabled);
+    color: var(--color-accent);
 
     .tp {
       width: 33.3%;
@@ -399,7 +433,7 @@ body {
     }
 
     .cent {
-      color: var(--text-color);
+      color: var(--color-primary);
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -422,24 +456,29 @@ body {
     box-sizing: border-box;
 
     .text-cont {
+      
       .text {
         opacity: 1;
         margin-bottom:1vw;
         font-size: 3vw;
         line-height:2.9vw;
         white-space:pre;
-        margin-left: 3vw;
+        padding-left: 3vw;
+        padding-right:3vw;
         height:fit-content;
+        animation: text-glow 10s ease-out  infinite;
         font-family:monospace;
+        position:relative;
+        overflow:hidden;
         text-shadow:
-          0 0 60px var(--text-disabled),
-          0 0 10px var(--text-color)
-          ;
+          0 0 60px var(--color-accent),
+          0 0 10px var(--color-primary);
           .effect {
             opacity:0.8;
             position: absolute;
             width:100%;
-            background: repeating-linear-gradient(var(--background), var(--background) 10px, #9198e500 10px, #9198e500 25px);
+            pointer-events: none;
+            background: repeating-linear-gradient(var(--color-secondary), var(--color-secondary) 1%, #9198e500 1%, #9198e500 1.75%);
             height:100%;
             top:0;
             left:0;
@@ -454,7 +493,7 @@ body {
       pointer-events: none;
       top: 0;
       left: 0;
-      opacity: 0.2;
+      opacity: 0.1;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
@@ -463,7 +502,7 @@ body {
       .cont-inn {
         width: 90%;
         height: 90%;
-        border: solid 0.3vw var(--text-color);
+        border: solid 0.25vw var(--color-primary);
         display: flex;
         flex-wrap: wrap;
         overflow: hidden;
@@ -477,9 +516,9 @@ body {
           background-color: transparent;
 
           .corner-box {
-            width: 0.75vw;
-            height: 0.75vw;
-            background: var(--text-color);
+            width: 0.55vw;
+            height: 0.55vw;
+            background: var(--color-primary);
           }
         }
       }
@@ -511,7 +550,7 @@ body {
 
 .animate-item {
   display: inline-flex;
-  background: var(--background);
+  background: var(--color-secondary);
   white-space:pre;
   font-size:3px;
 
@@ -538,8 +577,8 @@ body {
 }
 
 ::selection {
-  background: var(--text-color);
-  color: var(--background);
+  background: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 * {
@@ -660,8 +699,31 @@ body {
     transition: all 400ms ease-in-out;
 
     .unit {
-      background-color: var(--loader-color);
+      background-color: var(--color-primary);
       transition: all 400ms ease-in-out;
     }
   }
+}
+
+
+
+@keyframes text-glow {
+  0% { 
+
+    text-shadow:
+    0 0 60px var(--color-accent),
+    0 0 10px var(--color-primary);
+  }
+  50% { 
+
+    text-shadow:
+    0 0 0px var(--color-accent),
+    0 0 5px var(--color-primary);
+  }
+  100% { 
+    text-shadow:
+    0 0 60px var(--color-accent),
+    0 0 10px var(--color-primary);
+  }
+
 }
