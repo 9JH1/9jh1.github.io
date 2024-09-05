@@ -561,9 +561,17 @@ https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${encodeURIComponent(
 baseWebsite();
 console.log("HIRE ME: tkf.x1os@gmail.com");
 
-
-
-
-document.getElementById("dark").addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-})
+if (window.location.search) {
+  const searchResults = String(window.location.search).replace("?", "");
+  fetch("./src/js/ref.json")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      Object.keys(data).forEach((key) => {
+        if (key == searchResults) {
+          location.href= data[key];
+        }
+      });
+    });
+}

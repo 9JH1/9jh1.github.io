@@ -10,12 +10,6 @@
 
   
 }
-.dark {
-  --color-primary: hsl(305, 38%, 24%);
-  --color-secondary: hsl(0, 50%, 90%);
-  --color-tertiary: hsl(60, 80%, 80%);
-  --color-accent: hsl(300, 80%, 80%);
-}
 
 /*
   --color-secondary: rgb(30, 11, 29);
