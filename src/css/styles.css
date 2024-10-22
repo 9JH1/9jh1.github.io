@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
 
 :root {
-  --color-primary: hsl(303, 50%, 90%);
+  --color-primary: hsl(175, 38%, 72%);
   --color-secondary: hsl(303, 50%, 10%);
   --color-tertiary: hsl(3, 80%, 20%);
   --color-accent: hsl(306, 53%, 47%);
@@ -99,7 +99,7 @@ body {
       }
     }
   }
-
+  
   #about {
     overflow: hidden;
     width: 100vw;
@@ -405,6 +405,7 @@ body {
 
     .tp {
       width: 33.3%;
+      user-select:none;
       height: 100%;
       display: flex;
       align-items: center;
@@ -458,6 +459,7 @@ body {
         font-family:monospace;
         position:relative;
         overflow:hidden;
+        -webkit-text-stroke: 10px;
         text-shadow:
           0 0 60px var(--color-accent),
           0 0 10px var(--color-primary);

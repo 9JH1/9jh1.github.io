@@ -510,7 +510,7 @@ function baseWebsite() {
   window.addEventListener("DOMContentLoaded", addCustomKeyframe);
   // window frame tilt settings and trigger
   setTiltEffect(document.getElementsByClassName("lin-inn")[0], {
-    max: 15,
+    max: 5,
     perspective: 2000,
     scale: 1.0,
     speed: 1000,
@@ -521,7 +521,7 @@ function baseWebsite() {
   parallax("text-lar-1", 30);
   parallax("text-lar-2", 30);
   setTiltEffect(document.getElementById("text-subtle"), {
-    max: 15,
+    max: 5,
     perspective: 1500,
     scale: 1.0,
     speed: 5000,
