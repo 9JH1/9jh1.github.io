@@ -1,19 +1,5 @@
 [
     [
-        "Designs",
-        "https://github.com/9JH1/designs",
-        "08/06/2024",
-        " [DEPRECATED]",
-        "false"
-    ],
-    [
-        "Terminal Emulator",
-        "https://github.com/9JH1/terminaldisplay",
-        "27/12/2023",
-        "",
-        "false"
-    ],
-    [
         "Home Server",
         "https://github.com/9JH1/home-server",
         "25/05/2024",
@@ -26,20 +12,6 @@
         "26/04/2024",
         " [FINISHED] Highlighted",
         "true"
-    ],
-    [
-        "I3 Wallpaper Engine",
-        "https://github.com/9jh1/i3-wallpaper-engine",
-        "14/05/2024",
-        " [WIP]",
-        "false"
-    ],
-    [
-        "X3A",
-        "https://github.com/9jh1/X3A",
-        "26/03/2024",
-        " [WIP]",
-        "false"
     ],
     [
         "wallpaper-effect",
@@ -68,5 +40,13 @@
         "07/03/2024",
         " [UPDATING ]",
         "false"
+    ], 
+    [
+        "C testing", 
+        "https://github.com/9JH1/C", 
+        "09/23/2024", 
+        " [UPDATING] ",
+        "true"
+        
     ]
 ]
