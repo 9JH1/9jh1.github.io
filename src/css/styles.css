@@ -7,8 +7,6 @@
   --color-secondary: hsl(303, 50%, 10%);
   --color-tertiary: hsl(3, 80%, 20%);
   --color-accent: hsl(306, 53%, 47%);
-
-  
 }
 
 /*
@@ -99,7 +97,7 @@ body {
       }
     }
   }
-  
+
   #about {
     overflow: hidden;
     width: 100vw;
@@ -164,7 +162,7 @@ body {
         }
 
         #form-email {
-          border-top-right-radius: 1.2em
+          border-top-right-radius: 1.2em;
         }
 
         #form-body {
@@ -230,25 +228,23 @@ body {
       color: var(--color-accent);
     }
     .links {
-      height:4vh;
-      display:flex;
+      height: 4vh;
+      display: flex;
       flex-wrap: nowrap;
-      gap:1vh;
+      gap: 1vh;
 
-      a { 
-        height:4vh;
-        width:4vh;
-        display:flex;
+      a {
+        height: 4vh;
+        width: 4vh;
+        display: flex;
         align-items: center;
         justify-content: center;
-        cursor:pointer;
+        cursor: pointer;
 
-        img { 
-          width:2.5vh;
-          height:2.5vh;
-
+        img {
+          width: 2.5vh;
+          height: 2.5vh;
         }
-        
       }
     }
   }
@@ -298,7 +294,6 @@ body {
       box-sizing: border-box;
       min-height: fit-content;
       height: fit-content;
-
     }
 
     .title {
@@ -405,7 +400,7 @@ body {
 
     .tp {
       width: 33.3%;
-      user-select:none;
+      user-select: none;
       height: 100%;
       display: flex;
       align-items: center;
@@ -444,35 +439,37 @@ body {
     box-sizing: border-box;
 
     .text-cont {
-      
       .text {
         opacity: 1;
-        margin-bottom:1vw;
+        margin-bottom: 1vw;
         font-size: 3vw;
-        line-height:2.9vw;
-        font-weight:900;
-        white-space:pre;
+        line-height: 2.9vw;
+        font-weight: 900;
+        white-space: pre;
+        font-weight: 900;
         padding-left: 3vw;
-        padding-right:3vw;
-        height:fit-content;
-        animation: text-glow 10s ease-out  infinite;
-        font-family:monospace;
-        position:relative;
-        overflow:hidden;
-        -webkit-text-stroke: 10px;
-        text-shadow:
-          0 0 60px var(--color-accent),
-          0 0 10px var(--color-primary);
-          .effect {
-            opacity:0.8;
-            position: absolute;
-            width:100%;
-            pointer-events: none;
-            background: repeating-linear-gradient(var(--color-secondary), var(--color-secondary) 1%, #9198e500 1%, #9198e500 1.75%);
-            height:100%;
-            top:0;
-            left:0;
-          }
+        padding-right: 3vw;
+        height: fit-content;
+        animation: text-glow 10s ease-out infinite;
+        font-family: monospace;
+        position: relative;
+        overflow: hidden;
+        text-shadow: 0 0 60px var(--color-accent), 0 0 10px var(--color-primary);
+        .effect {
+          opacity: 0.8;
+          position: absolute;
+          width: 100%;
+          pointer-events: none;
+          background: repeating-linear-gradient(
+            var(--color-secondary),
+            var(--color-secondary) 1%,
+            #9198e500 1%,
+            #9198e500 1.75%
+          );
+          height: 100%;
+          top: 0;
+          left: 0;
+        }
       }
     }
 
@@ -541,8 +538,8 @@ body {
 .animate-item {
   display: inline-flex;
   background: var(--color-secondary);
-  white-space:pre;
-  font-size:3px;
+  white-space: pre;
+  font-size: 3px;
 
   .inn {
     transform: translateY(100%) rotate(10deg);
@@ -695,25 +692,14 @@ body {
   }
 }
 
-
-
 @keyframes text-glow {
-  0% { 
-
-    text-shadow:
-    0 0 60px var(--color-accent),
-    0 0 10px var(--color-primary);
+  0% {
+    text-shadow: 0 0 60px var(--color-accent), 0 0 10px var(--color-primary);
   }
-  50% { 
-
-    text-shadow:
-    0 0 0px var(--color-accent),
-    0 0 5px var(--color-primary);
+  50% {
+    text-shadow: 0 0 0px var(--color-accent), 0 0 5px var(--color-primary);
   }
-  100% { 
-    text-shadow:
-    0 0 60px var(--color-accent),
-    0 0 10px var(--color-primary);
+  100% {
+    text-shadow: 0 0 60px var(--color-accent), 0 0 10px var(--color-primary);
   }
-
 }
