@@ -6,10 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
     <script src="/src/js/scrape.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Cookie&family=Lexend:wght@100..900&display=swap');
+
+        .format-italic {
+            font-family: "Cookie", cursive !important;
+            font-weight: 100 !important;
+            font-size: 1.3em !important;
+            margin: 0px;
+            line-height: 10px;
+        }
+
+        .format-text {
+            font-family: 'Lexend', sans-serif;
+            font-weight: 400;
+            font-size: 1em;
+            margin: 0px;
+        }
+
+        .format-highlight {
+            color: green;
+            margin: 0px;
+        }
+
+        .format-underline {
+            text-decoration: underline;
+        }
+
+        .format-code {
+            white-space: pre;
+            border: 3px grey solid;
+            border-radius: 3px;
+            width: 100%;
+            box-sizing: border-box;
+            height: fit-content;
+            resize: none;
+            overflow: hidden;
+            padding: 5px;
+            font-family: 'Azeret Mono', monospace;
+            font-weight: 400;
+
+        }
+
+        .format-code-bold {
+            font-weight: 700;
+        }
+
+        .seperator {
+            width: 100%;
+            background: red;
+            height: 2px;
+            border-radius: 20px;
+            margin: 3vh 0px;
+        }
+    </style>
 </head>
 
 <body>
-    Journal Go here
+    <h2 class="format-text">
+
+        Hello <span class="format-italic format-highlight">World</span>
+        <br>
+        this is my format stylesheet for <a href="https://9jh1.github.io">my websites</a> journal/blogpage<br>
+
+        <div class="seperator"></div>
+        <div class="format-code"><span class="format-code-bold">Hello World</span><br>this is my format stylesheet for
+            my
+            websites journal/blogpage</div>
+    </h2>
 </body>
 
 </html>
