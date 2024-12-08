@@ -3,8 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
 
 :root {
-  --color-primary: hsl(175, 38%, 72%);
-  --color-secondary: hsl(303, 50%, 10%);
+  --color-primary: hsl(175, 36%, 60%);
+  --color-secondary: hsl(301, 51%, 21%);
   --color-tertiary: hsl(3, 80%, 20%);
   --color-accent: hsl(306, 53%, 47%);
 }
@@ -25,7 +25,7 @@
   top: 0;
   left: 0;
   pointer-events: none;
-  opacity: 0.025;
+  opacity: 0.08;
   scale: 1.5;
 
   img {
@@ -433,43 +433,21 @@ body {
     overflow: hidden;
     display: flex;
     align-items: center;
-    font-family: "Poppins", sans-serif;
+  font-family: "IBM Plex Mono", monospace;
     min-height: 30vh;
     font-weight: 700;
     box-sizing: border-box;
 
     .text-cont {
+      margin-left:5vw;
       .text {
         opacity: 1;
-        margin-bottom: 1vw;
-        font-size: 3vw;
-        line-height: 2.9vw;
-        font-weight: 900;
-        white-space: pre;
-        font-weight: 900;
-        padding-left: 3vw;
-        padding-right: 3vw;
-        height: fit-content;
-        animation: text-glow 10s ease-out infinite;
-        font-family: monospace;
-        position: relative;
-        overflow: hidden;
-        text-shadow: 0 0 60px var(--color-accent), 0 0 10px var(--color-primary);
-        .effect {
-          opacity: 0.8;
-          position: absolute;
-          width: 100%;
-          pointer-events: none;
-          background: repeating-linear-gradient(
-            var(--color-secondary),
-            var(--color-secondary) 1%,
-            #9198e500 1%,
-            #9198e500 1.75%
-          );
-          height: 100%;
-          top: 0;
-          left: 0;
+        font-size:3vw;
+        .quote-author { 
+          font-size:1.5vw;
+          font-weight:600;
         }
+
       }
     }
 
@@ -480,7 +458,7 @@ body {
       pointer-events: none;
       top: 0;
       left: 0;
-      opacity: 0.1;
+      opacity: 0.2;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
@@ -643,7 +621,7 @@ body {
   #main {
     .text-cont {
       .text {
-        margin-left: 3vw !important;
+        font-size:3.9vw !important;
       }
     }
   }

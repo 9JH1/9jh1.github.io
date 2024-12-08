@@ -198,22 +198,22 @@ function parallax(elementId, divider) {
   const parallax = document.getElementById(elementId);
   parallax.classList.add("parallax-Element");
   // finally fixed this bs
-  if (window.innerWidth >= 770) {
-    document.addEventListener("mousemove", (event) => {
-      let _mouseX =
-        (event.clientX - document.documentElement.clientWidth / 2) / divider;
-      let _mouseY =
-        (event.clientY - document.documentElement.clientHeight / 2) / divider;
+  document.addEventListener("mousemove", (event) => {
+    let _mouseX =
+      (event.clientX - document.documentElement.clientWidth / 2) / divider;
+    let _mouseY =
+      (event.clientY - document.documentElement.clientHeight / 2) / divider;
 
+    if (window.innerWidth >= 770) {
       parallax.style.transform = `translate(${_mouseX}px, ${_mouseY}px)`;
       parallax.style.webkitTransform = `translate(${_mouseX}px, ${_mouseY}px)`;
       parallax.style.mozTransform = `translate(${_mouseX}px, ${_mouseY}px)`;
+    }
+    setTimeout(() => {
+      parallax.style.transition = "all  0s";
+    }, 300);
+  });
 
-      setTimeout(() => {
-        parallax.style.transition = "all  0s";
-      }, 300);
-    });
-  }
 }
 
 function coolTextFunc(
@@ -260,31 +260,33 @@ function setTiltEffect(element, tiltEffectSettings) {
   }
 
   function cardMouseMove(event) {
-    const cardWidth = card.offsetWidth;
-    const cardHeight = card.offsetHeight;
-    const centerX = card.offsetLeft + cardWidth / 2;
-    const centerY = card.offsetTop + cardHeight / 2;
-    const mouseX = event.clientX - centerX;
-    const mouseY = event.clientY - centerY;
-    const rotateXUncapped =
-      +1 * ((tiltEffectSettings.max * mouseY) / (cardHeight / 2));
-    const rotateYUncapped =
-      -1 * ((tiltEffectSettings.max * mouseX) / (cardWidth / 2));
-    const rotateX =
-      rotateXUncapped < -tiltEffectSettings.max
-        ? -tiltEffectSettings.max
-        : rotateXUncapped > tiltEffectSettings.max
-          ? tiltEffectSettings.max
-          : rotateXUncapped;
-    const rotateY =
-      rotateYUncapped < -tiltEffectSettings.max
-        ? -tiltEffectSettings.max
-        : rotateYUncapped > tiltEffectSettings.max
-          ? tiltEffectSettings.max
-          : rotateYUncapped;
+    if (window.innerWidth >= 770) {
+      const cardWidth = card.offsetWidth;
+      const cardHeight = card.offsetHeight;
+      const centerX = card.offsetLeft + cardWidth / 2;
+      const centerY = card.offsetTop + cardHeight / 2;
+      const mouseX = event.clientX - centerX;
+      const mouseY = event.clientY - centerY;
+      const rotateXUncapped =
+        +1 * ((tiltEffectSettings.max * mouseY) / (cardHeight / 2));
+      const rotateYUncapped =
+        -1 * ((tiltEffectSettings.max * mouseX) / (cardWidth / 2));
+      const rotateX =
+        rotateXUncapped < -tiltEffectSettings.max
+          ? -tiltEffectSettings.max
+          : rotateXUncapped > tiltEffectSettings.max
+            ? tiltEffectSettings.max
+            : rotateXUncapped;
+      const rotateY =
+        rotateYUncapped < -tiltEffectSettings.max
+          ? -tiltEffectSettings.max
+          : rotateYUncapped > tiltEffectSettings.max
+            ? tiltEffectSettings.max
+            : rotateYUncapped;
 
-    card.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) 
+      card.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) 
                           scale3d(${tiltEffectSettings.scale}, ${tiltEffectSettings.scale}, ${tiltEffectSettings.scale})`;
+    }
   }
 
   function cardMouseLeave(event) {
@@ -517,16 +519,7 @@ function baseWebsite() {
     easing: "cubic-bezier(.03,.98,.52,.99)",
   });
   // parallax triggers
-  parallax("noise", 100);
-  parallax("text-lar-1", 30);
-  parallax("text-lar-2", 30);
-  setTiltEffect(document.getElementById("text-subtle"), {
-    max: 5,
-    perspective: 1500,
-    scale: 1.0,
-    speed: 5000,
-    easing: "cubic-bezier(.03,.98,.52,.99)",
-  });
+
   //message button triggers
   messageBody.value = "Body";
   messageButton.addEventListener("click", () => {
@@ -543,6 +536,9 @@ https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${encodeURIComponent(
   messageBody.addEventListener("focus", () => {
     messageBody.value = "";
   });
+
+  parallax("noise", 200);
+  parallax("text-lar", 100);
 
   //set the current status of the clock
   setTime();
@@ -570,7 +566,7 @@ if (window.location.search) {
     .then((data) => {
       Object.keys(data).forEach((key) => {
         if (key == searchResults) {
-          location.href= data[key];
+          location.href = data[key];
         }
       });
     });
