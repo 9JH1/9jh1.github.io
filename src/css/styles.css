@@ -622,6 +622,9 @@ body {
     .text-cont {
       .text {
         font-size:3.9vw !important;
+        .quote-author { 
+          font-size:3.2vw !important;
+        }
       }
     }
   }
