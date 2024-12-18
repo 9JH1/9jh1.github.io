@@ -354,12 +354,6 @@ body {
       }
     }
 
-    .new {
-      button {
-        background: var(--color-accent);
-      }
-    }
-
     .favorite {
       button {
         background: var(--color-accent);

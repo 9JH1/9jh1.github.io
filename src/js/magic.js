@@ -445,6 +445,7 @@ async function loadAll() {
                   }
                   if (element[4] == "true") {
                     newItemProject.classList.add("favorite");
+                    console.log(element);
                   }
                 });
             });
