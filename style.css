@@ -1,0 +1,87 @@
+:root {
+	--bg: black;
+	--fg: white;
+	--ac: pink;
+	--on-ac:purple;
+}
+
+* {
+	margin: 0px;
+	padding: 0;
+	font-size:35px;
+	border: none;
+	font-family: monospace;
+}
+
+body {
+	color: var(--fg);
+	background: var(--bg);
+}
+
+body {
+	box-sizing: border-box;
+	overflow-y: scroll;
+}
+
+.root {
+	overflow-x: hidden;
+	padding-left: var(--unit-w);
+	padding-top: var(--unit-h);
+	box-sizing: border-box;
+}
+
+.startup {
+	width: fit-content;
+	background: red;
+	height: fit-content;
+	padding: 0px;
+}
+
+hr {
+	border-top: solid 1px var(--fg);
+	margin-top: var(--unit-h);
+	margin-bottom: var(--unit-h);
+}
+
+.list p {
+	padding-left: calc(var(--unit-w) * 2);
+	width: 100%;
+	background: var(--fg);
+	color: var(--bg);
+}
+
+#content {
+	display: none;
+}
+
+mark {
+	color: var(--bg);
+	background: var(--fg);
+}
+
+.s-list div {
+	background:var(--fg);
+	position:relative;
+	color: var(--bg);
+}
+
+.s-list div div {
+	padding-left: calc(var(--unit-w) * 4);
+}
+
+.s-list div:not(:last-child) {
+	margin-bottom: var(--unit-h);
+}
+
+.l-text {
+	position:absolute;
+	right:0;
+	top:0;
+	background: var(--ac);
+	color: var(--on-ac)
+}
+
+*::-moz-selection, *::selection {
+  background-color: var(--fg);
+  color: var(--bg);
+}

@@ -1,0 +1,24 @@
+{
+	"projects": [
+		{
+			"name": "PLib",
+			"url": "https://github.com/9jh1/plib",
+			"tags": ["c","opensource", "library"],
+			"tagline": "Ansi C",
+			"description": [
+				{
+					"cont": "Simplistic argument parsing.",
+					"file": ["plib.c", "plib.h"]
+				},
+				{
+					"cont": "Basic non-threaded input loop with full mouse support.",
+					"file": ["lib/input.c", "lib/input.h"]
+				},
+				{
+					"cont": "Optimised Box renderer for TUI applications",
+					"file": ["lib/input.c", "lib.input.h"]
+				}
+			]
+		}
+	]
+}
