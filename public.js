@@ -52,7 +52,7 @@ window.onload = function()
 	});
 
 	// Set dimensions of root element
-	function resize_root_element()
+	function resize_root_element() 
 	{
 		const u_w = (Math.floor(window.innerWidth / unit.width) - 1) * unit.width;
 		/* const u_h = (Math.floor(window.innerHeight / unit.height) - 1) * unit.height; */
@@ -72,7 +72,7 @@ window.onload = function()
 	const projw = document.getElementById("projects");
 	const jourw = document.getElementById("journal");
 
-	fetch('http://wish-reggae.gl.at.ply.gg:10108/data_json')
+	fetch('data.json')
 		.then(res => {
 			if (!res.ok)
 				window.alert("data.json couldent be loaded..");
