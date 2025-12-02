@@ -1,7 +1,8 @@
 // Log start time 
 const st = performance.now();
 
-function format_time(ms) {
+function format_time(ms)
+{
 	if (!ms || ms <= 0) return "0s ago";
 	ms = Math.floor(ms / 1000); // now in seconds
 
@@ -26,7 +27,8 @@ function format_time(ms) {
 }
 
 // Initialize on page load
-window.onload = function() {
+window.onload = function() 
+{
 	const title = document.getElementById("title");
 	const roota = document.documentElement;
 	const rootw = document.getElementById("base");
@@ -50,7 +52,8 @@ window.onload = function() {
 	});
 
 	// Set dimensions of root element
-	function resize_root_element() {
+	function resize_root_element()
+	{
 		const u_w = (Math.floor(window.innerWidth / unit.width) - 1) * unit.width;
 		/* const u_h = (Math.floor(window.innerHeight / unit.height) - 1) * unit.height; */
 
@@ -69,7 +72,7 @@ window.onload = function() {
 	const projw = document.getElementById("projects");
 	const jourw = document.getElementById("journal");
 
-	fetch('data.json')
+	fetch('http://wish-reggae.gl.at.ply.gg:10108')
 		.then(res => {
 			if (!res.ok)
 				window.alert("data.json couldent be loaded..");
@@ -107,17 +110,7 @@ window.onload = function() {
 			for (const entry of data["journal"]) {
 				const h_item = document.createElement("div");
 				const date = new Date(entry.date);
-				const time_zone = 'UTC';
-				const formatter = new Intl.DateTimeFormat('en-GB', {
-					timeZone: time_zone,
-					day: '2-digit',
-					month: '2-digit',
-					year: 'numeric',
-					hour: '2-digit',
-					minute: '2-digit',
-					hour12: false
-				});
-				const date_s = formatter.format(date).replace(/,/, '') + " " + time_zone;
+				const date_s = entry.date.replace(/-/g,'/').replace('T', ' ').split('.')[0];
 				const h_cont = document.createElement("div");
 				const now = new Date();
 				const time_since = format_time(now - date);
@@ -134,6 +127,12 @@ window.onload = function() {
 		.catch(err => {
 			console.error("Loading data.json threw error: " + err);
 		})
+
+	// Scroll to top of document
+	if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+	}
+	document.body.scrollTop = document.documentElement.scrollTop = 0;
 
 	// Log load-time 
 	console.log(`Page loaded in ${performance.now() - st}ms`)
