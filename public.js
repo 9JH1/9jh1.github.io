@@ -34,29 +34,31 @@ function format_time(date) {
 
 // Initialize on page load
 window.onload = function() {
-	const title = document.getElementById("title");
-	const roota = document.documentElement;
-	const start = document.getElementById("startup");
-	const rootw = document.getElementById("content");
+	if (page_load == -1) {
+		const title = document.getElementById("title");
+		const roota = document.documentElement;
+		const start = document.getElementById("startup");
+		const rootw = document.getElementById("content");
 
-	// Initialize page
-	const unit = start.getBoundingClientRect();
-	const default_title = title.innerText;
-	start.remove();
-	roota.style.setProperty("--unit-w", unit.width + "px");
-	roota.style.setProperty("--unit-h", unit.height + "px");
+		// Initialize page
+		const unit = start.getBoundingClientRect();
+		const default_title = title.innerText;
+		start.remove();
+		roota.style.setProperty("--unit-w", unit.width + "px");
+		roota.style.setProperty("--unit-h", unit.height + "px");
 
-	// Set dimensions of root element
-	function resize_root_element() {
-		rootw.style.width = (Math.floor(window.innerWidth / unit.width) - 1) * unit.width + "px"
+		// Set dimensions of root element
+		function resize_root_element() {
+			rootw.style.width = (Math.floor(window.innerWidth / unit.width) - 1) * unit.width + "px"
+		}
+
+		resize_root_element();
+		window.addEventListener("resize", resize_root_element);
+
+		// Load json data
+		const projw = document.getElementById("projects");
+		const jourw = document.getElementById("journal");
 	}
-
-	resize_root_element();
-	window.addEventListener("resize", resize_root_element);
-
-	// Load json data
-	const projw = document.getElementById("projects");
-	const jourw = document.getElementById("journal");
 
 	fetch('data.json')
 		.then(res => {
@@ -75,7 +77,8 @@ window.onload = function() {
 					out += `tags   : ${loc.tags.join(", ")}\n`;
 					out += `date   : ${loc.date}\n`;
 					out += `posted : ${format_time(new Date(loc.date))}\n`
-					out += `--------------\n`;
+					out += `url    : ${location.href}\n`
+					out += `---------------------------\n`;
 					out += `${loc.content}`;
 					document.body.innerText = out;
 				}
