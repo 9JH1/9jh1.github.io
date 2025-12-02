@@ -9,7 +9,6 @@
 * {
 	margin: 0px;
 	font-size:35px;
-	border: none;
 	font-family: monospace;
 }
 
@@ -20,14 +19,7 @@ body {
 	overflow-y: scroll;
 }
 
-.root {
-	overflow-x: hidden;
-	padding-left: var(--unit-w);
-	padding-top: var(--unit-h);
-	box-sizing: border-box;
-}
-
-.startup {
+#startup {
 	width: fit-content;
 	background: red;
 	height: fit-content;
@@ -41,7 +33,10 @@ hr {
 }
 
 #content {
-	display: none;
+	overflow-x: hidden;
+	padding-left: var(--unit-w);
+	padding-top: var(--unit-h);
+	box-sizing: border-box;
 }
 
 body::selection {

@@ -2,10 +2,7 @@
 const st = performance.now();
 
 function format_time(date) {
-	let ms = Date.now() - date.getTime();
-	console.log(ms);
-	if (!ms || ms <= 0) return "0s ago";
-	ms = Math.floor(ms / 1000); 
+	let ms = Math.floor((Date.now() - date.getTime()) / 1000); 
 
 	const units = [
 		{ label: "d", secs: 86400 },
@@ -31,19 +28,13 @@ function format_time(date) {
 window.onload = function() {
 	const title = document.getElementById("title");
 	const roota = document.documentElement;
-	const rootw = document.getElementById("base");
-	const wcont = document.getElementById("content");
+	const start = document.getElementById("startup");
+	const rootw = document.getElementById("content");
 
 	// Initialize page
-	const unit = rootw.getBoundingClientRect();
-	const default_title = "Home"
-
-	title.innerText = default_title;
-	rootw.classList.remove("startup");
-	rootw.classList.add("root");
-	rootw.innerHTML = "";
-
-	// Set styles
+	const unit = start.getBoundingClientRect();
+	const default_title = title.innerText;
+	start.remove();
 	roota.style.setProperty("--unit-w", unit.width + "px");
 	roota.style.setProperty("--unit-h", unit.height + "px");
 
@@ -55,20 +46,12 @@ window.onload = function() {
 	resize_root_element();
 	window.addEventListener("resize", resize_root_element);
 
-	// Load content 
-	let out = "";
-	wcont.innerHTML.split('\n').forEach((line) => out += line.trimStart());
-	rootw.innerHTML = out;
-	wcont.remove();
-
 	// Load json data
 	const projw = document.getElementById("projects");
 	const jourw = document.getElementById("journal");
 
 	fetch('data.json')
 		.then(res => {
-			if (!res.ok)
-				window.alert("data.json couldent be loaded..");
 			return res.json();
 		})
 		.then(data => {
@@ -89,13 +72,8 @@ window.onload = function() {
 				}
 
 
-				h_item.addEventListener("mouseenter", () => {
-					title.innerText = `${project.name} | ${project.tagline}`
-				});
-
-				h_item.addEventListener("mouseleave", () => {
-					title.innerText = default_title;
-				});
+				h_item.addEventListener("mouseenter", () => title.innerText = `${project.name} | ${project.tagline}`);
+				h_item.addEventListener("mouseleave", () => title.innerText = default_title);
 			}
 
 
