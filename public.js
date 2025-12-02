@@ -117,7 +117,7 @@ window.onload = function()
 
 				h_item.classList.add("li");
 				h_item.innerHTML += `<p><b>${entry.title}</b></p>`;
-				h_item.innerHTML += `<span class="l-text" title="${date_s}">${time_since} | ${entry.tags}</span>`;
+				h_item.innerHTML += `<span class="l-text" title="${date_s}">${time_since} | ${entry.tags.join(", ")}</span>`;
 
 				h_item.append(h_cont);
 				h_cont.innerText = entry.content;

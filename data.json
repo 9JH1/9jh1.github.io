@@ -7,15 +7,15 @@
 			"tagline": "Ansi C library",
 			"description": [
 				{
-					"cont": "Simplistic argument parsing.",
+					"cont": "Simple argument parsing that allows you to easily set up your program without the need for bukly and ugly loops and else if blocks.",
 					"file": ["plib.c", "plib.h"]
 				},
 				{
-					"cont": "Basic non-threaded input loop with full mouse support.",
+					"cont": "Basic non-threaded input loop that allows for not just regular keys but all mouse input (SCROLL, MOVE, RELEASE) along with a few special keys eg Control+G.",
 					"file": ["lib/input.c", "lib/input.h"]
 				},
 				{
-					"cont": "Optimised Box renderer for TUI applications",
+					"cont": "Optimised styled box renderer that allows you to draw a box onto the screen at any point. this is bundled with the input loop code as you can easily set up input detection on boxes using it.",
 					"file": ["lib/input.c", "lib.input.h"]
 				}
 			]
@@ -27,23 +27,23 @@
 			"tagline": "Ansi C",
 			"description": [
 				{
-					"cont": "runs a command on file content update.",
-					"file": "arr2.c"
+					"cont": "Takes in a file and watches its contense, if the contense changes it runs a given command.",
+					"file": "arr.c"
 				}
 			]
 		},
 		{
 			"name": "xobar",
 			"url": "https://github.com/9JH1/xobar",
-			"tags": ["c", "opensource", "tomlc", "xobar"],
+			"tags": ["c", "opensource", "tomlc", "xobar", "depricated"],
 			"tagline": "Status bar",
 			"description": [
 				{
-					"cont": "Custom text statusbar.",
+					"cont": "Custom text statusbar. Made as a replacement for i3status.",
 					"file": ""
 				}, 
 				{
-					"cont": "Uses TOMLC for toml configuration.",
+					"cont": "Uses the tomlc library to parse a toml configuration file",
 					"file": ""
 				}
 			]
@@ -76,7 +76,7 @@
 			"title": "New projects",
 			"date":"2025-12-02T02:23:06.100Z",
 			"tags": ["projects", "wip", "c", "navtui", "0bchat"],
-			"content": "Ive started development on 0bchat - A end to end encrypted chat client using C. With PLib V5.0.1 I've started writing navtui, a navidrome client terminal application."
+			"content": "Ive started development on 0bchat - A end to end encrypted chat client using C. With PLib V5.0.1 I've started writing navtui, a navidrome client terminal application, both of these projects are privated at the moment but will go public on their first release. I don't want another incident with unfinished repos ehm motionlayer.."
 		}
 	]
 }
