@@ -1,8 +1,16 @@
 // Log start time 
 const st = performance.now();
 
+const url = window.location.search;
+const url_params = new URLSearchParams(url);
+let page_load = -1;
+
+if (url_params.has("p")) {
+	page_load = url_params.get("p");
+}
+
 function format_time(date) {
-	let ms = Math.floor((Date.now() - date.getTime()) / 1000); 
+	let ms = Math.floor((Date.now() - date.getTime()) / 1000);
 
 	const units = [
 		{ label: "d", secs: 86400 },
@@ -18,7 +26,7 @@ function format_time(date) {
 			str += `${val}${label} `;
 			ms %= secs;
 		}
-		if (str) break; 
+		if (str) break;
 	}
 
 	return (str || "0s").trim() + " ago";
@@ -55,50 +63,84 @@ window.onload = function() {
 			return res.json();
 		})
 		.then(data => {
-			for (const project of data["projects"]) {
-				const h_item = document.createElement("div");
-				const h_item_desc_ul = document.createElement("ul");
-				const h_item_desc_div = document.createElement("div");
+			if (page_load != -1) {
+				if (page_load > data["journal"].length) {
+					document.body.innerHTML = "404";
+					document.head.innerHTML = "";
+				} else {
+					const loc = data["journal"][page_load];
+					let out = "";
 
-				h_item.classList.add("li");
-				h_item.innerHTML += `<p><a href="${project.url}">${project.name}</a></p>`
-				h_item.innerHTML += `<span class="l-text" title="description | tag(s)">${project.tagline} | ${project.tags.join(", ")}</span>`
-				h_item.append(h_item_desc_div);
-				h_item_desc_div.append(h_item_desc_ul);
-				projw.append(h_item);
+					out += `title  : ${loc.title}\n`;
+					out += `tags   : ${loc.tags.join(", ")}\n`;
+					out += `date   : ${loc.date}\n`;
+					out += `posted : ${format_time(new Date(loc.date))}`
+					out += `--------------\n`;
+					out += `${loc.content}`;
+					document.body.innerText = out;
+				}
+				document.head.innerHTML = "";
+				return;
 
-				for (const desc of project["description"]) {
-					h_item_desc_ul.innerHTML += `<li>${desc.cont}</li>`
+			} else {
+				for (const project of data["projects"]) {
+					const h_item = document.createElement("div");
+					const h_item_desc_ul = document.createElement("ul");
+					const h_item_desc_div = document.createElement("div");
+
+					h_item.classList.add("li");
+					h_item.innerHTML += `<p><a href="${project.url}">${project.name}</a></p>`
+					h_item.innerHTML += `<span class="l-text" title="description | tag(s)">${project.tagline} | ${project.tags.join(", ")}</span>`
+					h_item.append(h_item_desc_div);
+					h_item_desc_div.append(h_item_desc_ul);
+					projw.append(h_item);
+
+					for (const desc of project["description"]) {
+						h_item_desc_ul.innerHTML += `<li>${desc.cont}</li>`
+					}
+
+
+					h_item.addEventListener("mouseenter", () => title.innerText = `${project.name} | ${project.tagline}`);
+					h_item.addEventListener("mouseleave", () => title.innerText = default_title);
 				}
 
+				for (const [index, entry] of data["journal"].entries()) {
+					const h_item = document.createElement("div");
+					const h_cont = document.createElement("div");
+					const date = new Date(entry.date);
+					const h_share = document.createElement("span");
+					const date_s = date.toLocaleDateString(undefined, {
+						year: 'numeric',
+						month: 'numeric',
+						day: 'numeric'
+					}) + " " + date.toLocaleTimeString(undefined, {
+						hour: '2-digit',
+						minute: '2-digit',
+						second: '2-digit',
+						hour12: false
+					});
 
-				h_item.addEventListener("mouseenter", () => title.innerText = `${project.name} | ${project.tagline}`);
-				h_item.addEventListener("mouseleave", () => title.innerText = default_title);
-			}
+					h_item.classList.add("li");
+					h_item.innerHTML += `<p><b>${entry.title}</b> </p>`;
+					h_item.innerHTML += `<span class="l-text" title="Posted ${date_s}">${format_time(date)} | ${entry.tags.join(", ")}</span>`;
+					h_cont.innerText = entry.content + '\n';
 
+					h_share.classList.add("share");
+					h_share.innerText = "Copy Share Link"
 
-			for (const entry of data["journal"]) {
-				const h_item = document.createElement("div");
-				const h_cont = document.createElement("div");
-				const date = new Date(entry.date);
-				const date_s = date.toLocaleDateString(undefined, {
-					year: 'numeric',
-					month: 'numeric',
-					day: 'numeric'
-				}) + " " + date.toLocaleTimeString(undefined, {
-					hour: '2-digit',
-					minute: '2-digit',
-					second: '2-digit',
-					hour12: false
-				});
+					h_share.addEventListener("click", () => {
+						const url_text = `${location.href}?p=${index}`;
+						navigator.clipboard.writeText(url_text)
+							.then(() => {
+								console.log('Text copied to clipboard');
+								alert('URL copied: ' + url_text);
+							})
+					});
 
-				h_item.classList.add("li");
-				h_item.innerHTML += `<p><b>${entry.title}</b></p>`;
-				h_item.innerHTML += `<span class="l-text" title="Posted ${date_s}">${format_time(date)} | ${entry.tags.join(", ")}</span>`;
-				h_cont.innerText = entry.content;
-
-				h_item.append(h_cont);
-				jourw.append(h_item);
+					h_item.append(h_cont);
+					h_cont.append(h_share);
+					jourw.append(h_item);
+				}
 			}
 		})
 
@@ -106,6 +148,7 @@ window.onload = function() {
 	if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 	document.body.scrollTop = document.documentElement.scrollTop = 0;
 
-	// Log load-time 
-	console.log(`Page loaded in ${performance.now() - st}ms`)
 }
+
+// Log load-time 
+console.log(`Page loaded in ${performance.now() - st}ms`)
