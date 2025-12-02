@@ -3,7 +3,7 @@
 		{
 			"name": "PLib",
 			"url": "https://github.com/9jh1/plib",
-			"tags": ["c","opensource", "library"],
+			"tags": ["c","opensource", "library", "plib"],
 			"tagline": "Ansi C library",
 			"description": [
 				{
@@ -23,7 +23,7 @@
 		{
 			"name": "Auto Read-Run(er)",
 			"url": "https://github.com/9jh1/arr",
-			"tags": ["c", "opensource", "gnu"],
+			"tags": ["c", "opensource", "gnu", "arr"],
 			"tagline": "Ansi C",
 			"description": [
 				{
@@ -35,7 +35,7 @@
 		{
 			"name": "xobar",
 			"url": "https://github.com/9JH1/xobar",
-			"tags": ["c", "opensource", "tomlc"],
+			"tags": ["c", "opensource", "tomlc", "xobar"],
 			"tagline": "Status bar",
 			"description": [
 				{
@@ -51,11 +51,15 @@
 		{
 			"name": "motionlayer",
 			"url": "https://github.com/9JH1/motionlayer",
-			"tags": ["c", "opensource", "wip"],
+			"tags": ["c", "opensource", "wip", "motionlayer"],
 			"tagline": "X11 video wallpaper",
 			"description" : [
 				{
 					"cont": "Uses MPV to set a video wallpaper",
+					"file": ""
+				},
+				{
+					"cont": "Use https://github.com/9jh1/C instead",
 					"file": ""
 				}
 			]
@@ -67,6 +71,12 @@
 			"date": "2025-12-02T00:20:19.976Z",
 			"tags": ["notopic"],
 			"content": "Hello World!\nWelcome to my new website!"
+		},
+		{
+			"title": "New projects",
+			"date":"2025-12-02T02:23:06.100Z",
+			"tags": ["projects", "wip", "c", "navtui", "0bchat"],
+			"content": "Ive started development on 0bchat - A end to end encrypted chat client using C. With PLib V5.0.1 I've started writing navtui, a navidrome client terminal application."
 		}
 	]
 }
