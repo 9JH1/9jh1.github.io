@@ -68,13 +68,13 @@
 	"journal": [
 		{
 			"title": "Initial Commit",
-			"date": "2025-12-02T00:20:19.976Z",
+			"date": "2025-12-01T23:20:19.976Z",
 			"tags": ["notopic"],
 			"content": "Hello World!\nWelcome to my new website!"
 		},
 		{
 			"title": "New projects",
-			"date":"2025-12-02T02:23:06.100Z",
+			"date": "2025-12-02T01:23:06.100Z",
 			"tags": ["projects", "wip", "c", "navtui", "0bchat"],
 			"content": "Ive started development on 0bchat - A end to end encrypted chat client using C. With PLib V5.0.1 I've started writing navtui, a navidrome client terminal application, both of these projects are privated at the moment but will go public on their first release. I don't want another incident with unfinished repos ehm motionlayer.."
 		}
