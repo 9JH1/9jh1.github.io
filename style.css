@@ -16,9 +16,6 @@
 body {
 	color: var(--fg);
 	background: var(--bg);
-}
-
-body {
 	box-sizing: border-box;
 	overflow-y: scroll;
 }
@@ -84,4 +81,8 @@ mark {
 *::-moz-selection, *::selection {
   background-color: var(--fg);
   color: var(--bg);
+}
+
+a {
+	color:aqua;
 }
