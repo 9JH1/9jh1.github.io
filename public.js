@@ -79,6 +79,13 @@ window.onload = function() {
 					out += `${loc.content}`;
 					document.body.innerText = out;
 				}
+
+				// styles
+				document.body.style.whiteSpace = "pre";
+				document.body.style.fontFamily = "monospace";
+				document.body.style.textWrap = "wrap";
+
+				// wipe other data
 				document.head.innerHTML = "";
 				return;
 
