@@ -72,7 +72,7 @@ window.onload = function()
 	const projw = document.getElementById("projects");
 	const jourw = document.getElementById("journal");
 
-	fetch('http://wish-reggae.gl.at.ply.gg:10108')
+	fetch('http://wish-reggae.gl.at.ply.gg:10108/data_json')
 		.then(res => {
 			if (!res.ok)
 				window.alert("data.json couldent be loaded..");
