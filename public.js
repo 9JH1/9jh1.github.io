@@ -55,9 +55,6 @@ window.onload = function() {
 		resize_root_element();
 		window.addEventListener("resize", resize_root_element);
 
-		// Load json data
-		const projw = document.getElementById("projects");
-		const jourw = document.getElementById("journal");
 	}
 
 	fetch('data.json')
@@ -93,6 +90,10 @@ window.onload = function() {
 				return;
 
 			} else {
+				// Load json data
+				const projw = document.getElementById("projects");
+				const jourw = document.getElementById("journal");
+				
 				for (const project of data["projects"]) {
 					const h_item = document.createElement("div");
 					const h_item_desc_ul = document.createElement("ul");
