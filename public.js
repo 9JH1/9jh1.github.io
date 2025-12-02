@@ -35,14 +35,12 @@ function format_time(date) {
 // Initialize on page load
 window.onload = function() {
 	if (page_load == -1) {
-		const title = document.getElementById("title");
 		const roota = document.documentElement;
 		const start = document.getElementById("startup");
 		const rootw = document.getElementById("content");
 
 		// Initialize page
 		const unit = start.getBoundingClientRect();
-		const default_title = title.innerText;
 		start.remove();
 		roota.style.setProperty("--unit-w", unit.width + "px");
 		roota.style.setProperty("--unit-h", unit.height + "px");
@@ -93,6 +91,8 @@ window.onload = function() {
 				// Load json data
 				const projw = document.getElementById("projects");
 				const jourw = document.getElementById("journal");
+				const title = document.getElementById("title");
+				const default_title = title.innerText;
 				
 				for (const project of data["projects"]) {
 					const h_item = document.createElement("div");
