@@ -66,10 +66,12 @@
 			text-wrap: wrap;
 			margin: 0px;
 			padding:0px;
+			box-sizing: border-box;
 		}
 
 		body {
 			background: black;
+			max-width:50%;
 			color:white;
 		}
 
@@ -88,9 +90,12 @@
 		}
 
 		@media screen and not (orientation: portrait){
-			
+			* {
+				font-size: 24px;
+			}
 			body {
-				max-width:50%;
+				max-width:100%;
+				width: 100%;
 			}
 		}
 	</style>
