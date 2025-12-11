@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Portfolio | Naming it as it is</title>
+	<script title="public.js">	
+		function format_time(date) {
+			let ms = Math.floor((Date.now() - date.getTime()) / 1000);
+
+			const units = [
+				{ label: "d", secs: 86400 },
+				{ label: "h", secs: 3600 },
+				{ label: "m", secs: 60 },
+				{ label: "s", secs: 1 }
+			];
+
+			let str = "";
+			for (const { label, secs } of units) {
+				const val = Math.floor(ms / secs);
+				if (val > 0) {
+					str += `${val}${label} `;
+					ms %= secs;
+			}
+			if (str) break;
+		}
+
+		return (str || "0s").trim() + " ago";
+	}
+
+	// Initialize on page load
+	window.onload = function() {
+		const url = new URLSearchParams(window.location.search);
+	
+		document.querySelectorAll(".utc").forEach(element=>{
+			const time = new Date(element.innerText);
+			element.title = time;
+			element.innerHTML = format_time(time);
+		})
+
+		// Load post url
+		if(url.has("p")){
+			fetch('data.json')
+				.then(res => {
+					return res.json();
+				})
+				.then(data => {
+					document.head.innerHTML = "";
+					document.body.innerHTML = "404";
+					if (Number(url.get("p")) < data["journal"].length) {
+						const loc = data["journal"][url.get("p")];
+						document.body.innerText = `title  : ${loc.title}\ntags   : ${loc.tags.join(", ")}\ndate   : ${loc.date}\nposted : ${format_time(new Date(loc.date))}\nurl    : ${location.href}\n${"-".repeat(20)}\n${loc.content}`;
+					}
+			})
+		}
+	}
+	</script>
+	<style>
+		* {
+			font-family: monospace;
+			font-size: 35px;
+			text-wrap: wrap;
+			margin-top: 0px;
+		}
+
+		body {
+			margin: 0px;
+			max-width: 1400px;
+			background: black;
+			color:white;
+			border-left: solid 1px grey;
+		}
+
+		pre {
+			background: rgba(255,255,255,0.2);
+			color: white;
+		}
+
+		pre, body {
+			padding: 2ch 1ch;
+		}
+
+		@media screen and (max-width: 700px) {
+  		* {
+				font-size:5vw;
+  		}
+		}
+	</style>
+	<!-- Proud human written website -->
+</head>
+<body>
+	<i>
+		<div>I want my office to be quiet. The loudest thing in the room by far should be the occasional purring of the cat</div>
+		<div>- Linus Torvalds</div>	
+	</i>
+	<br>
+	<hr>
+	<br>
+	<b>About Me:</b>
+	<div>I'm an experienced C developer, I've been writing open source, free and optimized software for the last 5 years.</div>
+	<br>
+	<div>I love free (<i>as in freedom</i>) open source software and simple tools, long time Linux user. I'm especially fond of <a href="https://suckless.org/">suckless software</a> and the other <a href="https://www.gnu.org/home.en.html">GNU tools</a>. I value privacy overall and I despise subscription services, the modern digital world is a mess, having to navigate surveillance, censorship, capitalism, and the ever overuse of artificial intelligence. Put the power back in the hands of the people.</div>
+	<br>
+	<div>I'm proficient in majority of operating systems, Linux, BSD and Windows, currently I daily drive <i>SalixOS</i> which is a distribution of Slackware, the oldest maintained Linux distro. I have experience working on larger projects and I value my organizational abilities. I did freelance software develpment for a few years followed by another few years of freelance web development.</div>
+	<br>
+	<hr>
+	<br>
+	<b>Projects:</b>
+	<!-- PROJECT_START -->
+	<hr>
+	<br>
+	<b>Contact me:</b>
+	<div>These emails forward to my personal Disroot.org account:</p>
+	<i>
+		<div>tkf.x1os@gmail.com</div>
+		<div>x3hy@protonmail.com</div>
+	</i>
+	<br>
+	<hr>
+	<br>
+	<b>Journal:</b>
+	<!-- JOURNAL_START -->
+	<hr>
+</body>
+</html>

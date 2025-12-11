@@ -2,28 +2,109 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title id="title"></title>
-	<script src="./public.js" defer>Portfolio</script>
-	<link rel="stylesheet" href="style.css">
+	<title>Portfolio | Naming it as it is</title>
+	<script title="public.js">	
+		function format_time(date) {
+			let ms = Math.floor((Date.now() - date.getTime()) / 1000);
+
+			const units = [
+				{ label: "d", secs: 86400 },
+				{ label: "h", secs: 3600 },
+				{ label: "m", secs: 60 },
+				{ label: "s", secs: 1 }
+			];
+
+			let str = "";
+			for (const { label, secs } of units) {
+				const val = Math.floor(ms / secs);
+				if (val > 0) {
+					str += `${val}${label} `;
+					ms %= secs;
+			}
+			if (str) break;
+		}
+
+		return (str || "0s").trim() + " ago";
+	}
+
+	// Initialize on page load
+	window.onload = function() {
+		const url = new URLSearchParams(window.location.search);
+	
+		document.querySelectorAll(".utc").forEach(element=>{
+			const time = new Date(element.innerText);
+			element.title = time;
+			element.innerHTML = format_time(time);
+		})
+
+		// Load post url
+		if(url.has("p")){
+			fetch('data.json')
+				.then(res => {
+					return res.json();
+				})
+				.then(data => {
+					document.head.innerHTML = "";
+					document.body.innerHTML = "404";
+					if (Number(url.get("p")) < data["journal"].length) {
+						const loc = data["journal"][url.get("p")];
+						document.body.innerText = `title  : ${loc.title}\ntags   : ${loc.tags.join(", ")}\ndate   : ${loc.date}\nposted : ${format_time(new Date(loc.date))}\nurl    : ${location.href}\n${"-".repeat(20)}\n${loc.content}`;
+					}
+			})
+		}
+	}
+	</script>
+	<style>
+		* {
+			font-family: monospace;
+			font-size: 35px;
+			text-wrap: wrap;
+			margin-top: 0px;
+		}
+
+		body {
+			margin: 0px;
+			max-width: 1400px;
+			background: black;
+			color:white;
+			border-left: solid 1px grey;
+		}
+
+		pre {
+			background: rgba(255,255,255,0.2);
+			color: white;
+		}
+
+		pre, body {
+			padding: 2ch 1ch;
+		}
+
+		@media screen and (max-width: 700px) {
+  		* {
+				font-size:5vw;
+  		}
+		}
+	</style>
+	<!-- Proud human written website -->
 </head>
 <body>
-	<div id="content">
-			<i>
-				<p>I want my office to be quiet. The loudest thing in the room by far should be the occasional purring of the cat</p>
-				<p>- Linus Torvalds</p>	
-			</i>
-
-		<hr>
-		
-		<h2>About Me:</h2>
-			<p>I'm an experienced C developer, I've been writing open source, free and optimized software for the last 5 years.</p>
-			
-			<br>
-			<p>I love free (<i>as in freedom</i>) open source software and simple tools, long time Linux user. I'm especially fond of <a href="https://suckless.org/">suckless software</a> and the other <a href="https://www.gnu.org/home.en.html">GNU tools</a>. I value privacy overall and I despise subscription services, the modern digital world is a mess, having to navigate surveillance, censorship, capitalism, and the ever overuse of artificial intelligence. Put the power back in the hands of the people.</p>
-		<hr>
-		
-		<h2>Projects:</h2>
+	<i>
+		<div>I want my office to be quiet. The loudest thing in the room by far should be the occasional purring of the cat</div>
+		<div>- Linus Torvalds</div>	
+	</i>
+	<br>
+	<hr>
+	<br>
+	<b>About Me:</b>
+	<div>I'm an experienced C developer, I've been writing open source, free and optimized software for the last 5 years.</div>
+	<br>
+	<div>I love free (<i>as in freedom</i>) open source software and simple tools, long time Linux user. I'm especially fond of <a href="https://suckless.org/">suckless software</a> and the other <a href="https://www.gnu.org/home.en.html">GNU tools</a>. I value privacy overall and I despise subscription services, the modern digital world is a mess, having to navigate surveillance, censorship, capitalism, and the ever overuse of artificial intelligence. Put the power back in the hands of the people.</div>
+	<br>
+	<div>I'm proficient in majority of operating systems, Linux, BSD and Windows, currently I daily drive <i>SalixOS</i> which is a distribution of Slackware, the oldest maintained Linux distro. I have experience working on larger projects and I value my organizational abilities. I did freelance software develpment for a few years followed by another few years of freelance web development.</div>
+	<br>
+	<hr>
+	<br>
+	<b>Projects:</b>
 <pre>
 name    : motionlayer
 tags    : c, opensource, wip, motionlayer
@@ -60,30 +141,24 @@ url     : <a href="https://github.com/9jh1/plib">https://github.com/9jh1/plib</a
 <span class="file-list">lib/input.c, lib/input.h, </span>Basic non-threaded input loop that allows for not just regular keys but all mouse input (SCROLL, MOVE, RELEASE) along with a few special keys eg Control+G.
 <span class="file-list">lib/input.c, lib.input.h, </span>Optimised styled box renderer that allows you to draw a box onto the screen at any point. this is bundled with the input loop code as you can easily set up input detection on boxes using it.
 </pre>
-		<!-- PROJECT_START -->
-		<br>
-		<hr>
-		<br>
-		<h2>Contact me:</h2>
-		<p>This email forwards to my personal Protonmail account:</p>
-		<p>tkf.x1os@gmail.com</p>
-		<br>
-		<hr>
-		<br>
-		<h2>Journal:</h2>
+	<!-- PROJECT_START -->
+	<hr>
+	<br>
+	<b>Contact me:</b>
+	<div>These emails forward to my personal Disroot.org account:</p>
+	<i>
+		<div>tkf.x1os@gmail.com</div>
+		<div>x3hy@protonmail.com</div>
+	</i>
+	<br>
+	<hr>
+	<br>
+	<b>Journal:</b>
 <pre>
-title  : RE- ew protonmail
-tags   : 
-post url: <a href="?p=4">here</a>
-privacy, usability, rant
-date   : <span class="utc"></span>
---------------------
-</pre><pre>
-title  : ew protonmail
-tags   : 
-post url: <a href="?p=3">here</a>
-privacy, usability, rant
-date   : <span class="utc">2025-12-04T00:03:53Z</span>
+title    : ew protonmail
+post url : <a href="?p=3">here</a>
+tags     : privacy, usability, rant
+date     : <span class="utc">2025-12-04T00:03:53Z</span>
 --------------------
 I've been using proton mail for a few months now, and don't get me wrong I like proton as a company and I understand that they're just trying to make some funding. Personally I'm not a big fan of the corperate presence thats becoming the norm. Now I like to use the aerc email client, small issue with this, proton dosent allow users to use clients other then their offical client.. The only way theyve provided to negate this is to have a proton-mail-plus subscription AND a desktop application (protonmail-bridge-core) which acts as the other end of the encryption that way the client using the proton email can actually read emails..
 
@@ -92,30 +167,27 @@ I have no issue with some features being behind a paywall again proton do need t
 To fix this issue I've created a new email at disroot.org which provides end-to-end symetric encryption using pgp, disroot.org also supports 3rd party clients out of the box. I've set up my accounts so that my proton account forwards emails to my disroot account but in doing so I also noticed that proton does not forward emails sent from its own address so emails sent from your own email to yourself will not be forewarded.. ill also say that there are very few options given to actually change the forwarding settings.. In gmail the options to delete, archive or keep forwarded mail is right there but in proton no such feature exists. Ontop of all of this disroot also has a contact book system that allows you to import your contacts from other services eg google contacts, this is yet another feature that protonmail does not have.
 
 This website still shows a google email as a contact email all emails sent to that address will be forwarded to my disroot email. go check out disroot.org, note that they are donation run and therefore have limited time and because of this they close registrations during the weekend. After signing up you have a 48 hour period where a maintainer will have to manually approve your account request. There is no mention of the prior when signing up.</pre><pre>
-title  : Link Sharing!!
-tags   : 
-post url: <a href="?p=2">here</a>
-notopic
-date   : <span class="utc">2025-12-02T10:45:42Z</span>
+title    : Link Sharing!!
+post url : <a href="?p=2">here</a>
+tags     : notopic
+date     : <span class="utc">2025-12-02T10:45:42Z</span>
 --------------------
 This page now supports sharing of specific journal entries!!
 Try it out by pressing the text below:</pre><pre>
-title  : New projects
-tags   : 
-post url: <a href="?p=1">here</a>
-projects, wip, c, navtui, 0bchat
-date   : <span class="utc">2025-12-02T01:23:06.100Z</span>
+title    : New projects
+post url : <a href="?p=1">here</a>
+tags     : projects, wip, c, navtui, 0bchat
+date     : <span class="utc">2025-12-02T01:23:06.100Z</span>
 --------------------
 I've started development on 0bchat - A end to end encrypted chat client using C. With PLib V5.0.1 I've started writing navtui, a navidrome client terminal application, both of these projects are privated at the moment but will go public on their first release. I don't want another incident with unfinished repos ehm motionlayer..</pre><pre>
-title  : Initial Commit
-tags   : 
-post url: <a href="?p=0">here</a>
-notopic
-date   : <span class="utc">2025-12-01T23:20:19.976Z</span>
+title    : Initial Commit
+post url : <a href="?p=0">here</a>
+tags     : notopic
+date     : <span class="utc">2025-12-01T23:20:19.976Z</span>
 --------------------
 Hello World!
-Welcome to my new website!</pre>		<!-- JOURNAL_START -->
-	</div>
+Welcome to my new website!</pre>	<!-- JOURNAL_START -->
+	<hr>
 </body>
 </html>
 <!-- End of file reached -->
