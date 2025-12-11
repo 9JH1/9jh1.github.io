@@ -27,5 +27,6 @@ loads at sub 1ms average. Along with preprocessing I took great attention to det
 amount of styles used on the page.
 
 The final file size generated is roughly 8.4 Kilobytes which nicely fits into the 14.6 Kilobytes 
-sent over TCP's slow start algorithm.
+sent over TCP's slow start algorithm. Also note that the backend is unoptimized and takes around
+0.002s from start to stop writing to the output file. 
 ```
