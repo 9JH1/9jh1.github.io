@@ -238,7 +238,7 @@ print_journal_code(FILE * f)
 		char *content = cJSON_GetObjectItemCaseSensitive(item, "content")->valuestring;
 
 		// Print data
-		printf("title    : %s\npost url : <a href=\"?p=%lu\">here</a>\ntags     : ", title, array_size - index - 1);
+		printf("title    : <a href=\"?p=%lu\">%s</a>\ntags     : ", array_size - index - 1, title);
 		
 		// Print tags
 		cJSON *tag = NULL;
@@ -252,7 +252,7 @@ print_journal_code(FILE * f)
 			printf("%s", tag->valuestring);
 		}
 
-		printf("\ndate     : <span class=\"utc\">%s</span>\n", date);
+		printf("\nposted   : <span class=\"utc\">%s</span>\ndate    : %s\n", date, date);
 		
 		for(int i = 0; i < 20; ++i){
 			printf("-");
