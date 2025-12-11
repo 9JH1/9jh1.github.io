@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<script>
+	const st = performance.now();
+</script>
 <head>
+	<!-- Proud human written website -->
 	<meta charset="UTF-8">
 	<link rel="icon" type="image/png", href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEVHcEyC+tLSAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=">
 	<title>Portfolio | Naming it as it is</title>
@@ -38,7 +42,7 @@
 			element.innerHTML = format_time(time);
 		})
 
-		// Load post url
+		// Load post URL
 		if(url.has("p")){
 			fetch('src/data.json')
 				.then(res => {
@@ -58,38 +62,37 @@
 	<style>
 		* {
 			font-family: monospace;
-			font-size: 5vh;
+			font-size: 16px;
 			text-wrap: wrap;
-			margin-top: 0px;
+			margin: 0px;
+			padding:0px;
 		}
 
 		body {
-			margin: 0px;
-			max-width: 70%;
 			background: black;
 			color:white;
-			position:relative;
-		}
-		html {
-			display:flex;
-		}
-
-		html::before {
-			content:" ";
-			white-space: pre;
 		}
 
 		pre {
 			background: rgba(255,255,255,0.1);
 			color: white;
+			width:100%;
+		}
+
+		body, pre {
+			padding: 0px 1ch;
 		}
 
 		a { 
 			color:cyan;
 		}
 
+		@media screen and (min-width: 500px){
+			body {
+				max-width:50%;
+			}
+		}
 	</style>
-	<!-- Proud human written website -->
 </head>
 <body>
 	<br>
@@ -125,5 +128,9 @@
 	<b>Journal:</b>
 	<!-- JOURNAL_START -->
 	<br>
+
 </body>
+<script>	
+	console.log(`Loaded ${new TextEncoder().encode(document.documentElement.outerHTML).length / 1024}Kbs in ${performance.now()-st}ms`)
+</script>
 </html>
