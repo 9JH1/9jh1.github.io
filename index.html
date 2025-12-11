@@ -40,7 +40,7 @@
 
 		// Load post url
 		if(url.has("p")){
-			fetch('data.json')
+			fetch('src/data.json')
 				.then(res => {
 					return res.json();
 				})
@@ -58,17 +58,25 @@
 	<style>
 		* {
 			font-family: monospace;
-			font-size: 35px;
+			font-size: 5vh;
 			text-wrap: wrap;
 			margin-top: 0px;
 		}
 
 		body {
 			margin: 0px;
-			max-width: 1400px;
+			max-width: 70%;
 			background: black;
 			color:white;
-			border-left: solid 1px grey;
+			position:relative;
+		}
+		html {
+			display:flex;
+		}
+
+		html::before {
+			content:" ";
+			white-space: pre;
 		}
 
 		pre {
@@ -76,23 +84,15 @@
 			color: white;
 		}
 
-		pre, body {
-			padding: 2ch 1ch;
-		}
-
 		a { 
 			color:cyan;
 		}
 
-		@media screen and (orientation: portrait) {
-  		* {
-				font-size:6px;
-  		}
-		}
 	</style>
 	<!-- Proud human written website -->
 </head>
 <body>
+	<br>
 	<i>
 		<div>I want my office to be quiet. The loudest thing in the room by far should be the occasional purring of the cat</div>
 		<div>- Linus Torvalds</div>	
@@ -110,34 +110,33 @@
 	<hr>
 	<br>
 	<b>Projects:</b>
-<pre>
-name    : motionlayer
+<pre><br>name    : motionlayer
 tags    : c, opensource, wip, motionlayer
 tagline : X11 video wallpaper
 url     : <a href="https://github.com/9JH1/motionlayer">https://github.com/9JH1/motionlayer</a>
 --------------------
 Uses MPV to set a video wallpaper
 Use https://github.com/9jh1/C instead
-</pre>
-<pre>
-name    : xobar
+<br></pre>
+<br>
+<pre><br>name    : xobar
 tags    : c, opensource, tomlc, xobar, depricated
 tagline : Status bar
 url     : <a href="https://github.com/9JH1/xobar">https://github.com/9JH1/xobar</a>
 --------------------
 Custom text statusbar. Made as a replacement for i3status.
 Uses the tomlc library to parse a toml configuration file
-</pre>
-<pre>
-name    : Auto Read-Run(er)
+<br></pre>
+<br>
+<pre><br>name    : Auto Read-Run(er)
 tags    : c, opensource, gnu, arr
 tagline : Ansi C
 url     : <a href="https://github.com/9jh1/arr">https://github.com/9jh1/arr</a>
 --------------------
 <span class="file-list">arr.c, </span>Takes in a file and watches its contense, if the contense changes it runs a given command.
-</pre>
-<pre>
-name    : PLib
+<br></pre>
+<br>
+<pre><br>name    : PLib
 tags    : c, opensource, library, plib
 tagline : Ansi C library
 url     : <a href="https://github.com/9jh1/plib">https://github.com/9jh1/plib</a>
@@ -145,7 +144,8 @@ url     : <a href="https://github.com/9jh1/plib">https://github.com/9jh1/plib</a
 <span class="file-list">plib.c, plib.h, </span>Simple argument parsing that allows you to easily set up your program without the need for bukly and ugly loops and else if blocks.
 <span class="file-list">lib/input.c, lib/input.h, </span>Basic non-threaded input loop that allows for not just regular keys but all mouse input (SCROLL, MOVE, RELEASE) along with a few special keys eg Control+G.
 <span class="file-list">lib/input.c, lib.input.h, </span>Optimised styled box renderer that allows you to draw a box onto the screen at any point. this is bundled with the input loop code as you can easily set up input detection on boxes using it.
-</pre>
+<br></pre>
+<br>
 	<!-- PROJECT_START -->
 	<hr>
 	<br>
@@ -159,8 +159,7 @@ url     : <a href="https://github.com/9jh1/plib">https://github.com/9jh1/plib</a
 	<hr>
 	<br>
 	<b>Journal:</b>
-<pre>
-title    : ew protonmail
+<pre><br>title    : ew protonmail
 post url : <a href="?p=3">here</a>
 tags     : privacy, usability, rant
 date     : <span class="utc">2025-12-04T00:03:53Z</span>
@@ -171,27 +170,37 @@ I have no issue with some features being behind a paywall again proton do need t
 
 To fix this issue I've created a new email at disroot.org which provides end-to-end symetric encryption using pgp, disroot.org also supports 3rd party clients out of the box. I've set up my accounts so that my proton account forwards emails to my disroot account but in doing so I also noticed that proton does not forward emails sent from its own address so emails sent from your own email to yourself will not be forewarded.. ill also say that there are very few options given to actually change the forwarding settings.. In gmail the options to delete, archive or keep forwarded mail is right there but in proton no such feature exists. Ontop of all of this disroot also has a contact book system that allows you to import your contacts from other services eg google contacts, this is yet another feature that protonmail does not have.
 
-This website still shows a google email as a contact email all emails sent to that address will be forwarded to my disroot email. go check out disroot.org, note that they are donation run and therefore have limited time and because of this they close registrations during the weekend. After signing up you have a 48 hour period where a maintainer will have to manually approve your account request. There is no mention of the prior when signing up.</pre><pre>
-title    : Link Sharing!!
+This website still shows a google email as a contact email all emails sent to that address will be forwarded to my disroot email. go check out disroot.org, note that they are donation run and therefore have limited time and because of this they close registrations during the weekend. After signing up you have a 48 hour period where a maintainer will have to manually approve your account request. There is no mention of the prior when signing up.
+<br></pre>
+<br>
+<pre><br>title    : Link Sharing!!
 post url : <a href="?p=2">here</a>
 tags     : notopic
 date     : <span class="utc">2025-12-02T10:45:42Z</span>
 --------------------
 This page now supports sharing of specific journal entries!!
-Try it out by pressing the text below:</pre><pre>
-title    : New projects
+Try it out by pressing the text below:
+<br></pre>
+<br>
+<pre><br>title    : New projects
 post url : <a href="?p=1">here</a>
 tags     : projects, wip, c, navtui, 0bchat
 date     : <span class="utc">2025-12-02T01:23:06.100Z</span>
 --------------------
-I've started development on 0bchat - A end to end encrypted chat client using C. With PLib V5.0.1 I've started writing navtui, a navidrome client terminal application, both of these projects are privated at the moment but will go public on their first release. I don't want another incident with unfinished repos ehm motionlayer..</pre><pre>
-title    : Initial Commit
+I've started development on 0bchat - A end to end encrypted chat client using C. With PLib V5.0.1 I've started writing navtui, a navidrome client terminal application, both of these projects are privated at the moment but will go public on their first release. I don't want another incident with unfinished repos ehm motionlayer..
+<br></pre>
+<br>
+<pre><br>title    : Initial Commit
 post url : <a href="?p=0">here</a>
 tags     : notopic
 date     : <span class="utc">2025-12-01T23:20:19.976Z</span>
 --------------------
 Hello World!
-Welcome to my new website!</pre>	<!-- JOURNAL_START -->
+Welcome to my new website!
+<br></pre>
+<br>
+	<!-- JOURNAL_START -->
+	<br>
 </body>
 </html>
 <!-- End of file reached -->

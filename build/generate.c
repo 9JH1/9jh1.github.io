@@ -232,7 +232,7 @@ print_journal_code(FILE * f)
 
 	// Loop through array
 	cJSON_ArrayForEach(item, journal){
-		printf("<pre>\n");
+		printf("<pre><br>");
 		char *title = cJSON_GetObjectItemCaseSensitive(item, "title")->valuestring;
 		char *date = cJSON_GetObjectItemCaseSensitive(item, "date")->valuestring;
 		char *content = cJSON_GetObjectItemCaseSensitive(item, "content")->valuestring;
@@ -258,10 +258,10 @@ print_journal_code(FILE * f)
 			printf("-");
 		}
 
-		printf("\n%s", content);
+		printf("\n%s\n", content);
 		index++;
 
-		printf("</pre>");
+		printf("<br></pre>\n<br>\n");
 	}
 	
 	return;
@@ -287,7 +287,7 @@ print_project_code(FILE * f)
 
 	// Loop through array
 	cJSON_ArrayForEach(item, project){
-		printf("<pre>\n");
+		printf("<pre><br>");
 		char *name = cJSON_GetObjectItemCaseSensitive(item, "name")->valuestring;
 		char *url = cJSON_GetObjectItemCaseSensitive(item, "url")->valuestring;
 		char *brief = cJSON_GetObjectItemCaseSensitive(item, "tagline")->valuestring;
@@ -333,7 +333,7 @@ print_project_code(FILE * f)
 			printf("%s\n", cont);
 		}
 
-		printf("</pre>\n");
+		printf("<br></pre>\n<br>\n");
 	}
 
 	return;

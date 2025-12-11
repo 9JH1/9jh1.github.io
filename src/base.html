@@ -40,7 +40,7 @@
 
 		// Load post url
 		if(url.has("p")){
-			fetch('data.json')
+			fetch('src/data.json')
 				.then(res => {
 					return res.json();
 				})
@@ -58,17 +58,25 @@
 	<style>
 		* {
 			font-family: monospace;
-			font-size: 35px;
+			font-size: 5vh;
 			text-wrap: wrap;
 			margin-top: 0px;
 		}
 
 		body {
 			margin: 0px;
-			max-width: 1400px;
+			max-width: 70%;
 			background: black;
 			color:white;
-			border-left: solid 1px grey;
+			position:relative;
+		}
+		html {
+			display:flex;
+		}
+
+		html::before {
+			content:" ";
+			white-space: pre;
 		}
 
 		pre {
@@ -76,23 +84,15 @@
 			color: white;
 		}
 
-		pre, body {
-			padding: 2ch 1ch;
-		}
-
 		a { 
 			color:cyan;
 		}
 
-		@media screen and (max-width: 800px) {
-  		* {
-				font-size:6px;
-  		}
-		}
 	</style>
 	<!-- Proud human written website -->
 </head>
 <body>
+	<br>
 	<i>
 		<div>I want my office to be quiet. The loudest thing in the room by far should be the occasional purring of the cat</div>
 		<div>- Linus Torvalds</div>	
@@ -124,5 +124,6 @@
 	<br>
 	<b>Journal:</b>
 	<!-- JOURNAL_START -->
+	<br>
 </body>
 </html>
