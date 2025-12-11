@@ -1,5 +1,5 @@
 {
-	"projects": [
+	"project": [
 		{
 			"name": "PLib",
 			"url": "https://github.com/9jh1/plib",
@@ -28,7 +28,7 @@
 			"description": [
 				{
 					"cont": "Takes in a file and watches its contense, if the contense changes it runs a given command.",
-					"file": "arr.c"
+					"file": ["arr.c"]
 				}
 			]
 		},
@@ -40,11 +40,11 @@
 			"description": [
 				{
 					"cont": "Custom text statusbar. Made as a replacement for i3status.",
-					"file": ""
+					"file": []
 				}, 
 				{
 					"cont": "Uses the tomlc library to parse a toml configuration file",
-					"file": ""
+					"file": []
 				}
 			]
 		},
@@ -56,11 +56,11 @@
 			"description" : [
 				{
 					"cont": "Uses MPV to set a video wallpaper",
-					"file": ""
+					"file": []
 				},
 				{
 					"cont": "Use https://github.com/9jh1/C instead",
-					"file": ""
+					"file": []
 				}
 			]
 		}
@@ -87,8 +87,14 @@
 		{
 			"title": "ew protonmail",
 			"date": "2025-12-04T00:03:53Z",
-			"tags": ["privacy", "tui", "usability"],
+			"tags": ["privacy", "usability", "rant"],
 			"content": "I've been using proton mail for a few months now, and don't get me wrong I like proton as a company and I understand that they're just trying to make some funding. Personally I'm not a big fan of the corperate presence thats becoming the norm. Now I like to use the aerc email client, small issue with this, proton dosent allow users to use clients other then their offical client.. The only way theyve provided to negate this is to have a proton-mail-plus subscription AND a desktop application (protonmail-bridge-core) which acts as the other end of the encryption that way the client using the proton email can actually read emails..\n\nI have no issue with some features being behind a paywall again proton do need to make some money somehow but this is such a basic feature..\n\nTo fix this issue I've created a new email at disroot.org which provides end-to-end symetric encryption using pgp, disroot.org also supports 3rd party clients out of the box. I've set up my accounts so that my proton account forwards emails to my disroot account but in doing so I also noticed that proton does not forward emails sent from its own address so emails sent from your own email to yourself will not be forewarded.. ill also say that there are very few options given to actually change the forwarding settings.. In gmail the options to delete, archive or keep forwarded mail is right there but in proton no such feature exists. Ontop of all of this disroot also has a contact book system that allows you to import your contacts from other services eg google contacts, this is yet another feature that protonmail does not have.\n\nThis website still shows a google email as a contact email all emails sent to that address will be forwarded to my disroot email. go check out disroot.org, note that they are donation run and therefore have limited time and because of this they close registrations during the weekend. After signing up you have a 48 hour period where a maintainer will have to manually approve your account request. There is no mention of the prior when signing up."
+		},
+		{
+			"title": "RE- ew protonmail",
+			"date": "",
+			"tags": ["privacy", "usability", "rant"],
+			"content": ""
 		}
 	]
 }

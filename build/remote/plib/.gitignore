@@ -1,0 +1,5 @@
+latex/
+html/
+.plibDoxy
+test 
+test.c
