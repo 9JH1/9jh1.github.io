@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title id="title"></title>
+	<script src="./public.js" defer>Portfolio</script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="content">
+			<i>
+				<p>I want my office to be quiet. The loudest thing in the room by far should be the occasional purring of the cat</p>
+				<p>- Linus Torvalds</p>	
+			</i>
+
+		<hr>
+		
+		<h2>About Me:</h2>
+			<p>I'm an experienced C developer, I've been writing open source, free and optimized software for the last 5 years.</p>
+			
+			<br>
+			<p>I love free (<i>as in freedom</i>) open source software and simple tools, long time Linux user. I'm especially fond of <a href="https://suckless.org/">suckless software</a> and the other <a href="https://www.gnu.org/home.en.html">GNU tools</a>. I value privacy overall and I despise subscription services, the modern digital world is a mess, having to navigate surveillance, censorship, capitalism, and the ever overuse of artificial intelligence. Put the power back in the hands of the people.</p>
+		<hr>
+		
+		<h2>Projects:</h2>
+<pre>
+name    : motionlayer
+tags    : c, opensource, wip, motionlayer
+tagline : X11 video wallpaper
+url     : <a href="https://github.com/9JH1/motionlayer">https://github.com/9JH1/motionlayer</a>
+--------------------
+Uses MPV to set a video wallpaper
+Use https://github.com/9jh1/C instead
+</pre>
+<pre>
+name    : xobar
+tags    : c, opensource, tomlc, xobar, depricated
+tagline : Status bar
+url     : <a href="https://github.com/9JH1/xobar">https://github.com/9JH1/xobar</a>
+--------------------
+Custom text statusbar. Made as a replacement for i3status.
+Uses the tomlc library to parse a toml configuration file
+</pre>
+<pre>
+name    : Auto Read-Run(er)
+tags    : c, opensource, gnu, arr
+tagline : Ansi C
+url     : <a href="https://github.com/9jh1/arr">https://github.com/9jh1/arr</a>
+--------------------
+<span class="file-list">arr.c, </span>Takes in a file and watches its contense, if the contense changes it runs a given command.
+</pre>
+<pre>
+name    : PLib
+tags    : c, opensource, library, plib
+tagline : Ansi C library
+url     : <a href="https://github.com/9jh1/plib">https://github.com/9jh1/plib</a>
+--------------------
+<span class="file-list">plib.c, plib.h, </span>Simple argument parsing that allows you to easily set up your program without the need for bukly and ugly loops and else if blocks.
+<span class="file-list">lib/input.c, lib/input.h, </span>Basic non-threaded input loop that allows for not just regular keys but all mouse input (SCROLL, MOVE, RELEASE) along with a few special keys eg Control+G.
+<span class="file-list">lib/input.c, lib.input.h, </span>Optimised styled box renderer that allows you to draw a box onto the screen at any point. this is bundled with the input loop code as you can easily set up input detection on boxes using it.
+</pre>
+		<!-- PROJECT_START -->
+		<br>
+		<hr>
+		<br>
+		<h2>Contact me:</h2>
+		<p>This email forwards to my personal Protonmail account:</p>
+		<p>tkf.x1os@gmail.com</p>
+		<br>
+		<hr>
+		<br>
+		<h2>Journal:</h2>
+<pre>
+title  : RE- ew protonmail
+tags   : 
+post url: <a href="?p=4">here</a>
+privacy, usability, rant
+date   : <span class="utc"></span>
+--------------------
+</pre><pre>
+title  : ew protonmail
+tags   : 
+post url: <a href="?p=3">here</a>
+privacy, usability, rant
+date   : <span class="utc">2025-12-04T00:03:53Z</span>
+--------------------
+I've been using proton mail for a few months now, and don't get me wrong I like proton as a company and I understand that they're just trying to make some funding. Personally I'm not a big fan of the corperate presence thats becoming the norm. Now I like to use the aerc email client, small issue with this, proton dosent allow users to use clients other then their offical client.. The only way theyve provided to negate this is to have a proton-mail-plus subscription AND a desktop application (protonmail-bridge-core) which acts as the other end of the encryption that way the client using the proton email can actually read emails..
+
+I have no issue with some features being behind a paywall again proton do need to make some money somehow but this is such a basic feature..
+
+To fix this issue I've created a new email at disroot.org which provides end-to-end symetric encryption using pgp, disroot.org also supports 3rd party clients out of the box. I've set up my accounts so that my proton account forwards emails to my disroot account but in doing so I also noticed that proton does not forward emails sent from its own address so emails sent from your own email to yourself will not be forewarded.. ill also say that there are very few options given to actually change the forwarding settings.. In gmail the options to delete, archive or keep forwarded mail is right there but in proton no such feature exists. Ontop of all of this disroot also has a contact book system that allows you to import your contacts from other services eg google contacts, this is yet another feature that protonmail does not have.
+
+This website still shows a google email as a contact email all emails sent to that address will be forwarded to my disroot email. go check out disroot.org, note that they are donation run and therefore have limited time and because of this they close registrations during the weekend. After signing up you have a 48 hour period where a maintainer will have to manually approve your account request. There is no mention of the prior when signing up.</pre><pre>
+title  : Link Sharing!!
+tags   : 
+post url: <a href="?p=2">here</a>
+notopic
+date   : <span class="utc">2025-12-02T10:45:42Z</span>
+--------------------
+This page now supports sharing of specific journal entries!!
+Try it out by pressing the text below:</pre><pre>
+title  : New projects
+tags   : 
+post url: <a href="?p=1">here</a>
+projects, wip, c, navtui, 0bchat
+date   : <span class="utc">2025-12-02T01:23:06.100Z</span>
+--------------------
+I've started development on 0bchat - A end to end encrypted chat client using C. With PLib V5.0.1 I've started writing navtui, a navidrome client terminal application, both of these projects are privated at the moment but will go public on their first release. I don't want another incident with unfinished repos ehm motionlayer..</pre><pre>
+title  : Initial Commit
+tags   : 
+post url: <a href="?p=0">here</a>
+notopic
+date   : <span class="utc">2025-12-01T23:20:19.976Z</span>
+--------------------
+Hello World!
+Welcome to my new website!</pre>		<!-- JOURNAL_START -->
+	</div>
+</body>
+</html>
+<!-- End of file reached -->
