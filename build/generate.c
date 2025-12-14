@@ -338,5 +338,3 @@ print_project_code(FILE * f)
 
 	return;
 }
-
-
