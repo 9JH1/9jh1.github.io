@@ -1,0 +1,145 @@
+{
+  "project": [
+    {
+      "name": "PLib",
+      "url": "https://github.com/9jh1/plib",
+      "tags": [
+        "c",
+        "opensource",
+        "library",
+        "plib"
+      ],
+      "tagline": "Ansi C library",
+      "description": [
+        {
+          "cont": "Simple argument parsing that allows you to easily set up your program without the need for bukly and ugly loops and else if blocks.",
+          "file": [
+            "plib.c",
+            "plib.h"
+          ]
+        },
+        {
+          "cont": "Basic non-threaded input loop that allows for not just regular keys but all mouse input (SCROLL, MOVE, RELEASE) along with a few special keys eg Control+G.",
+          "file": [
+            "lib/input.c",
+            "lib/input.h"
+          ]
+        },
+        {
+          "cont": "Optimised styled box renderer that allows you to draw a box onto the screen at any point. this is bundled with the input loop code as you can easily set up input detection on boxes using it.",
+          "file": [
+            "lib/input.c",
+            "lib.input.h"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Auto Read-Run(er)",
+      "url": "https://github.com/9jh1/arr",
+      "tags": [
+        "c",
+        "opensource",
+        "gnu",
+        "arr"
+      ],
+      "tagline": "Ansi C",
+      "description": [
+        {
+          "cont": "Takes in a file and watches its contense, if the contense changes it runs a given command.",
+          "file": [
+            "arr.c"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "xobar",
+      "url": "https://github.com/9JH1/xobar",
+      "tags": [
+        "c",
+        "opensource",
+        "tomlc",
+        "xobar",
+        "depricated"
+      ],
+      "tagline": "Status bar",
+      "description": [
+        {
+          "cont": "Custom text statusbar. Made as a replacement for i3status.",
+          "file": []
+        },
+        {
+          "cont": "Uses the tomlc library to parse a toml configuration file",
+          "file": []
+        }
+      ]
+    },
+    {
+      "name": "motionlayer",
+      "url": "https://github.com/9JH1/motionlayer",
+      "tags": [
+        "c",
+        "opensource",
+        "wip",
+        "motionlayer"
+      ],
+      "tagline": "X11 video wallpaper",
+      "description": [
+        {
+          "cont": "Uses MPV to set a video wallpaper",
+          "file": []
+        },
+        {
+          "cont": "Use https://github.com/9jh1/C instead",
+          "file": []
+        }
+      ]
+    }
+  ],
+  "journal": [
+    {
+      "title": "Initial Commit",
+      "date": "2025-12-01T23:20:19.976Z",
+      "tags": [
+        "notopic"
+      ],
+      "content": "Hello World!\nWelcome to my new website!"
+    },
+    {
+      "title": "New projects",
+      "date": "2025-12-02T01:23:06.100Z",
+      "tags": [
+        "projects",
+        "wip",
+        "c",
+        "navtui",
+        "0bchat"
+      ],
+      "content": "I've started development on 0bchat - A end to end encrypted chat client using C. With PLib V5.0.1 I've started writing navtui, a navidrome client terminal application, both of these projects are privated at the moment but will go public on their first release. I don't want another incident with unfinished repos ehm motionlayer.."
+    },
+    {
+      "title": "Link Sharing!!",
+      "date": "2025-12-02T10:45:42Z",
+      "tags": [
+        "notopic"
+      ],
+      "content": "This page now supports sharing of specific journal entries!!\nTry it out by pressing the text below:\nEDIT* after updates you can now click on the title of the page to go to the unique post url, this url can be shared."
+    },
+    {
+      "title": "ew protonmail",
+      "date": "2025-12-04T00:03:53Z",
+      "tags": [
+        "privacy",
+        "usability",
+        "rant"
+      ],
+      "content": "I've been using proton mail for a few months now, and don't get me wrong I like proton as a company and I understand that they're just trying to make some funding. Personally I'm not a big fan of the corperate presence thats becoming the norm. Now I like to use the aerc email client, small issue with this, proton dosent allow users to use clients other then their offical client.. The only way theyve provided to negate this is to have a proton-mail-plus subscription AND a desktop application (protonmail-bridge-core) which acts as the other end of the encryption that way the client using the proton email can actually read emails..\n\nI have no issue with some features being behind a paywall again proton do need to make some money somehow but this is such a basic feature..\n\nTo fix this issue I've created a new email at disroot.org which provides end-to-end symetric encryption using pgp, disroot.org also supports 3rd party clients out of the box. I've set up my accounts so that my proton account forwards emails to my disroot account but in doing so I also noticed that proton does not forward emails sent from its own address so emails sent from your own email to yourself will not be forewarded.. ill also say that there are very few options given to actually change the forwarding settings.. In gmail the options to delete, archive or keep forwarded mail is right there but in proton no such feature exists. Ontop of all of this disroot also has a contact book system that allows you to import your contacts from other services eg google contacts, this is yet another feature that protonmail does not have.\n\nThis website still shows a google email as a contact email all emails sent to that address will be forwarded to my disroot email. go check out disroot.org, note that they are donation run and therefore have limited time and because of this they close registrations during the weekend. After signing up you have a 48 hour period where a maintainer will have to manually approve your account request. There is no mention of the prior when signing up.\nEDIT, recently email forwarding was disabled as it is now a premium service!"
+    },
+    {
+      "title": "I Use Arch BTW",
+      "date": "2025-12-14T10:48:32Z",
+      "content": "The title is a joke cowboy.. calm down.\n\nI've been using Archlinux for quite a while now.. 3 years. I recently decided that Archlinux is far too mainstream and so I set out on finding a new OS that could fit my needs as a developer. As a developer I like to have the most up-to-date packages along with quick installation of said packages. When I install an OS I like it to have either a quick and easy setup but a long post-install setup (think BSD) OR a very advanced setup and some other features that make it worth my time. \n\nDon't take my last statement as me saying I dislike installing advanced systems, just imagine I want to quickly re-install my development environment onto a new device or from a reinstall, I don't want to have to spend hours compiling the kernal or configuring locales.\n\nNow the first OS set I tried was BSD based systems. The few I tried where\n- OpenBSD\n- FreeBSD\n- NetBSD\n(in order)\n\nNow OpenBSD was really nice when installing, just like the other BSD varients it had a very basic installation process using a TUI setup process. I found all of the BSD versions very enjoyable to install. After first installing OpenBSD it prompty took 30 minutes to boot. This was likely due to the fact that OpenBSD is very secure and it performs several memory checks and other system checks on boot, the other more likely reason was that it was the first boot. FreeBSD had about the same installation process give or take, I will say FreeBSD was the only BSD version that I had looked into before. FreeBSD was the next OS I installed, Now I ended up cutting my visit short due to FreeBSD's lack of support for my Realtek ethernet driver, this was because I had downloaded the bootonly option which dosent actually come with full driver support so really this was my fault but don't worry I came back to give it another shot. Now NetBSD was cool and all and it was the first BSD version I actually got to boot, I played around with the default X11 environment before trying to fix the very apparent issue with the lack of graphics drivers which caused X11 to be in 1260x680p which is not ideal on a 1920x1080p monitor.. After some googling I found out that NetBSD dident even have a package for the drivers I needed. I switched back to FreeBSD and figured out how to install graphics drivers. I gotta say FreeBSD was a great system to use. Sure packages where annoying to install but it was a sacrafice I was willing to take. My computer is used for two things and two things only, One being development but two being playing games with my friends. I was a bit disapointed that there is no simple BSD alternative build for either Discord or Steam and the few that where available where buggy and complicated, and I'm far to stupid to even attempt such things.\n\nI decided to push the lack of support aside and do some developing just to see if the development experience could make up for it. I like to develop in my own custom environment built offof sucklesses window manager. At the time my configuration used polybar which is a popular lightweight statusbar program, this and a few other dependancies are required for my build to work. I spent an aditional Day installing polybar and the other dependancies and found that the package manager provided was so outdated that I ended up having to manually install from source every time I wanted something up to date. Now again like I said before I have no issue with compiling things myself its no hardship just the time crunch is not acceptable when I'm busy and need a package fast.\n\nNow after all of the BSD stuff I started looking into more advanced linux distros. a few that caught my eye where Gentoo and Slackware. First I tried slackware before figuring out the absolutly useless package manager and pre-installed bloat so I immediatly to SalixOS which is built ontop of slackware but also has a more usable backage manager slapt-get. I used slackware for a little until I ran into the same problem as before where packages where outdated and some where just not available. More infuriating Slackware has an online user driven repository of source packages that let you download a packages source code along with a file which can be used to compile the program. This system just reminded me of the arch AUR and PKGBUILDs. Now the issue with this slackware system is that packages are not maintained at all so it was common to find packages that EXISTED but where just uninstallable, and of course this meant installing from source and compiling manually.. nice stuff. Next on the list was Gentoo which was a day long commute to install. Gentoo comes with Systemd which is nice.. uh yeah but guess what the package manager is a compile local package mananger so when installing a package you run a very basic command, yes yes good good, then you wait 20 buisness days for it to download the source and all the dependancies before locally compiling and installing.. holy moly what a waste of time. \n\nI'm very sure that it was me that was making these issues so apparent and I'm sure there are millions of alternative routes I could have taken. I've ended up back with arch linux which i guess solved my issue with it being mainstream.. it is mainstream because it is so easy to install now-a-days so every idiot installs it just to say they use linux while running a base kde or gnome setup. I absolultly hate those kinds of people who use something for the main reason of status or reputation.. This was the initial reason I wanted to move over to another OS. I wanted an OS that was not diluted and poisoned by outliers in the community. I guess this week long journey has given me proof that I have an actual reason to be using arch. After all that fuss I think arch is the best distro because it has both up-to-date packages and a comprehensive installation and customization process.\n"
+    }
+  ]
+}

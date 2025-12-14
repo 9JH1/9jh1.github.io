@@ -9,20 +9,19 @@ tmp=$(mktemp --suffix=".txt")
 nvim "$tmp"
 
 # Create new json object
-NEW_JSON="$(jq -n \
-	--arg title "$title" \
-	--arg date "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" \
-	--rawfile content "$tmp" \
-	'{
-		title: $title,
-    	date: $date,
+NEW_JSON="$(
+  jq -n \
+    --arg title "$title" \
+    --arg date "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" \
+    --rawfile content "$tmp" \
+    '{ title: $title, date: $date, content: $content }'
+)"
 
-    	content: $content
-	}')"
+jq --argjson entry "$NEW_JSON" \
+   '.journal += [$entry]' \
+   src/data.json > tmp.json && mv tmp.json src/data.json
 
-# Push to data file 
-jq --argjson d "$NEW_JSON" '.journal+=[$d]' src/data.json
-
+exit
 #Generate new index file 
 cd build
 ./gen.sh 
