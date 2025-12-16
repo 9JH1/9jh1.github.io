@@ -12,7 +12,7 @@
       "tagline": "Ansi C library",
       "description": [
         {
-          "cont": "Simple argument parsing that allows you to easily set up your program without the need for bukly and ugly loops and else if blocks.",
+          "cont": "Simple argument parsing that allows you to easily set up your program without the need for bulky and ugly loops and else if blocks.",
           "file": [
             "plib.c",
             "plib.h"
