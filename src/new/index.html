@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Untiled website #9</title>
+	<link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="description" content="My portfolio wesite">
+	<meta name="keywords" content="project, portfolio, 9jh1, _3hy, 3hy, coding, programming.">
+	<meta name="author" content="9jh1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="icon" type="image/png", href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEVHcEyC+tLSAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=">
+</head>
+<body>
+	<header>
+		<h1>Untitiled website #9</h1>
+		<p>My Personal Portfolio</p>
+	</header>
+	<div class="content">
+		<nav>
+			<ul>
+				<li>info</li>
+				<li>about me</li>
+				<li>contact</li>
+				<li>journal</li>
+			</ul>
+
+			<ul>
+				<li>projects</li>
+				<!--$FOR_ALL(projects)-->
+			</ul>
+
+			<ul>
+				<li>journal</li>
+				<!--$FOR_ALL(journal)-->
+			</ul>
+		</nav>
+		<section>
+			<ul>
+				<i>I want my office to be quiet. The loudest thing in the room by far should be the occasional purring of the cat<br>- Linus Torvalds</i>
+				<hr>
+				<li><b>About Me:</b></li>
+				<div id="about-me">
+					I Love free (<i>as in freedom</i>) open source software and community driven projects. Some of my favorite software is made by <a href="https;//suckless.org/">Suckless Software</a> and <a href="https://www.gnu.org/home.en.html">the GNU collection</a>. I value privacy over everything, I despise subscription services. The modern digital world is a mess, having to navigate mass surveillance, censorship and the ever-increasing overabundance of artificial intelligence. Put the power back into the hands of the people.
+					<br><br>
+					My production setup consists of a FreeBSD base with DWM. Try my config <a href="https://github.com/9jh1/dwm-rice">here</a>
+				</div>
+				<hr>
+				<li><b>Projects:</b></li>
+				<div id="projects">
+					<!--$FOR_ALL(project)-->
+				</div>
+				<hr>
+				<li><b>Rough History:</b></li>
+				<div id="history">
+					I Been writing code for around five years now, if you think thats not very long keep in mind I was born in 2008. I first started out writing basic programs in python. I got hooked onto software development so I have lots of experience with popular python gui librarys like Tkinter, CustomTkinter, ImGUI and more. After a while I started looking into web development using the javascript Electron framework, this of course drove me to learn web development. For a long time I practiced web development until I was profficient in javascript, I never bothered learning a framework like React or Svelt as I'm a strong beliver in semantic modularization of elements in html. After that stage I started getting into linux and other FOSS operating systems, this drove me to learn the C programming language in which I've made several projects below.
+				</div>
+				<hr>
+				<li><b>Contact:</b></li>
+				<div id="contact">
+					I'm available for discussion, review, or feedback on weekends. If you're looking to hire me then email one of the listed emails below and ensure the subject line contains the word <i>hire</i>. I should respond within one buisness day in <b>Australia standard time</b>. 
+					<br><br>
+					<div>1. tkf.x1os@gmail.com</div>
+					<div>2. x3hy@protonmail.com</div>
+				</div>
+				<li><b>Journal:</b></li>
+				<div id="journal">
+					<!--$FOR_ALL(journal)-->
+				</div>
+			</ul>
+		</section>
+	</div>
+</body>
+</html>
