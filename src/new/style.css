@@ -1,5 +1,7 @@
 :root {
-	--pad:2ch;
+	--pad:4ch;
+	--pad-s: 3ch;
+	--text-pad: "---";
 	--pad-a: calc(var(--pad)*2);
 	--nav-size: 20%;
 	--bg: #01010f; /* background */
@@ -48,17 +50,28 @@ body {
 		opacity:0.3;
 		margin-top:1px;
 		border-bottom: solid 1px var(--fg-alt);
-		margin-bottom:var(--pad-a);
+		margin-bottom:var(--pad-s);
 	}
 
 	nav {
-		height:fit-content;
+		height:calc(100vh - (var(--pad-a)*2));
 		width:fit-content;
 		top:var(--pad-a);
 		position:sticky;
+		&::after {
+			position:absolute;
+			bottom:0;
+			content: "V2.6.3";
+			opacity:0.1;
+			text-align:center;
+			width:100%;
+			&::hover {
+				opacity:1;
+			}
+		}
 
 		ul {
-			margin-left:10px;
+			margin-left:var(--pad-s);
 
 			li {
 				cursor: pointer;
@@ -75,7 +88,7 @@ body {
 				&:not(li:first-child) {
 					text-transform: capitalize;
 					&::before {
-						content: "--";
+						content: var(--text-pad);
 						color: transparent;
 						user-select: none;
 					}
@@ -83,9 +96,6 @@ body {
 					&::after {
 						content: ";"; 
 						opacity: 0.5;
-						&:hover {
-							opacity: 1;
-						}
 					}
 				}
 			}
