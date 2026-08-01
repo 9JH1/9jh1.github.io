@@ -1,1 +1,0 @@
-The `download` file will download my GitHubAPI content into two files, `repo.json` and `user.json`. `repo.json` contains the repo information of all projects, this data is loaded into the projects section of the main website. The `user.json` file contains my user stats such as username profile photo and more importantly the readme file.
